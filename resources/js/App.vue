@@ -13,6 +13,7 @@
                     <router-link to="/books" class="nav-item nav-link">Books</router-link>
                     <router-link to="/books" class="nav-item nav-link">Scenarios</router-link>
                     <router-link to="/books" class="nav-item nav-link">Gharts</router-link>
+                    <router-link to="/books" class="nav-item nav-link">Tables</router-link>
                     <a class="nav-item nav-link" style="cursor: pointer;" @click="logout">Logout</a>
                 </div>
                 <!-- for non-logged user-->
