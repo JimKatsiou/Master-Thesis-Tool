@@ -6,9 +6,6 @@
                 <span class="text-secondary">Reporting Tool</span>
             </div>
             <nav-bar />
-            <side-bar />
-            <!-- <side-bar :menu="menu" /> -->
-            <hr>
             <router-view />
             <footer-bar />
         </div>
@@ -17,14 +14,12 @@
 
 <script>
 import menu from '../menu'
-import SideBar from './components/SideBar.vue'
 import NavBar from './components/NavBar.vue'
 import FooterBar from './components/FooterBar.vue'
 
 export default {
     name: "App",
     components: {
-        SideBar,
         NavBar,
         FooterBar,
         menu
