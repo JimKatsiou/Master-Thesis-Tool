@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+   <nav  id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
         <div class="collapse navbar-collapse">
             <!-- for logged-in user-->
             <div class="side-bar" v-if="isLoggedIn">
@@ -62,4 +62,19 @@ export default ({
     },
 })
 </script>
+
+<style scoped>
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 58px 0 0; /* Height of navbar */
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
+  width: 240px;
+  z-index: 600;
+}
+</style>
 

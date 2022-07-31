@@ -1,6 +1,9 @@
 <template>
-    <div>
-        <h4>Homepage</h4>
+    <div class="main">
+        <h2>Reporting and IoT Network Management</h2>
+
+        <img :src="getHomePageImage()" class="img-fluid" alt="...">
+
     </div>
 </template>
 
@@ -14,6 +17,21 @@ export default {
     },
     created() {
     },
-    methods: {}
+    methods: {
+        getHomePageImage(){
+            return "images/logo.png/"
+        }
+    }
 }
 </script>
+
+<style scoped>
+
+.main {
+  margin-left: 10px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+</style>
+

@@ -6,9 +6,13 @@ import Register from '../pages/Register';
 import Login from '../pages/Login';
 import Dashboard from '../pages/Dashboard';
 
-import Books from '../components/Books';
-import AddBook from '../components/AddBook';
-import EditBook from '../components/EditBook';
+import Books from '../components/Books/Books';
+import AddBook from '../components/Books/AddBook';
+import EditBook from '../components/Books/EditBook';
+
+import Scenarios from '../components/Scenarios/Scenarios'
+import AddScenario from '../components/Scenarios/Scenarios'
+import EditScenario from '../components/Scenarios/Scenarios'
 
 export const routes = [
     {
@@ -36,6 +40,8 @@ export const routes = [
         path: '/dashboard',
         component: Dashboard
     },
+
+    //Example Book routes
     {
         name: 'books',
         path: '/books',
@@ -50,6 +56,23 @@ export const routes = [
         name: 'editbook',
         path: '/books/edit/:id',
         component: EditBook
+    },
+
+    // Scenarios routes
+    {
+        name: 'scenarios',
+        path: '/scenarios',
+        component: Scenarios
+    },
+    {
+        name: 'addscenario',
+        path: '/scenarios/add',
+        component: AddScenario
+    },
+    {
+        name: 'editscenario',
+        path: '/scenarios/edit/:id',
+        component: EditScenario
     },
 ];
 
