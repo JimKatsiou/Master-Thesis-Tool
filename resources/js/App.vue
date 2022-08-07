@@ -22,11 +22,9 @@ export default {
     components: {
         NavBar,
         FooterBar,
-        menu
     },
     data() {
         return {
-            menu
         }
     },
     created() {

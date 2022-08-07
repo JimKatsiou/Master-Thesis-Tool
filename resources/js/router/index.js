@@ -6,13 +6,22 @@ import Register from '../pages/Register';
 import Login from '../pages/Login';
 import Dashboard from '../pages/Dashboard';
 
-import Books from '../components/Books/Books';
-import AddBook from '../components/Books/AddBook';
-import EditBook from '../components/Books/EditBook';
-
 import Scenarios from '../components/Scenarios/Scenarios'
 import AddScenario from '../components/Scenarios/Scenarios'
 import EditScenario from '../components/Scenarios/Scenarios'
+
+import Technology from '../components/Technologies/Technologies'
+import AddTechnology from '../components/Technologies/AddTechnology'
+import EditTechnology from '../components/Technologies/EditTechnology'
+
+import TypeOfSystem from '../components/TypeOfSystem/TypeOfSystem'
+import AddTypeOfSystem from '../components/TypeOfSystem/AddTypeOfSystem'
+import EditTypeOfSystem from '../components/TypeOfSystem/EditTypeOfSystem'
+
+import Charts from '../components/Charts/Charts'
+import TablesView from '../components/Tables/TablesView'
+import Matlab from '../components/Matlab/Matlab'
+import Documentation from '../components/Documentation'
 
 export const routes = [
     {
@@ -41,23 +50,6 @@ export const routes = [
         component: Dashboard
     },
 
-    //Example Book routes
-    {
-        name: 'books',
-        path: '/books',
-        component: Books
-    },
-    {
-        name: 'addbook',
-        path: '/books/add',
-        component: AddBook
-    },
-    {
-        name: 'editbook',
-        path: '/books/edit/:id',
-        component: EditBook
-    },
-
     // Scenarios routes
     {
         name: 'scenarios',
@@ -74,6 +66,65 @@ export const routes = [
         path: '/scenarios/edit/:id',
         component: EditScenario
     },
+
+    //Technologies routes
+    {
+        name: 'technologies',
+        path: '/technologies',
+        component: Technology
+    },
+    {
+        name: 'addtechnology',
+        path: '/technologies/add',
+        component: AddTechnology
+    },
+    {
+        name: 'edittechnology',
+        path: '/technologies/edit/:id',
+        component: EditTechnology
+    },
+
+    //TypeOfSystem routes
+    {
+        name: 'TypeOfSystem',
+        path: '/TypeOfSystem',
+        component: TypeOfSystem
+    },
+    {
+        name: 'addTypeOfSystem',
+        path: '/TypeOfSystem/add',
+        component: AddTypeOfSystem
+    },
+    {
+        name: 'editTypeOfSystem',
+        path: '/TypeOfSystem/edit/:id',
+        component: EditTypeOfSystem
+    },
+
+    {
+        name: 'Charts',
+        path: '/charts',
+        component: Charts
+    },
+
+    {
+        name: 'testing-matlab',
+        path: '/testing-matlab',
+        component: Matlab
+    },
+
+    {
+        name: 'Tables',
+        path: '/tables',
+        component: TablesView
+    },
+
+    {
+        name: 'Documentation',
+        path: '/documentation',
+        component: Documentation
+    },
+
 ];
 
 const router = createRouter({

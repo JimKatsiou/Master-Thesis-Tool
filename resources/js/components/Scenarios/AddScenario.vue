@@ -5,14 +5,14 @@
             <div class="col-md-6">
                 <form @submit.prevent="addScenario">
                     <div class="form-group">
-                        <label>Name</label>
-                        <input type="text" class="form-control" v-model="scenario.name">
+                        <label>Type of System</label>
+                        <input type="text" class="form-control" v-model="scenario.type_of_system_name">
                     </div>
                     <div class="form-group">
-                        <label>Author</label>
-                        <input type="text" class="form-control" v-model="book.author">
+                        <label>Technology</label>
+                        <input type="text" class="form-control" v-model="scenario.technology_name">
                     </div>
-                    <button type="submit" class="btn btn-primary">Add Book</button>
+                    <button type="submit" class="btn btn-primary">Add Scenario</button>
                 </form>
             </div>
         </div>
