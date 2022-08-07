@@ -7,6 +7,7 @@
                 <th>ID</th>
                 <th>Type of System</th>
                 <th>Technology</th>
+                <th>Description</th>
                 <th>Created At</th>
                 <th>Updated At</th>
                 <th>Actions</th>
@@ -17,19 +18,20 @@
                 <td>{{ scenario.id }}</td>
                 <td>{{ scenario.type_of_system }}</td>
                 <td>{{ scenario.technology }}</td>
+                <td>{{ scenario.dscription }}</td>
                 <td>{{ scenario.created_at }}</td>
                 <td>{{ scenario.updated_at }}</td>
                 <td>
                     <div class="btn-group" role="group">
                         <router-link :to="{name: 'editscenario', params: { id: scenario.id }}" class="btn btn-primary">Edit</router-link>
-                        <button class="btn btn-danger" @click="deleteBook(scenario.id)">Delete</button>
+                        <button class="btn btn-danger" @click="deleteScenario(scenario.id)">Delete</button>
                     </div>
                 </td>
             </tr>
             </tbody>
         </table>
 
-        <button type="button" class="btn btn-info" @click="this.$router.push('/scenarios/add')">Add Book</button>
+        <button type="button" class="btn btn-info" @click="this.$router.push('/scenarios/add')">Add Scenario</button>
     </div>
 </template>
 
@@ -52,7 +54,7 @@ export default {
         })
     },
     methods: {
-        deleteBook(id) {
+        deleteScenario(id) {
             this.$axios.get('/sanctum/csrf-cookie').then(response => {
                 this.$axios.delete(`/api/scenarios/delete/${id}`)
                     .then(response => {

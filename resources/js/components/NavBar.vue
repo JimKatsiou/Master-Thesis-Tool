@@ -10,15 +10,14 @@
                 <div class="list-group list-group-flush mx-3 mt-4">
                     <router-link to="/dashboard" class="list-group-item list-group-item-action py-2 ripple active">Dashboard</router-link>
                     <hr>
-                    <router-link to="/books" class="list-group-item list-group-item-action py-2 ripple">Books X</router-link>
                     <router-link to="/scenarios" class="list-group-item list-group-item-action py-2 ripple">Scenarios</router-link>
-                    <router-link to="/books" class="list-group-item list-group-item-action py-2 ripple">Testing - Matlab</router-link>
+                    <router-link to="/testing-matlab" class="list-group-item list-group-item-action py-2 ripple">Testing - Matlab</router-link>
                     <hr>
-                    <router-link to="/books" class="list-group-item list-group-item-action py-2 ripple">Charts</router-link>
-                    <router-link to="/books" class="list-group-item list-group-item-action py-2 ripple">Tables</router-link>
+                    <router-link to="/charts" class="list-group-item list-group-item-action py-2 ripple">Charts</router-link>
+                    <router-link to="/tables" class="list-group-item list-group-item-action py-2 ripple">Tables</router-link>
                     <hr>
-                    <router-link to="/books" class="list-group-item list-group-item-action py-2 ripple">Documention</router-link>
-                    <router-link to="/books" class="list-group-item list-group-item-action py-2 ripple">Somethink else</router-link>
+                    <router-link to="/documentation" class="list-group-item list-group-item-action py-2 ripple">Documentaion</router-link>
+                    <router-link to="/" class="list-group-item list-group-item-action py-2 ripple">Somethink else</router-link>
                     <a href="#" class="list-group-item list-group-item-action py-2 ripple"><span>Calendar</span> </a>
                     <a href="#" class="list-group-item list-group-item-action py-2 ripple"><span>Users</span></a>
                      <a class="list-group-item list-group-item-action py-2 ripple" style="cursor: pointer;" @click="logout">Logout</a>
