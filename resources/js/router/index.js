@@ -7,10 +7,10 @@ import Login from '../pages/Login';
 import Dashboard from '../pages/Dashboard';
 
 import Scenarios from '../components/Scenarios/Scenarios'
-import AddScenario from '../components/Scenarios/Scenarios'
-import EditScenario from '../components/Scenarios/Scenarios'
+import AddScenario from '../components/Scenarios/AddScenario'
+import EditScenario from '../components/Scenarios/EditScenario'
 
-import Technology from '../components/Technologies/Technologies'
+import Technologies from '../components/Technologies/Technologies'
 import AddTechnology from '../components/Technologies/AddTechnology'
 import EditTechnology from '../components/Technologies/EditTechnology'
 
@@ -18,9 +18,10 @@ import TypeOfSystem from '../components/TypeOfSystem/TypeOfSystem'
 import AddTypeOfSystem from '../components/TypeOfSystem/AddTypeOfSystem'
 import EditTypeOfSystem from '../components/TypeOfSystem/EditTypeOfSystem'
 
+import Matlab from '../components/Matlab/Matlab'
+
 import Charts from '../components/Charts/Charts'
 import TablesView from '../components/Tables/TablesView'
-import Matlab from '../components/Matlab/Matlab'
 import Documentation from '../components/Documentation'
 
 export const routes = [
@@ -71,7 +72,7 @@ export const routes = [
     {
         name: 'technologies',
         path: '/technologies',
-        component: Technology
+        component: Technologies
     },
     {
         name: 'addtechnology',
@@ -86,18 +87,18 @@ export const routes = [
 
     //TypeOfSystem routes
     {
-        name: 'TypeOfSystem',
-        path: '/TypeOfSystem',
+        name: 'typeOfSystem',
+        path: '/type_of_systems',
         component: TypeOfSystem
     },
     {
         name: 'addTypeOfSystem',
-        path: '/TypeOfSystem/add',
+        path: '/type_of_systems/add',
         component: AddTypeOfSystem
     },
     {
         name: 'editTypeOfSystem',
-        path: '/TypeOfSystem/edit/:id',
+        path: '/type_of_systems/edit/:id',
         component: EditTypeOfSystem
     },
 

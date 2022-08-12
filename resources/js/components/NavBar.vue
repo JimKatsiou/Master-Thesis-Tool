@@ -11,6 +11,9 @@
                     <router-link to="/dashboard" class="list-group-item list-group-item-action py-2 ripple active">Dashboard</router-link>
                     <hr>
                     <router-link to="/scenarios" class="list-group-item list-group-item-action py-2 ripple">Scenarios</router-link>
+                    <router-link to="/technologies" class="list-group-item list-group-item-action py-2 ripple">Technologies</router-link>
+                    <router-link to="/type_of_systems" class="list-group-item list-group-item-action py-2 ripple">Type of systems</router-link>
+                    <hr>
                     <router-link to="/testing-matlab" class="list-group-item list-group-item-action py-2 ripple">Testing - Matlab</router-link>
                     <hr>
                     <router-link to="/charts" class="list-group-item list-group-item-action py-2 ripple">Charts</router-link>
@@ -20,7 +23,8 @@
                     <router-link to="/" class="list-group-item list-group-item-action py-2 ripple">Somethink else</router-link>
                     <a href="#" class="list-group-item list-group-item-action py-2 ripple"><span>Calendar</span> </a>
                     <a href="#" class="list-group-item list-group-item-action py-2 ripple"><span>Users</span></a>
-                     <a class="list-group-item list-group-item-action py-2 ripple" style="cursor: pointer;" @click="logout">Logout</a>
+                    <hr>
+                    <a class="list-group-item list-group-item-action py-2 ripple" style="cursor: pointer;" @click="logout">Logout</a>
                 </div>
             </div>
             <!-- for non-logged user-->
@@ -35,114 +39,16 @@
         </div>
     </nav>
     <!-- Sidebar -->
-
-    <!-- Navbar -->
-    <nav id="main-navbar" class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
-        <!-- Container wrapper -->
-        <div class="container-fluid">
-        <!-- Toggle button -->
-        <button
-                class="navbar-toggler"
-                type="button"
-                data-mdb-toggle="collapse"
-                data-mdb-target="#sidebarMenu"
-                aria-controls="sidebarMenu"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-                >
-            <i class="fas fa-bars"></i>
-        </button>
-
-        <!-- Brand -->
-        <a class="navbar-brand" href="#">
-            <img src="MasterThesis/imges/general/logo.png">
-        </a>
-
-
-        <!-- Right links -->
-        <ul class="navbar-nav ms-auto d-flex flex-row"  v-if="isLoggedIn">
-            <!-- Notification dropdown -->
-            <li class="nav-item dropdown">
-            <a
-                class="nav-link me-3 me-lg-0 dropdown-toggle hidden-arrow"
-                href="#"
-                id="navbarDropdownMenuLink"
-                role="button"
-                data-mdb-toggle="dropdown"
-                aria-expanded="false"
-                >
-                <i class="fas fa-bell"></i>
-                <span class="badge rounded-pill badge-notification bg-danger"
-                    >1</span
-                >
-            </a>
-            <ul
-                class="dropdown-menu dropdown-menu-end"
-                aria-labelledby="navbarDropdownMenuLink"
-                >
-                <li><a class="dropdown-item" href="#">Some news</a></li>
-                <li><a class="dropdown-item" href="#">Another news</a></li>
-                <li>
-                <a class="dropdown-item" href="#">Something else here</a>
-                </li>
-            </ul>
-            </li>
-
-            <!-- Icon -->
-            <li class="nav-item">
-            <a class="nav-link me-3 me-lg-0" href="#">
-                <i class="fas fa-fill-drip"></i>
-            </a>
-            </li>
-            <!-- Icon -->
-            <li class="nav-item me-3 me-lg-0">
-            <a class="nav-link" href="#">
-                <i class="fab fa-github"></i>
-            </a>
-            </li>
-
-            <!-- Avatar -->
-            <li class="nav-item dropdown">
-            <a
-                class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center"
-                href="#"
-                id="navbarDropdownMenuLink"
-                role="button"
-                data-mdb-toggle="dropdown"
-                aria-expanded="false"
-                >
-                <img
-                    src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg"
-                    class="rounded-circle"
-                    height="22"
-                    alt=""
-                    loading="lazy"
-                    />
-            </a>
-            <ul
-                class="dropdown-menu dropdown-menu-end"
-                aria-labelledby="navbarDropdownMenuLink"
-                >
-                <li><a class="dropdown-item" href="#">My profile</a></li>
-                <li><a class="dropdown-item" href="#">Settings</a></li>
-                <li><a class="dropdown-item" href="#">Logout</a></li>
-            </ul>
-            </li>
-        </ul>
-        </div>
-        <!-- Container wrapper -->
-  </nav>
-  <!-- Navbar -->
 </header>
 <!--Main Navigation-->
 
-<!--Main layout-->
+<!-- Main layout-->
 <main style="margin-top: 58px">
   <div class="container pt-4">
 
   </div>
 </main>
-<!--Main layout-->
+<!--Main layout -->
 
 
 </template>
@@ -212,12 +118,12 @@ export default ({
 /* Sidebar */
 .sidebar {
     height: 100%; /* Full-height: remove this if you want "auto" height */
-    width: 240px; /* Set the width of the sidebar */
+    width: 250px; /* Set the width of the sidebar */
     position: fixed; /* Fixed Sidebar (stay in place on scroll) */
     top: 0; /* Stay at the top */
     bottom: 0;
     left: 0;
-    padding: 58px 0 0; /* Height of navbar */
+    padding: 20px 0 0; /* Height of navbar */
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
     z-index: 1;
 }
@@ -232,13 +138,6 @@ export default ({
   box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
 }
 
-.sidebar-sticky {
-  position: relative;
-  top: 0;
-  height: calc(100vh - 48px);
-  padding-top: 0.5rem;
-  overflow-x: hidden;
-  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-}
+
 </style>
 

@@ -1,9 +1,9 @@
 <template>
-    <div class="main">
-        <h2>Reporting and IoT Network Management</h2>
-
+    <div class="container">
+        <div class="main">
+            <h2>Reporting and IoT Network Management</h2>
+        </div>
         <img :src="getHomePageImage()" class="img-fluid" alt="...">
-
     </div>
 </template>
 

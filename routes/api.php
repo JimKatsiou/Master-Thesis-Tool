@@ -18,7 +18,7 @@ Route::group(['prefix' => 'scenarios', 'middleware' => 'auth:sanctum'], function
     Route::delete('delete/{id}', [ScenarioController::class, 'delete']);
 });
 
-Route::group(['prefix' => 'technolgies', 'middleware' => 'auth:sanctum'], function () {
+Route::group(['prefix' => 'technologies', 'middleware' => 'auth:sanctum'], function () {
     Route::get('/', [TechnologyController::class, 'index']);
     Route::post('add', [TechnologyController::class, 'add']);
     Route::get('edit/{id}', [TechnologyController::class, 'edit']);
@@ -26,10 +26,14 @@ Route::group(['prefix' => 'technolgies', 'middleware' => 'auth:sanctum'], functi
     Route::delete('delete/{id}', [TechnologyController::class, 'delete']);
 });
 
-Route::group(['prefix' => 'systemes', 'middleware' => 'auth:sanctum'], function () {
+Route::group(['prefix' => 'type_of_systems', 'middleware' => 'auth:sanctum'], function () {
     Route::get('/', [TypeOfSystemController::class, 'index']);
     Route::post('add', [TypeOfSystemController::class, 'add']);
     Route::get('edit/{id}', [TypeOfSystemController::class, 'edit']);
     Route::post('update/{id}', [TypeOfSystemController::class, 'update']);
     Route::delete('delete/{id}', [TypeOfSystemController::class, 'delete']);
+});
+
+Route::group(['prefix' => 'testing-matlab', 'middleware' => 'auth:sanctum'], function () {
+    Route::get('/', [TestingController::class, 'index']);
 });

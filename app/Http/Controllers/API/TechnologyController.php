@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
@@ -18,9 +17,10 @@ class TechnologyController extends Controller
     // add technology
     public function add(Request $request)
     {
-        $technology = new Technologies([
-            'name' => $request->name,
-        ]);
+        $technology = new Technologies();
+
+        $technology->name = $request->name;
+
         $technology->save();
 
         return response()->json('The technology successfully added');
