@@ -17,16 +17,22 @@ class ScenarioController extends Controller
     // add scenario
     public function add(Request $request)
     {
-        $scenario = new Scenario([
-            'type_of_system_name' => $request->type_of_system_name,
-            'technology_name' => $request->technology_name
-        ]);
+        $scenario = new Scenario();
+
+        $scenario->type_of_system_name = $request->type_of_system_name;
+        $scenario->technology_name = $request->technology_name;
+        if(isset($request->description)){
+            $scenario->description = $request->description;
+        } else {
+            $scenario->description = null;
+        }
+
         $scenario->save();
 
         return response()->json('The scenario successfully added');
     }
 
-    // edit scenarioσ
+    // edit scenarios
     public function edit($id)
     {
         $scenario = Scenario::find($id);

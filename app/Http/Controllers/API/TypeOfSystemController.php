@@ -17,10 +17,17 @@ class TypeOfSystemController extends Controller
     // add type_of_system
     public function add(Request $request)
     {
-        $type_of_system = new TypeOfSystem([
-            'name' => $request->name,
-            'description' => $request->description
-        ]);
+
+
+        $type_of_system = new TypeOfSystem();
+
+        $type_of_system->name = $request->name;
+        if(isset($request->description)){
+            $type_of_system->description = $request->description;
+        } else {
+            $type_of_system->description = null;
+        }
+
         $type_of_system->save();
 
         return response()->json('The type of system successfully added');

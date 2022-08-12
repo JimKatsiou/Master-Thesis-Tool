@@ -17,7 +17,7 @@ class CraeteScenarioTable extends Migration
             $table->id();
             $table->string('technology_name');
             $table->string('type_of_system_name');
-            $table->string('description');
+            $table->string('description')->default(null);
             $table->timestamps();
         });
     }

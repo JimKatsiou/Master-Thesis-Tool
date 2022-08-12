@@ -1,15 +1,10 @@
 <template>
     <div id="app">
-        <div class="container">
-            <div class="text-center" style="margin: 20px 0px 20px 0px;">
-                <!-- <a href="/"><img src="{{ asset('/public/images/iot.png') }}"></a><br> -->
-                <span class="text-secondary">Reporting Tool</span>
-            </div>
-            <nav-bar />
-            <router-view />
-            <footer-bar />
-        </div>
+        <nav-bar />
+        <router-view />
+        <footer-bar />
     </div>
+
 </template>
 
 <script>

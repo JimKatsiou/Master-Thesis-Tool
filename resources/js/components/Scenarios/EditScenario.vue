@@ -1,18 +1,26 @@
 <template>
-    <div>
-        <h4 class="text-center">Edit Scenario</h4>
+    <div class="topOfThePage">
+        <h3>Edit Scenarios</h3>
+    </div>
+    <div class="nextOfSideBar">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-6" v-if="scenario">
                 <form @submit.prevent="updateScenario">
                     <div class="form-group">
                         <label>Type of System</label>
-                        <input type="text" class="form-control" v-model="scenarios.type_of_system_name">
+                        <input type="text" class="form-control" v-model="scenario.type_of_system_name">
                     </div>
                     <div class="form-group">
                         <label>Technology</label>
                         <input type="text" class="form-control" v-model="scenario.technology_name">
                     </div>
+                    <div class="form-group">
+                        <label>Description</label>
+                        <input type="text" class="form-control" v-model="scenario.description">
+                    </div>
+                    <br>
                     <button type="submit" class="btn btn-primary">Update Scenario</button>
+                    <router-link to="/scenarios" class="btn btn-secondary">Back</router-link>
                 </form>
             </div>
         </div>
@@ -58,3 +66,18 @@ export default {
     }
 }
 </script>
+
+<style>
+.nextOfSideBar {
+    margin-left: 250px;
+    padding: 10px;
+}
+
+.topOfThePage
+{
+    margin-top: -50px;
+    background-color: rgba(146, 145, 145, 0.404);
+    margin-left: 250px;
+    padding: 10px;
+}
+</style>

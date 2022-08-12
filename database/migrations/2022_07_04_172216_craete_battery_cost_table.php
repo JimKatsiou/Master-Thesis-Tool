@@ -52,6 +52,6 @@ class CraeteBatteryCostTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Sensors');
+        Schema::dropIfExists('battery');
     }
 }

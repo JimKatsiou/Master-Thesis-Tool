@@ -1,6 +1,8 @@
 <template>
-    <div>
-        <h4 class="text-center">All Scenarios</h4><br/>
+    <div class="topOfThePage">
+        <h3>All Scenarios</h3>
+    </div>
+    <div class="nextOfSideBar">
         <table class="table table-bordered">
             <thead>
             <tr>
@@ -8,7 +10,6 @@
                 <th>Type of System</th>
                 <th>Technology</th>
                 <th>Description</th>
-                <th>Created At</th>
                 <th>Updated At</th>
                 <th>Actions</th>
             </tr>
@@ -16,10 +17,9 @@
             <tbody>
             <tr v-for="scenario in scenarios" :key="scenario.id">
                 <td>{{ scenario.id }}</td>
-                <td>{{ scenario.type_of_system }}</td>
-                <td>{{ scenario.technology }}</td>
-                <td>{{ scenario.dscription }}</td>
-                <td>{{ scenario.created_at }}</td>
+                <td>{{ scenario.type_of_system_name }}</td>
+                <td>{{ scenario.technology_name }}</td>
+                <td>{{ scenario.description }}</td>
                 <td>{{ scenario.updated_at }}</td>
                 <td>
                     <div class="btn-group" role="group">
@@ -75,3 +75,18 @@ export default {
     }
 }
 </script>
+
+<style>
+.nextOfSideBar {
+    margin-left: 250px;
+    padding: 10px;
+}
+
+.topOfThePage
+{
+    margin-top: -50px;
+    background-color: rgba(146, 145, 145, 0.404);
+    margin-left: 250px;
+    padding: 10px;
+}
+</style>
