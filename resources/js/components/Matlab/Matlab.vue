@@ -1,9 +1,11 @@
 <template>
-
-    <div class="container">
+    <div class="topOfThePage">
+        <h3>ALGORITHMS</h3>
+    </div>
+    <div class="nextOfSideBar">
         <div class="row justify-content-center">
             <div class="col-md-12">
-            <router-link to="/" class="btn btn-danger">Back to Dashboard</router-link>
+            <router-link to="/dashboard" class="btn btn-danger">Back to Dashboard</router-link>
             </div>
         </div>
         <hr>
@@ -52,17 +54,17 @@
         <div class="card-body">
         <ul>
             <li>
-                <h5> For cost-effective scenario: <button> Run button </button> <br> </h5>
+                <h5> For cost-effective scenario:</h5>
                 <h6> Direcory: <b> MattlabCodes/Greedy_CostEffective_Scenrio.m </b> </h6>
             </li>
             <hr>
             <li>
-                <h5> For energy-effective scenario: <button> Run button </button> <br> </h5>
+                <h5> For energy-effective scenario: </h5>
                 <h6> Direcory: <b> MattlabCodes/Greedy_EnergyEffective_Scenrio.m </b> </h6>
             </li>
             <hr>
             <li>
-                <h5> For most-effective scenario (both cost and energy): <button> Run button </button> <br> </h5>
+                <h5> For most-effective scenario (both cost and energy): </h5>
                 <h6> Direcory: <b> MattlabCodes/Greedy_MostEffective_Scenrio.m </b> </h6>
             </li>
         </ul>
@@ -96,6 +98,7 @@ import axios from 'axios';
 export default {
     data() {
         return {
+            matlab_status: '',
             file_name_1: 'mpla',
             file_name_2: 'mploo',
             file_name_3: 'mpli',
@@ -112,6 +115,12 @@ export default {
         // <?php
         //     exec("matlab.exe");
         // ?>
+        this.$axios.get('/sanctum/csrf-cookie').then(response => {
+            this.$axios.get('/api/testing-matlab/run-matlab')
+            .catch(function (error) {
+                console.error(error);
+            });
+        })
 
         this.get_data_5g();
         this.get_data_4();

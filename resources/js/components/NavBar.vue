@@ -123,7 +123,7 @@ export default ({
     top: 0; /* Stay at the top */
     bottom: 0;
     left: 0;
-    padding: 20px 0 0; /* Height of navbar */
+    padding: 10px 0 0; /* Height of navbar */
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
     z-index: 1;
 }

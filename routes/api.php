@@ -3,12 +3,15 @@
 use App\Http\Controllers\API\ScenarioController;
 use App\Http\Controllers\API\TechnologyController;
 use App\Http\Controllers\API\TypeOfSystemController;
+use App\Http\Controllers\API\MatlabController;
 use App\Http\Controllers\API\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::post('login', [UserController::class, 'login']);
 Route::post('register', [UserController::class, 'register']);
 Route::post('logout', [UserController::class, 'logout'])->middleware('auth:sanctum');
+//Route::get('run-matlab', [TestingController::class, 'runMatlab']);
+
 
 Route::group(['prefix' => 'scenarios', 'middleware' => 'auth:sanctum'], function () {
     Route::get('/', [ScenarioController::class, 'index']);
@@ -35,5 +38,5 @@ Route::group(['prefix' => 'type_of_systems', 'middleware' => 'auth:sanctum'], fu
 });
 
 Route::group(['prefix' => 'testing-matlab', 'middleware' => 'auth:sanctum'], function () {
-    Route::get('/', [TestingController::class, 'index']);
+    Route::get('run-matlab', [MatlabController::class, 'runMatlab']);
 });

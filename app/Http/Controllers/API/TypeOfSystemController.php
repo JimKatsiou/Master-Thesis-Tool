@@ -7,6 +7,14 @@ use Illuminate\Http\Request;
 
 class TypeOfSystemController extends Controller
 {
+
+    // This function runs Matlab
+    public function runMatlab()
+    {
+        dd('mpla');
+        exec("matlab.exe");
+    }
+
     // all type_of_system
     public function index()
     {
