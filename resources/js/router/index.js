@@ -102,6 +102,13 @@ export const routes = [
         component: EditTypeOfSystem
     },
 
+    // sensors and gateways
+    {
+        name: 'sensors_and_gateways',
+        path: '/sensors_and_gateways',
+        component: Scenarios
+    },
+
     {
         name: 'Charts',
         path: '/charts',

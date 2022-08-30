@@ -5,9 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class LoraSolutions extends Model
+class FiveGSolutions extends Model
 {
     use HasFactory;
-    protected $table = 'lora_solutions';
+
+    protected $table = '5g_solutions';
 
 }
+
+?>

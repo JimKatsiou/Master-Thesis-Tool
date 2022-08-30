@@ -13,6 +13,7 @@
                     <router-link to="/scenarios" class="list-group-item list-group-item-action py-2 ripple">Scenarios</router-link>
                     <router-link to="/technologies" class="list-group-item list-group-item-action py-2 ripple">Technologies</router-link>
                     <router-link to="/type_of_systems" class="list-group-item list-group-item-action py-2 ripple">Type of systems</router-link>
+                    <router-link to="/sensors_and_gateways" class="list-group-item list-group-item-action py-2 ripple">Sensors & Gateways </router-link>
                     <hr>
                     <router-link to="/testing-matlab" class="list-group-item list-group-item-action py-2 ripple">Testing - Matlab</router-link>
                     <hr>

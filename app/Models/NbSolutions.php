@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class NbSolutions extends Model
 {
     use HasFactory;
+    protected $table = 'nb_iot_solutions';
+
 }
