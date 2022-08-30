@@ -1,4 +1,3 @@
-
 <template>
     <footer class="text-center text-white fixed-bottom" style="background-color: #21081a;">
 

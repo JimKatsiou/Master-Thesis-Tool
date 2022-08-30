@@ -37,6 +37,21 @@ Route::group(['prefix' => 'type_of_systems', 'middleware' => 'auth:sanctum'], fu
     Route::delete('delete/{id}', [TypeOfSystemController::class, 'delete']);
 });
 
+Route::group(['prefix' => 'sensors_and_gateways', 'middleware' => 'auth:sanctum'], function () {
+    Route::get('/', [TypeOfSystemController::class, 'index']);
+    Route::post('add', [TypeOfSystemController::class, 'add']);
+    Route::get('edit/{id}', [TypeOfSystemController::class, 'edit']);
+    Route::post('update/{id}', [TypeOfSystemController::class, 'update']);
+    Route::delete('delete/{id}', [TypeOfSystemController::class, 'delete']);
+});
+
+
+
 Route::group(['prefix' => 'testing-matlab', 'middleware' => 'auth:sanctum'], function () {
     Route::get('run-matlab', [MatlabController::class, 'runMatlab']);
+    Route::get('get_data_5g_wq', [MatlabController::class, 'getData5gWQ']);
+    Route::get('get_data_Lora_wq', [MatlabController::class, 'get_data_Lora_wq']);
+    Route::get('get_data_NB_wq', [MatlabController::class, 'get_data_NB_wq']);
+    Route::get('get_data_battery', [MatlabController::class, 'get_data_battery']);
+    Route::get('get_data_cost', [MatlabController::class, 'get_data_cost']);
 });

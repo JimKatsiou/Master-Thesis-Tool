@@ -5,9 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class LoraSolutions extends Model
+class Battery extends Model
 {
     use HasFactory;
-    protected $table = 'lora_solutions';
 
+    protected $table = 'sensors_battary';
 }
+
+?>

@@ -26,21 +26,21 @@
             <div class="card-body">
 
                 <p>Scenario: <strong>Water quality - 5G Techonoly</strong></p>
-                {{ this.file_name_1 + 'file was created successfully!'}}
+                {{ this.file_name_1}}
 
                 <hr>
                 <p>Scenario: <strong>Water quality - NB-Iot Techonoly</strong></p>
-                {{ this.file_name_2 + 'file was created successfully!'}}
+                {{ this.file_name_2}}
 
                 <hr>
                 <p>Scenario: <strong>Water quality - LoRa Techonoly</strong></p>
-                {{ this.file_name_3 + 'file was created successfully!'}}
+                {{ this.file_name_3}}
 
                 <hr>
                 <p><strong>Extras:</strong></p>
-                {{ this.file_name_4 + 'file was created successfully!'}}
+                {{ this.file_name_4}}
                 <br>
-                {{ this.file_name_5 + 'file was created successfully!'}}
+                {{ this.file_name_5}}
                 <br>
             </div>
         </div>
@@ -79,13 +79,15 @@
         <ul>
             <li>
             </li>
-            <hr>
-            <li>
-            </li>
-            <hr>
-            <li>
-            </li>
         </ul>
+        </div>
+    </div>
+
+    <br>
+    <h5> <b> STEP 3: </b> Results creation. </h5>
+    <div class="card">
+        <div class="card-header">
+            <h2>Results</h2>
         </div>
     </div>
 
@@ -93,76 +95,107 @@
 </template>
 
 <script>
-import axios from 'axios';
+    import axios from 'axios';
 
-export default {
-    data() {
-        return {
-            matlab_status: '',
-            file_name_1: 'mpla',
-            file_name_2: 'mploo',
-            file_name_3: 'mpli',
-            file_name_4: 'mploo',
-            file_name_5: 'mpli',
-        }
-    },
-    component:{
-
-    },
-
-    mounted() {
-        // tha kanei execution to matlab
-        // <?php
-        //     exec("matlab.exe");
-        // ?>
-        this.$axios.get('/sanctum/csrf-cookie').then(response => {
-            this.$axios.get('/api/testing-matlab/run-matlab')
-            .catch(function (error) {
-                console.error(error);
-            });
-        })
-
-        this.get_data_5g();
-        this.get_data_4();
-        this.get_data_5();
-
-        this.get_data_2();
-
-        this.get_data_3();
-    },
-
-    computed: {
-
-    },
-
-    methods: {
-
-        get_data_5g() // this function fetch data table and it store into json formt and retutn data in json format
-        {
-            //this.$axios.get(`/api/get_5g_data`)
-
-            this.file_name_1 = 'file name '
+    export default {
+        data() {
+            return {
+                matlab_status: '',
+                file_name_1: '',
+                file_name_2: '',
+                file_name_3: '',
+                file_name_4: '',
+                file_name_5: '',
+            }
+        },
+        component:{
 
         },
 
-        get_data_4(){
+        mounted() {
+            this.$axios.get('/sanctum/csrf-cookie').then(response => {
+                this.$axios.get('/api/testing-matlab/run-matlab')
+                .catch(function (error) {
+                    console.error(error);
+                });
+            })
+
+            this.get_data_5g_wq();
+            this.get_data_Lora_wq();
+            this.get_data_NB_wq();
+
+            this.get_data_battery();
+            this.get_data_cost();
+        },
+
+        computed: {
 
         },
 
-        get_data_5(){
+        methods: {
+
+            get_data_5g_wq() // this function fetch data table and it store into json formt and retutn data in json format
+            {
+                this.$axios.get('/sanctum/csrf-cookie').then(response => {
+                    this.$axios.get('/api/testing-matlab/get_data_5g_wq').then(response => {
+                        this.file_name_1 = response.data + 'file was created successfully!';
+                    })
+                    .catch(function (error) {
+                        console.error(error);
+                    });
+                })
+            },
+
+            get_data_Lora_wq()
+            {
+                this.$axios.get('/sanctum/csrf-cookie').then(response => {
+                    this.$axios.get('/api/testing-matlab/get_data_Lora_wq').then(response => {
+                        this.file_name_2 = response.data + 'file was created successfully!';
+                    })
+                    .catch(function (error) {
+                        console.error(error);
+                    });
+                })
+            },
+
+            get_data_NB_wq()
+            {
+                this.$axios.get('/sanctum/csrf-cookie').then(response => {
+                    this.$axios.get('/api/testing-matlab/get_data_NB_wq').then(response => {
+                        this.file_name_3 = response.data + 'file was created successfully!';
+                    })
+                    .catch(function (error) {
+                        console.error(error);
+                    });
+                })
+            },
+
+            get_data_battery()
+            {
+                this.$axios.get('/sanctum/csrf-cookie').then(response => {
+                    this.$axios.get('/api/testing-matlab/get_data_battery').then(response => {
+                        this.file_name_4 = response.data + 'file was created successfully!';
+                    })
+                    .catch(function (error) {
+                        console.error(error);
+                    });
+                })
+            },
+
+            get_data_cost()
+            {
+                this.$axios.get('/sanctum/csrf-cookie').then(response => {
+                    this.$axios.get('/api/testing-matlab/get_data_cost').then(response => {
+                        this.file_name_5 = response.data + 'file was created successfully!';
+                    })
+                    .catch(function (error) {
+                        console.error(error);
+                    });
+                })
+            },
 
         },
-
-        get_data_2(){
-
-        },
-
-        get_data_3(){
-
-        },
-
-    },
-}
+    }
 </script>
 
 <style>
@@ -179,3 +212,4 @@ export default {
     padding: 10px;
 }
 </style>
+
