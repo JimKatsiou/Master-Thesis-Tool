@@ -23834,64 +23834,76 @@ var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNod
 
 var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Type of systems");
 
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Sensors & Gateways ");
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Sensors");
 
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("hr", null, null, -1
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Gateways");
+
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("hr", null, null, -1
 /* HOISTED */
 );
 
-var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Testing - Matlab");
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Testing - Matlab");
 
-var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("hr", null, null, -1
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("hr", null, null, -1
 /* HOISTED */
 );
 
-var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Charts");
+var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("5G Solutions");
 
-var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Tables");
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("LoRa Solutions");
 
-var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("hr", null, null, -1
+var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("NB-IoT Solutions");
+
+var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("hr", null, null, -1
 /* HOISTED */
 );
 
-var _hoisted_17 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Documentaion");
+var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Charts");
 
-var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Somethink else");
+var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Tables");
 
-var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("hr", null, null, -1
+/* HOISTED */
+);
+
+var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Documentaion");
+
+var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Somethink else");
+
+var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
   href: "#",
   "class": "list-group-item list-group-item-action py-2 ripple"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Calendar")], -1
 /* HOISTED */
 );
 
-var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
   href: "#",
   "class": "list-group-item list-group-item-action py-2 ripple"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Users")], -1
 /* HOISTED */
 );
 
-var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("hr", null, null, -1
+var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("hr", null, null, -1
 /* HOISTED */
 );
 
-var _hoisted_22 = {
+var _hoisted_27 = {
   "class": "side-bar"
 };
-var _hoisted_23 = {
+var _hoisted_28 = {
   "class": "list-group list-group-flush mx-3 mt-4"
 };
 
-var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Home");
+var _hoisted_29 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Home");
 
-var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Login");
+var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Login");
 
-var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Register");
+var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Register");
 
-var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("About");
+var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("About");
 
-var _hoisted_28 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", {
+var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", {
   style: {
     "margin-top": "58px"
   }
@@ -23945,7 +23957,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     /* STABLE */
 
   }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    to: "/sensors_and_gateways",
+    to: "/sensors",
     "class": "list-group-item list-group-item-action py-2 ripple"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -23954,22 +23966,62 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  }), _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    to: "/testing-matlab",
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    to: "/gateways",
     "class": "list-group-item list-group-item-action py-2 ripple"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_12];
+      return [_hoisted_11];
     }),
     _: 1
     /* STABLE */
 
-  }), _hoisted_13, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  }), _hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    to: "/testing-matlab",
+    "class": "list-group-item list-group-item-action py-2 ripple"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_13];
+    }),
+    _: 1
+    /* STABLE */
+
+  }), _hoisted_14, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    to: "/fiveGSolution",
+    "class": "list-group-item list-group-item-action py-2 ripple"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_15];
+    }),
+    _: 1
+    /* STABLE */
+
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    to: "/loraSolutions",
+    "class": "list-group-item list-group-item-action py-2 ripple"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_16];
+    }),
+    _: 1
+    /* STABLE */
+
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+    to: "/nbSolutions",
+    "class": "list-group-item list-group-item-action py-2 ripple"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_17];
+    }),
+    _: 1
+    /* STABLE */
+
+  }), _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: "/charts",
     "class": "list-group-item list-group-item-action py-2 ripple"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_14];
+      return [_hoisted_19];
     }),
     _: 1
     /* STABLE */
@@ -23979,17 +24031,17 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "list-group-item list-group-item-action py-2 ripple"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_15];
+      return [_hoisted_20];
     }),
     _: 1
     /* STABLE */
 
-  }), _hoisted_16, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  }), _hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: "/documentation",
     "class": "list-group-item list-group-item-action py-2 ripple"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_17];
+      return [_hoisted_22];
     }),
     _: 1
     /* STABLE */
@@ -23999,12 +24051,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "list-group-item list-group-item-action py-2 ripple"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_18];
+      return [_hoisted_23];
     }),
     _: 1
     /* STABLE */
 
-  }), _hoisted_19, _hoisted_20, _hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  }), _hoisted_24, _hoisted_25, _hoisted_26, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
     "class": "list-group-item list-group-item-action py-2 ripple",
     style: {
       "cursor": "pointer"
@@ -24014,12 +24066,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   }, "Logout")])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
     key: 1
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" for non-logged user"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_22, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_23, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" for non-logged user"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: "/",
     "class": "list-group-item list-group-item-action py-2 ripple active"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_24];
+      return [_hoisted_29];
     }),
     _: 1
     /* STABLE */
@@ -24029,7 +24081,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "list-group-item list-group-item-action py-2 ripple"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_25];
+      return [_hoisted_30];
     }),
     _: 1
     /* STABLE */
@@ -24039,7 +24091,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "list-group-item list-group-item-action py-2 ripple"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_26];
+      return [_hoisted_31];
     }),
     _: 1
     /* STABLE */
@@ -24049,14 +24101,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "list-group-item list-group-item-action py-2 ripple"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_27];
+      return [_hoisted_32];
     }),
     _: 1
     /* STABLE */
 
   })])])], 2112
   /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
-  ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Sidebar ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Main Navigation"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Main layout"), _hoisted_28, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Main layout ")], 64
+  ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Sidebar ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Main Navigation"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Main layout"), _hoisted_33, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Main layout ")], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -25419,7 +25471,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
 /* harmony export */   "routes": () => (/* binding */ routes)
 /* harmony export */ });
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm-bundler.js");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm-bundler.js");
 /* harmony import */ var _pages_Home__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pages/Home */ "./resources/js/pages/Home.vue");
 /* harmony import */ var _pages_About__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pages/About */ "./resources/js/pages/About.vue");
 /* harmony import */ var _pages_Register__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pages/Register */ "./resources/js/pages/Register.vue");
@@ -25434,10 +25486,40 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_TypeOfSystem_TypeOfSystem__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/TypeOfSystem/TypeOfSystem */ "./resources/js/components/TypeOfSystem/TypeOfSystem.vue");
 /* harmony import */ var _components_TypeOfSystem_AddTypeOfSystem__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/TypeOfSystem/AddTypeOfSystem */ "./resources/js/components/TypeOfSystem/AddTypeOfSystem.vue");
 /* harmony import */ var _components_TypeOfSystem_EditTypeOfSystem__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/TypeOfSystem/EditTypeOfSystem */ "./resources/js/components/TypeOfSystem/EditTypeOfSystem.vue");
-/* harmony import */ var _components_Matlab_Matlab__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/Matlab/Matlab */ "./resources/js/components/Matlab/Matlab.vue");
-/* harmony import */ var _components_Charts_Charts__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../components/Charts/Charts */ "./resources/js/components/Charts/Charts.vue");
-/* harmony import */ var _components_Tables_TablesView__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../components/Tables/TablesView */ "./resources/js/components/Tables/TablesView.vue");
-/* harmony import */ var _components_Documentation__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../components/Documentation */ "./resources/js/components/Documentation.vue");
+/* harmony import */ var _components_Sensors_Sensors__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../components/Sensors/Sensors */ "./resources/js/components/Sensors/Sensors.vue");
+/* harmony import */ var _components_Sensors_AddSensor__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../components/Sensors/AddSensor */ "./resources/js/components/Sensors/AddSensor.vue");
+/* harmony import */ var _components_Sensors_EditSensor__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../components/Sensors/EditSensor */ "./resources/js/components/Sensors/EditSensor.vue");
+/* harmony import */ var _components_Gateways_Gateways__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../components/Gateways/Gateways */ "./resources/js/components/Gateways/Gateways.vue");
+/* harmony import */ var _components_Gateways_AddGateway__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../components/Gateways/AddGateway */ "./resources/js/components/Gateways/AddGateway.vue");
+/* harmony import */ var _components_Gateways_EditGateway__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../components/Gateways/EditGateway */ "./resources/js/components/Gateways/EditGateway.vue");
+/* harmony import */ var _components_FiveGSolutions_FiveGSolutions__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../components/FiveGSolutions/FiveGSolutions */ "./resources/js/components/FiveGSolutions/FiveGSolutions.vue");
+/* harmony import */ var _components_FiveGSolutions_AddfiveGSolution__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../components/FiveGSolutions/AddfiveGSolution */ "./resources/js/components/FiveGSolutions/AddfiveGSolution.vue");
+/* harmony import */ var _components_FiveGSolutions_EditfiveGSolution__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../components/FiveGSolutions/EditfiveGSolution */ "./resources/js/components/FiveGSolutions/EditfiveGSolution.vue");
+/* harmony import */ var _components_loraSolutions_LoraSolutions__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../components/loraSolutions/LoraSolutions */ "./resources/js/components/loraSolutions/LoraSolutions.vue");
+/* harmony import */ var _components_loraSolutions_AddLoraSolution__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../components/loraSolutions/AddLoraSolution */ "./resources/js/components/loraSolutions/AddLoraSolution.vue");
+/* harmony import */ var _components_loraSolutions_EditLoraSolution__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../components/loraSolutions/EditLoraSolution */ "./resources/js/components/loraSolutions/EditLoraSolution.vue");
+/* harmony import */ var _components_nbSolutions_nbSolutions__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ../components/nbSolutions/nbSolutions */ "./resources/js/components/nbSolutions/nbSolutions.vue");
+/* harmony import */ var _components_nbSolutions_AddnbSolution__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ../components/nbSolutions/AddnbSolution */ "./resources/js/components/nbSolutions/AddnbSolution.vue");
+/* harmony import */ var _components_nbSolutions_EditnbSolution__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ../components/nbSolutions/EditnbSolution */ "./resources/js/components/nbSolutions/EditnbSolution.vue");
+/* harmony import */ var _components_Matlab_Matlab__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ../components/Matlab/Matlab */ "./resources/js/components/Matlab/Matlab.vue");
+/* harmony import */ var _components_Charts_Charts__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ../components/Charts/Charts */ "./resources/js/components/Charts/Charts.vue");
+/* harmony import */ var _components_Tables_TablesView__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ../components/Tables/TablesView */ "./resources/js/components/Tables/TablesView.vue");
+/* harmony import */ var _components_Documentation__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ../components/Documentation */ "./resources/js/components/Documentation.vue");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -25516,30 +25598,90 @@ var routes = [{
   name: 'editTypeOfSystem',
   path: '/type_of_systems/edit/:id',
   component: _components_TypeOfSystem_EditTypeOfSystem__WEBPACK_IMPORTED_MODULE_13__["default"]
-}, // sensors and gateways
+}, // Sensors
 {
-  name: 'sensors_and_gateways',
-  path: '/sensors_and_gateways',
-  component: _components_Scenarios_Scenarios__WEBPACK_IMPORTED_MODULE_5__["default"]
+  name: 'sensors',
+  path: '/sensors',
+  component: _components_Sensors_Sensors__WEBPACK_IMPORTED_MODULE_14__["default"]
+}, {
+  name: 'addsensor',
+  path: '/sensors/add',
+  component: _components_Sensors_AddSensor__WEBPACK_IMPORTED_MODULE_15__["default"]
+}, {
+  name: 'editsensor',
+  path: '/sensors/edit/:id',
+  component: _components_Sensors_EditSensor__WEBPACK_IMPORTED_MODULE_16__["default"]
+}, // Gateways
+{
+  name: 'gateways',
+  path: '/gateways',
+  component: _components_Gateways_Gateways__WEBPACK_IMPORTED_MODULE_17__["default"]
+}, {
+  name: 'addgateway',
+  path: '/gateways/add',
+  component: _components_Gateways_AddGateway__WEBPACK_IMPORTED_MODULE_18__["default"]
+}, {
+  name: 'editgateway',
+  path: '/gateways/edit/:id',
+  component: _components_Gateways_EditGateway__WEBPACK_IMPORTED_MODULE_19__["default"]
+}, // 5G Solution
+{
+  name: 'fiveGSolution',
+  path: '/fiveGSolution',
+  component: _components_FiveGSolutions_FiveGSolutions__WEBPACK_IMPORTED_MODULE_20__["default"]
+}, {
+  name: 'addfiveGSolution',
+  path: '/fiveGSolution/add',
+  component: _components_FiveGSolutions_AddfiveGSolution__WEBPACK_IMPORTED_MODULE_21__["default"]
+}, {
+  name: 'editfiveGSolution',
+  path: '/fiveGSolution/edit/:id',
+  component: _components_FiveGSolutions_EditfiveGSolution__WEBPACK_IMPORTED_MODULE_22__["default"]
+}, // Lora Solution
+{
+  name: 'loraSolutions',
+  path: '/loraSolutions',
+  component: _components_loraSolutions_LoraSolutions__WEBPACK_IMPORTED_MODULE_23__["default"]
+}, {
+  name: 'addloraSolutions',
+  path: '/loraSolutions/add',
+  component: _components_loraSolutions_AddLoraSolution__WEBPACK_IMPORTED_MODULE_24__["default"]
+}, {
+  name: 'editloraSolutions',
+  path: '/loraSolutions/edit/:id',
+  component: _components_loraSolutions_EditLoraSolution__WEBPACK_IMPORTED_MODULE_25__["default"]
+}, // NB Solution
+{
+  name: 'nbSolutions',
+  path: '/nbSolutions',
+  component: _components_nbSolutions_nbSolutions__WEBPACK_IMPORTED_MODULE_26__["default"]
+}, {
+  name: 'addnbSolution',
+  path: '/nbSolutions/add',
+  component: _components_nbSolutions_AddnbSolution__WEBPACK_IMPORTED_MODULE_27__["default"]
+}, {
+  name: 'editnbSolution',
+  path: '/nbSolutions/edit/:id',
+  component: _components_nbSolutions_EditnbSolution__WEBPACK_IMPORTED_MODULE_28__["default"]
 }, {
   name: 'Charts',
   path: '/charts',
-  component: _components_Charts_Charts__WEBPACK_IMPORTED_MODULE_15__["default"]
+  component: _components_Charts_Charts__WEBPACK_IMPORTED_MODULE_30__["default"]
 }, {
   name: 'testing-matlab',
   path: '/testing-matlab',
-  component: _components_Matlab_Matlab__WEBPACK_IMPORTED_MODULE_14__["default"]
+  component: _components_Matlab_Matlab__WEBPACK_IMPORTED_MODULE_29__["default"]
 }, {
   name: 'Tables',
   path: '/tables',
-  component: _components_Tables_TablesView__WEBPACK_IMPORTED_MODULE_16__["default"]
+  component: _components_Tables_TablesView__WEBPACK_IMPORTED_MODULE_31__["default"]
 }, {
   name: 'Documentation',
   path: '/documentation',
-  component: _components_Documentation__WEBPACK_IMPORTED_MODULE_17__["default"]
+  component: _components_Documentation__WEBPACK_IMPORTED_MODULE_32__["default"]
 }];
-var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_18__.createRouter)({
-  history: (0,vue_router__WEBPACK_IMPORTED_MODULE_18__.createWebHistory)(),
+var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_33__.createRouter)({
+  history: (0,vue_router__WEBPACK_IMPORTED_MODULE_33__.createWebHistory)(),
   routes: routes
 });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (router);
@@ -30633,7 +30775,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nbody {\n  background-color: #fbfbfb;\n}\n@media (min-width: 991.98px) {\nmain {\n    padding-left: 240px;\n}\n}\n\n/* Sidebar */\n.sidebar {\n    height: 100%; /* Full-height: remove this if you want \"auto\" height */\n    width: 250px; /* Set the width of the sidebar */\n    position: fixed; /* Fixed Sidebar (stay in place on scroll) */\n    top: 0; /* Stay at the top */\n    bottom: 0;\n    left: 0;\n    padding: 10px 0 0; /* Height of navbar */\n    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);\n    z-index: 1;\n}\n@media (max-width: 991.98px) {\n.sidebar {\n    width: 100%;\n}\n}\n.sidebar .active {\n  border-radius: 5px;\n  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);\n}\n\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nbody {\n  background-color: #fbfbfb;\n}\n@media (min-width: 991.98px) {\nmain {\n    padding-left: 240px;\n}\n}\n\n/* Sidebar */\n.sidebar {\n    height: 100%; /* Full-height: remove this if you want \"auto\" height */\n    width: 250px; /* Set the width of the sidebar */\n    position: absolute;\n    top: 0; /* Stay at the top */\n    bottom: 0;\n    left: 0;\n    padding: 10px 0 0; /* Height of navbar */\n    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);\n    z-index: 1;\n}\n@media (max-width: 991.98px) {\n.sidebar {\n    width: 100%;\n}\n}\n.sidebar .active {\n  border-radius: 5px;\n  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);\n}\n\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -49160,6 +49302,69 @@ const __exports__ = /*#__PURE__*/(0,E_Development_Laravel_ReportingTool_node_mod
 
 /***/ }),
 
+/***/ "./resources/js/components/FiveGSolutions/AddfiveGSolution.vue":
+/*!*********************************************************************!*\
+  !*** ./resources/js/components/FiveGSolutions/AddfiveGSolution.vue ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var E_Development_Laravel_ReportingTool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+const script = {}
+
+;
+const __exports__ = /*#__PURE__*/(0,E_Development_Laravel_ReportingTool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_0__["default"])(script, [['__file',"resources/js/components/FiveGSolutions/AddfiveGSolution.vue"]])
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/components/FiveGSolutions/EditfiveGSolution.vue":
+/*!**********************************************************************!*\
+  !*** ./resources/js/components/FiveGSolutions/EditfiveGSolution.vue ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var E_Development_Laravel_ReportingTool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+const script = {}
+
+;
+const __exports__ = /*#__PURE__*/(0,E_Development_Laravel_ReportingTool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_0__["default"])(script, [['__file',"resources/js/components/FiveGSolutions/EditfiveGSolution.vue"]])
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/components/FiveGSolutions/FiveGSolutions.vue":
+/*!*******************************************************************!*\
+  !*** ./resources/js/components/FiveGSolutions/FiveGSolutions.vue ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var E_Development_Laravel_ReportingTool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+const script = {}
+
+;
+const __exports__ = /*#__PURE__*/(0,E_Development_Laravel_ReportingTool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_0__["default"])(script, [['__file',"resources/js/components/FiveGSolutions/FiveGSolutions.vue"]])
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
 /***/ "./resources/js/components/FooterBar.vue":
 /*!***********************************************!*\
   !*** ./resources/js/components/FooterBar.vue ***!
@@ -49183,6 +49388,69 @@ const __exports__ = /*#__PURE__*/(0,E_Development_Laravel_ReportingTool_node_mod
 /* hot reload */
 if (false) {}
 
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/components/Gateways/AddGateway.vue":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/Gateways/AddGateway.vue ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var E_Development_Laravel_ReportingTool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+const script = {}
+
+;
+const __exports__ = /*#__PURE__*/(0,E_Development_Laravel_ReportingTool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_0__["default"])(script, [['__file',"resources/js/components/Gateways/AddGateway.vue"]])
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/components/Gateways/EditGateway.vue":
+/*!**********************************************************!*\
+  !*** ./resources/js/components/Gateways/EditGateway.vue ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var E_Development_Laravel_ReportingTool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+const script = {}
+
+;
+const __exports__ = /*#__PURE__*/(0,E_Development_Laravel_ReportingTool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_0__["default"])(script, [['__file',"resources/js/components/Gateways/EditGateway.vue"]])
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/components/Gateways/Gateways.vue":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/Gateways/Gateways.vue ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var E_Development_Laravel_ReportingTool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+const script = {}
+
+;
+const __exports__ = /*#__PURE__*/(0,E_Development_Laravel_ReportingTool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_0__["default"])(script, [['__file',"resources/js/components/Gateways/Gateways.vue"]])
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
 
@@ -49338,6 +49606,69 @@ const __exports__ = /*#__PURE__*/(0,E_Development_Laravel_ReportingTool_node_mod
 /* hot reload */
 if (false) {}
 
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/components/Sensors/AddSensor.vue":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/Sensors/AddSensor.vue ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var E_Development_Laravel_ReportingTool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+const script = {}
+
+;
+const __exports__ = /*#__PURE__*/(0,E_Development_Laravel_ReportingTool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_0__["default"])(script, [['__file',"resources/js/components/Sensors/AddSensor.vue"]])
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/components/Sensors/EditSensor.vue":
+/*!********************************************************!*\
+  !*** ./resources/js/components/Sensors/EditSensor.vue ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var E_Development_Laravel_ReportingTool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+const script = {}
+
+;
+const __exports__ = /*#__PURE__*/(0,E_Development_Laravel_ReportingTool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_0__["default"])(script, [['__file',"resources/js/components/Sensors/EditSensor.vue"]])
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/components/Sensors/Sensors.vue":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/Sensors/Sensors.vue ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var E_Development_Laravel_ReportingTool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+const script = {}
+
+;
+const __exports__ = /*#__PURE__*/(0,E_Development_Laravel_ReportingTool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_0__["default"])(script, [['__file',"resources/js/components/Sensors/Sensors.vue"]])
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
 
@@ -49545,6 +49876,132 @@ const __exports__ = /*#__PURE__*/(0,E_Development_Laravel_ReportingTool_node_mod
 /* hot reload */
 if (false) {}
 
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/components/loraSolutions/AddLoraSolution.vue":
+/*!*******************************************************************!*\
+  !*** ./resources/js/components/loraSolutions/AddLoraSolution.vue ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var E_Development_Laravel_ReportingTool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+const script = {}
+
+;
+const __exports__ = /*#__PURE__*/(0,E_Development_Laravel_ReportingTool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_0__["default"])(script, [['__file',"resources/js/components/loraSolutions/AddLoraSolution.vue"]])
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/components/loraSolutions/EditLoraSolution.vue":
+/*!********************************************************************!*\
+  !*** ./resources/js/components/loraSolutions/EditLoraSolution.vue ***!
+  \********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var E_Development_Laravel_ReportingTool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+const script = {}
+
+;
+const __exports__ = /*#__PURE__*/(0,E_Development_Laravel_ReportingTool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_0__["default"])(script, [['__file',"resources/js/components/loraSolutions/EditLoraSolution.vue"]])
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/components/loraSolutions/LoraSolutions.vue":
+/*!*****************************************************************!*\
+  !*** ./resources/js/components/loraSolutions/LoraSolutions.vue ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var E_Development_Laravel_ReportingTool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+const script = {}
+
+;
+const __exports__ = /*#__PURE__*/(0,E_Development_Laravel_ReportingTool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_0__["default"])(script, [['__file',"resources/js/components/loraSolutions/LoraSolutions.vue"]])
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/components/nbSolutions/AddnbSolution.vue":
+/*!***************************************************************!*\
+  !*** ./resources/js/components/nbSolutions/AddnbSolution.vue ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var E_Development_Laravel_ReportingTool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+const script = {}
+
+;
+const __exports__ = /*#__PURE__*/(0,E_Development_Laravel_ReportingTool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_0__["default"])(script, [['__file',"resources/js/components/nbSolutions/AddnbSolution.vue"]])
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/components/nbSolutions/EditnbSolution.vue":
+/*!****************************************************************!*\
+  !*** ./resources/js/components/nbSolutions/EditnbSolution.vue ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var E_Development_Laravel_ReportingTool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+const script = {}
+
+;
+const __exports__ = /*#__PURE__*/(0,E_Development_Laravel_ReportingTool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_0__["default"])(script, [['__file',"resources/js/components/nbSolutions/EditnbSolution.vue"]])
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/components/nbSolutions/nbSolutions.vue":
+/*!*************************************************************!*\
+  !*** ./resources/js/components/nbSolutions/nbSolutions.vue ***!
+  \*************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var E_Development_Laravel_ReportingTool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+const script = {}
+
+;
+const __exports__ = /*#__PURE__*/(0,E_Development_Laravel_ReportingTool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_0__["default"])(script, [['__file',"resources/js/components/nbSolutions/nbSolutions.vue"]])
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
 

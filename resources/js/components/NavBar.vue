@@ -13,9 +13,14 @@
                     <router-link to="/scenarios" class="list-group-item list-group-item-action py-2 ripple">Scenarios</router-link>
                     <router-link to="/technologies" class="list-group-item list-group-item-action py-2 ripple">Technologies</router-link>
                     <router-link to="/type_of_systems" class="list-group-item list-group-item-action py-2 ripple">Type of systems</router-link>
-                    <router-link to="/sensors_and_gateways" class="list-group-item list-group-item-action py-2 ripple">Sensors & Gateways </router-link>
+                    <router-link to="/sensors" class="list-group-item list-group-item-action py-2 ripple">Sensors</router-link>
+                    <router-link to="/gateways" class="list-group-item list-group-item-action py-2 ripple">Gateways</router-link>
                     <hr>
                     <router-link to="/testing-matlab" class="list-group-item list-group-item-action py-2 ripple">Testing - Matlab</router-link>
+                    <hr>
+                    <router-link to="/fiveGSolution" class="list-group-item list-group-item-action py-2 ripple">5G Solutions</router-link>
+                    <router-link to="/loraSolutions" class="list-group-item list-group-item-action py-2 ripple">LoRa Solutions</router-link>
+                    <router-link to="/nbSolutions" class="list-group-item list-group-item-action py-2 ripple">NB-IoT Solutions</router-link>
                     <hr>
                     <router-link to="/charts" class="list-group-item list-group-item-action py-2 ripple">Charts</router-link>
                     <router-link to="/tables" class="list-group-item list-group-item-action py-2 ripple">Tables</router-link>
@@ -120,7 +125,7 @@ export default ({
 .sidebar {
     height: 100%; /* Full-height: remove this if you want "auto" height */
     width: 250px; /* Set the width of the sidebar */
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    position: absolute;
     top: 0; /* Stay at the top */
     bottom: 0;
     left: 0;

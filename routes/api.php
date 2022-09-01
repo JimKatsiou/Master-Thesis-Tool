@@ -37,7 +37,7 @@ Route::group(['prefix' => 'type_of_systems', 'middleware' => 'auth:sanctum'], fu
     Route::delete('delete/{id}', [TypeOfSystemController::class, 'delete']);
 });
 
-Route::group(['prefix' => 'sensors_and_gateways', 'middleware' => 'auth:sanctum'], function () {
+Route::group(['prefix' => 'sensors', 'middleware' => 'auth:sanctum'], function () {
     Route::get('/', [TypeOfSystemController::class, 'index']);
     Route::post('add', [TypeOfSystemController::class, 'add']);
     Route::get('edit/{id}', [TypeOfSystemController::class, 'edit']);
