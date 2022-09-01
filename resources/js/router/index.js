@@ -18,6 +18,26 @@ import TypeOfSystem from '../components/TypeOfSystem/TypeOfSystem'
 import AddTypeOfSystem from '../components/TypeOfSystem/AddTypeOfSystem'
 import EditTypeOfSystem from '../components/TypeOfSystem/EditTypeOfSystem'
 
+import Sensors from '../components/Sensors/Sensors'
+import AddSensor from '../components/Sensors/AddSensor'
+import EditSensor from '../components/Sensors/EditSensor'
+
+import Gateways from '../components/Gateways/Gateways'
+import AddGateway from '../components/Gateways/AddGateway'
+import EditGateway from '../components/Gateways/EditGateway'
+
+import FiveGSolutions from '../components/FiveGSolutions/FiveGSolutions'
+import AddFiveGSolution from '../components/FiveGSolutions/AddfiveGSolution'
+import EditFiveGSolution from '../components/FiveGSolutions/EditfiveGSolution'
+
+import LoraSolutions from '../components/loraSolutions/LoraSolutions'
+import AddloraSolution from '../components/loraSolutions/AddLoraSolution'
+import EditloraSolution from '../components/loraSolutions/EditLoraSolution'
+
+import NbSolutions from '../components/nbSolutions/nbSolutions'
+import AddNbSolution from '../components/nbSolutions/AddnbSolution'
+import EditNbSolution from '../components/nbSolutions/EditnbSolution'
+
 import Matlab from '../components/Matlab/Matlab'
 
 import Charts from '../components/Charts/Charts'
@@ -102,11 +122,89 @@ export const routes = [
         component: EditTypeOfSystem
     },
 
-    // sensors and gateways
+    // Sensors
     {
-        name: 'sensors_and_gateways',
-        path: '/sensors_and_gateways',
-        component: Scenarios
+        name: 'sensors',
+        path: '/sensors',
+        component: Sensors
+    },
+    {
+        name: 'addsensor',
+        path: '/sensors/add',
+        component: AddSensor
+    },
+    {
+        name: 'editsensor',
+        path: '/sensors/edit/:id',
+        component: EditSensor
+    },
+
+    // Gateways
+    {
+        name: 'gateways',
+        path: '/gateways',
+        component: Gateways
+    },
+    {
+        name: 'addgateway',
+        path: '/gateways/add',
+        component: AddGateway
+    },
+    {
+        name: 'editgateway',
+        path: '/gateways/edit/:id',
+        component: EditGateway
+    },
+
+    // 5G Solution
+    {
+        name: 'fiveGSolution',
+        path: '/fiveGSolution',
+        component: FiveGSolutions
+    },
+    {
+        name: 'addfiveGSolution',
+        path: '/fiveGSolution/add',
+        component: AddFiveGSolution
+    },
+    {
+        name: 'editfiveGSolution',
+        path: '/fiveGSolution/edit/:id',
+        component: EditFiveGSolution
+    },
+
+    // Lora Solution
+    {
+        name: 'loraSolutions',
+        path: '/loraSolutions',
+        component: LoraSolutions
+    },
+    {
+        name: 'addloraSolutions',
+        path: '/loraSolutions/add',
+        component: AddloraSolution
+    },
+    {
+        name: 'editloraSolutions',
+        path: '/loraSolutions/edit/:id',
+        component: EditloraSolution
+    },
+
+    // NB Solution
+    {
+        name: 'nbSolutions',
+        path: '/nbSolutions',
+        component: NbSolutions
+    },
+    {
+        name: 'addnbSolution',
+        path: '/nbSolutions/add',
+        component: AddNbSolution
+    },
+    {
+        name: 'editnbSolution',
+        path: '/nbSolutions/edit/:id',
+        component: EditNbSolution
     },
 
     {
