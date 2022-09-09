@@ -3,83 +3,62 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Models\LoraSolutions;
 use Illuminate\Http\Request;
 
 class LoraSolutionsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    // all lora Solution
     public function index()
     {
-        //
+        $loraSolutions = LoraSolutions::all()->toArray();
+        return array_reverse($loraSolutions);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    // add lora Solution
+    public function add(Request $request)
     {
-        //
+        $loraSolution = new LoraSolutions();
+        $loraSolution->lora_sensors_type_a = $request->lora_sensors_type_a;
+        $loraSolution->number_of_lora_sensors_type_a = $request->number_of_lora_sensors_type_a;
+        $loraSolution->lora_sensors_type_b = $request->lora_sensors_type_b;
+        $loraSolution->number_of_lora_sensors_type_b = $request->number_of_lora_sensors_type_b;
+        $loraSolution->lora_sensors_type_c = $request->lora_sensors_type_c;
+        $loraSolution->number_of_lora_sensors_type_c = $request->number_of_lora_sensors_type_c;
+
+        $loraSolution->gateways_type_a = $request->gateways_type_a;
+        $loraSolution->gateways_type_b = $request->gateways_type_b;
+        $loraSolution->number_of_lora_gateways_type_a = $request->number_of_lora_gateways_type_a;
+        $loraSolution->number_of_lora_gateways_type_b = $request->number_of_lora_gateways_type_b;
+
+        $loraSolution->save();
+
+        return response()->json('The lora Solution successfully added');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    // edit lora Solutions
     public function edit($id)
     {
-        //
+        $loraSolution = LoraSolutions::find($id);
+        return response()->json($loraSolution);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    // update lora Solution
+    public function update($id, Request $request)
     {
-        //
+        $loraSolution = LoraSolutions::find($id);
+        dd($loraSolution);
+        $loraSolution->update($request->all());
+
+        return response()->json('The lora Solution successfully updated');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
+    // delete lora Solution
+    public function delete($id)
     {
-        //
+        $loraSolution = LoraSolutions::find($id);
+        $loraSolution->delete();
+
+        return response()->json('The lora Solution successfully deleted');
     }
 }
