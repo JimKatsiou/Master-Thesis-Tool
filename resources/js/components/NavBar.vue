@@ -18,7 +18,7 @@
                     <hr>
                     <router-link to="/testing-matlab" class="list-group-item list-group-item-action py-2 ripple">Testing - Matlab</router-link>
                     <hr>
-                    <router-link to="/fiveGSolution" class="list-group-item list-group-item-action py-2 ripple">5G Solutions</router-link>
+                    <router-link to="/fiveGSolutions" class="list-group-item list-group-item-action py-2 ripple">5G Solutions</router-link>
                     <router-link to="/loraSolutions" class="list-group-item list-group-item-action py-2 ripple">LoRa Solutions</router-link>
                     <router-link to="/nbSolutions" class="list-group-item list-group-item-action py-2 ripple">NB-IoT Solutions</router-link>
                     <hr>

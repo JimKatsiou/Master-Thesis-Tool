@@ -36,7 +36,7 @@ import EditloraSolution from '../components/loraSolutions/EditLoraSolution'
 
 import NbSolutions from '../components/nbSolutions/nbSolutions'
 import AddNbSolution from '../components/nbSolutions/AddnbSolution'
-import EditNbSolution from '../components/nbSolutions/EditnbSolution'
+import EditNbSolution from '../components/nbSolutions/EditNbSolution'
 
 import Matlab from '../components/Matlab/Matlab'
 
@@ -158,18 +158,18 @@ export const routes = [
 
     // 5G Solution
     {
-        name: 'fiveGSolution',
-        path: '/fiveGSolution',
+        name: 'fiveGSolutions',
+        path: '/fiveGSolutions',
         component: FiveGSolutions
     },
     {
         name: 'addfiveGSolution',
-        path: '/fiveGSolution/add',
+        path: '/fiveGSolutions/add',
         component: AddFiveGSolution
     },
     {
         name: 'editfiveGSolution',
-        path: '/fiveGSolution/edit/:id',
+        path: '/fiveGSolutions/edit/:id',
         component: EditFiveGSolution
     },
 
