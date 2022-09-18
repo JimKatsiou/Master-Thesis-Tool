@@ -11,5 +11,5 @@ class TypeOfSystem extends Model
 
     protected $guarded = [];
 
-    protected $table = 'type_of_system';
+    protected $table = 'type_of_systems';
 }

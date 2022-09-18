@@ -13,7 +13,7 @@ class CraeteTypeOfSystemTable extends Migration
      */
     public function up()
     {
-        Schema::create('type_of_system', function (Blueprint $table) {
+        Schema::create('type_of_systems', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('description')->default(null)->nullable();
@@ -28,6 +28,6 @@ class CraeteTypeOfSystemTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('type_of_system');
+        Schema::dropIfExists('type_of_systems');
     }
 }
