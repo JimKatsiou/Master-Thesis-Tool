@@ -13,15 +13,14 @@ class CraeteSolutions5gTable extends Migration
      */
     public function up()
     {
-        Schema::create('5g_solutions', function (Blueprint $table) {
+        Schema::create('five_g_solutions', function (Blueprint $table) {
             $table->id();
-            $table->string('5g_sensors_type_a');
+            $table->string('five_g_sensors_type_a');
             $table->integer('number_of_5g_sensors_type_a');
-            $table->string('5g_sensors_type_b');
+            $table->string('five_g_sensors_type_b');
             $table->integer('number_of_5g_sensors_type_b');
-            $table->string('5g_sensors_type_c');
+            $table->string('five_g_sensors_type_c');
             $table->integer('number_of_5g_sensors_type_c');
-            //$table->foreign('technology_id')->references('name')->on('technologies');
             $table->timestamps();
         });
     }

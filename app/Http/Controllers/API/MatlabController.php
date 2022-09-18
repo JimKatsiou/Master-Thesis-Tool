@@ -7,7 +7,7 @@ use App\Models\FiveGSolutions;
 use App\Models\LoraSolutions;
 use App\Models\NbSolutions;
 use App\Models\Battery;
-use App\Models\SensorsCost;
+use App\Models\SensorCost;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -35,17 +35,19 @@ class MatlabController extends Controller
 
         //For dynamic json file
         $file_name = date('d-m-Y') . '_5g_scenario' . '.json'; //create dynamic json file name
+        $saved_file = '5g_scenario' . '.json';
         $s_data = json_encode($scenario_data);
 
-        Storage::disk('local')->put("MatlabCodes/Inputs-json/". $file_name,$s_data);
-        Storage::disk('public')->put("MatlabCodes/Inputs-json/". $file_name,$s_data);
+        Storage::disk('local')->put("MatlabCodes/Inputs-json/". $saved_file,$s_data);
+        Storage::disk('public')->put("MatlabCodes/Inputs-json/". $saved_file,$s_data);
 
         return $file_name;
     }
 
     public function get_data_Lora_wq()
     {
-        $lora_scenario_data = LoraSolutions::select('number_of_lora_sensors_type_a', 'number_of_lora_sensors_type_b', 'number_of_lora_sensors_type_c')
+        $lora_scenario_data = LoraSolutions::select('number_of_lora_sensors_type_a', 'number_of_lora_sensors_type_b', 'number_of_lora_sensors_type_c',
+                                            'number_of_lora_gateways_type_a','number_of_lora_gateways_type_b')
                                 ->inRandomOrder()->limit(20)->get();
 
                                 $i = 0;
@@ -54,15 +56,19 @@ class MatlabController extends Controller
             $scenario_data[$i]['numberOfLoraSensorsTypeA'] = $data['number_of_lora_sensors_type_a'];
             $scenario_data[$i]['numberOfLoraSensorsTypeB'] = $data['number_of_lora_sensors_type_b'];
             $scenario_data[$i]['numberOfLoraSensorsTypeC'] = $data['number_of_lora_sensors_type_c'];
+
+            $scenario_data[$i]['numberOfGatewaysTypeA'] = $data['number_of_lora_gateways_type_a'];
+            $scenario_data[$i]['numberOfGatewaysTypeB'] = $data['number_of_lora_gateways_type_b'];
             $i++;
         }
 
         //For dynamic json file
         $file_name = date('d-m-Y') . '_lora_scenario' . '.json'; //create dynamic json file name
+        $saved_file = 'lora_scenario' . '.json';
         $s_data = json_encode($scenario_data);
 
-        Storage::disk('local')->put("MatlabCodes/Inputs-json/". $file_name,$s_data);
-        Storage::disk('public')->put("MatlabCodes/Inputs-json/". $file_name,$s_data);
+        Storage::disk('local')->put("MatlabCodes/Inputs-json/". $saved_file,$s_data);
+        Storage::disk('public')->put("MatlabCodes/Inputs-json/". $saved_file,$s_data);
 
         return $file_name;
     }
@@ -83,6 +89,7 @@ class MatlabController extends Controller
 
         //For dynamic json file
         $file_name = date('d-m-Y') . '_nb_scenario' . '.json'; //create dynamic json file name
+        $saved_file = 'nb_scenario' . '.json';
         $s_data = json_encode($scenario_data);
 
         Storage::disk('local')->put("MatlabCodes/Inputs-json/". $file_name,$s_data);
@@ -107,17 +114,18 @@ class MatlabController extends Controller
 
         //For dynamic json file
         $file_name = date('d-m-Y') . '_battery' . '.json'; //create dynamic json file name
+        $saved_file = 'battery' . '.json';
         $s_data = json_encode($scenario_data);
 
-        Storage::disk('local')->put("MatlabCodes/Inputs-json/". $file_name,$s_data);
-        Storage::disk('public')->put("MatlabCodes/Inputs-json/". $file_name,$s_data);
+        Storage::disk('local')->put("MatlabCodes/Inputs-json/". $saved_file,$s_data);
+        Storage::disk('public')->put("MatlabCodes/Inputs-json/". $saved_file,$s_data);
 
         return $file_name;
     }
 
     public function get_data_cost()
     {
-        $five_g_scenario_data = SensorsCost::select('number_of_5g_sensors_type_a', 'number_of_5g_sensors_type_b', 'number_of_5g_sensors_type_c')
+        $five_g_scenario_data = SensorCost::select('number_of_5g_sensors_type_a', 'number_of_5g_sensors_type_b', 'number_of_5g_sensors_type_c')
                                 ->inRandomOrder()->limit(20)->get();
 
                                 $i = 0;
@@ -131,6 +139,7 @@ class MatlabController extends Controller
 
         //For dynamic json file
         $file_name = date('d-m-Y') . '_costs' . '.json'; //create dynamic json file name
+        $saved_file = 'costs' . '.json';
         $s_data = json_encode($scenario_data);
 
         Storage::disk('local')->put("MatlabCodes/Inputs-json/". $file_name,$s_data);

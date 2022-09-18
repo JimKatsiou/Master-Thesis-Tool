@@ -13,7 +13,7 @@ class CraeteBatteryCostTable extends Migration
      */
     public function up()
     {
-        Schema::create('battery', function (Blueprint $table) {
+        Schema::create('sensors_batteries', function (Blueprint $table) {
             $table->id();
             $table->double('battery_capacity_5g_type_a');
             $table->double('battery_consumption_5g_type_a');
@@ -52,6 +52,6 @@ class CraeteBatteryCostTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('battery');
+        Schema::dropIfExists('sensors_batteries');
     }
 }

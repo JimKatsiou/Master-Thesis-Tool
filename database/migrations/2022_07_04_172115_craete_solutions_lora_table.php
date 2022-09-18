@@ -21,7 +21,6 @@ class CraeteSolutionsLoraTable extends Migration
             $table->integer('number_of_lora_sensors_type_b');
             $table->string('lora_sensors_type_c');
             $table->integer('number_of_lora_sensors_type_c');
-            //$table->foreign('technology_name')->references('name')->on('technologies');
             $table->timestamps();
         });
     }

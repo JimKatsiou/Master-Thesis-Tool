@@ -16,6 +16,7 @@ class CraeteTechnologiesTable extends Migration
         Schema::create('technologies', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('description')->default(null)->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CraeteTechnologiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Technologies');
+        Schema::dropIfExists('technologies');
     }
 }

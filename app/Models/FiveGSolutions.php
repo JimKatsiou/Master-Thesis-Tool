@@ -9,7 +9,7 @@ class FiveGSolutions extends Model
 {
     use HasFactory;
 
-    protected $table = '5g_solutions';
+    protected $table = 'five_g_solutions';
 
 }
 

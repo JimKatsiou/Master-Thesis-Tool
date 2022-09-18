@@ -22729,17 +22729,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../menu */ "./resources/menu.js");
-/* harmony import */ var _components_NavBar_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/NavBar.vue */ "./resources/js/components/NavBar.vue");
-/* harmony import */ var _components_FooterBar_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/FooterBar.vue */ "./resources/js/components/FooterBar.vue");
-
+/* harmony import */ var _components_NavBar_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/NavBar.vue */ "./resources/js/components/NavBar.vue");
+/* harmony import */ var _components_FooterBar_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/FooterBar.vue */ "./resources/js/components/FooterBar.vue");
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "App",
   components: {
-    NavBar: _components_NavBar_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    FooterBar: _components_FooterBar_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+    NavBar: _components_NavBar_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    FooterBar: _components_FooterBar_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
     return {};
@@ -24376,7 +24374,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
   var _component_router_view = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-view");
 
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_nav_bar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_view), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <footer-bar /> ")]);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_nav_bar), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_view)]);
 }
 
 /***/ }),
@@ -28003,16 +28001,14 @@ var _hoisted_2 = {
   "class": "nextOfSideBar"
 };
 
-var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "card"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, " mpla mpla")], -1
-/* HOISTED */
-);
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Welcome ");
+
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<section class=\"section is-main-section\"><div class=\"title is-ancestor\"><div class=\"title is-parent\"><div class=\"card title is-child\"><div class=\"card-content\"><div class=\"level is-mobile\"><div class=\"is-widget-label\"><h3 class=\"subtitle is-spaced\"> Sensors </h3><h1 class=\"title\"><div>???</div></h1><div class=\"level-item has-widget-icon\"><div class=\"is-widget-icon\"><span class=\"icon has-text-primary is-large\"><i class=\"mdi mdi-account-multiple mdi-48px\"></i></span></div></div></div></div></div></div></div><div class=\"title is-parent\"><div class=\"card title is-child\"><div class=\"card-content\"><div class=\"level is-mobile\"><div class=\"is-widget-label\"><h3 class=\"subtitle is-spaced\"> Technologies </h3><h1 class=\"title\"><div>???</div></h1><div class=\"level-item has-widget-icon\"><div class=\"is-widget-icon\"><span class=\"icon has-text-primary is-large\"><i class=\"mdi mdi-account-multiple mdi-48px\"></i></span></div></div></div></div></div></div></div><div class=\"title is-parent\"><div class=\"card title is-child\"><div class=\"card-content\"><div class=\"level is-mobile\"><div class=\"is-widget-label\"><h3 class=\"subtitle is-spaced\"> Solutions </h3><h1 class=\"title\"><div>???</div></h1><div class=\"level-item has-widget-icon\"><div class=\"is-widget-icon\"><span class=\"icon has-text-primary is-large\"><i class=\"mdi mdi-account-multiple mdi-48px\"></i></span></div></div></div></div></div></div></div></div></section><div class=\"card\"><p> mpla mpla</p></div>", 2);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Welcome " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.name) + " ", 1
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", null, [_hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("b", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($data.name), 1
   /* TEXT */
-  ), _hoisted_3])], 64
+  )]), _hoisted_4])], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -28551,7 +28547,7 @@ var routes = [{
   name: 'editTypeOfSystem',
   path: '/type_of_systems/edit/:id',
   component: _components_TypeOfSystem_EditTypeOfSystem__WEBPACK_IMPORTED_MODULE_13__["default"]
-}, // Sensors
+}, // Sensors routes
 {
   name: 'sensors',
   path: '/sensors',
@@ -28564,7 +28560,7 @@ var routes = [{
   name: 'editsensor',
   path: '/sensors/edit/:id',
   component: _components_Sensors_EditSensor__WEBPACK_IMPORTED_MODULE_16__["default"]
-}, // Gateways
+}, // Gateways routes
 {
   name: 'gateways',
   path: '/gateways',
@@ -28577,7 +28573,7 @@ var routes = [{
   name: 'editgateway',
   path: '/gateways/edit/:id',
   component: _components_Gateways_EditGateway__WEBPACK_IMPORTED_MODULE_19__["default"]
-}, // 5G Solution
+}, // 5G Solution routes
 {
   name: 'fiveGSolutions',
   path: '/fiveGSolutions',
@@ -28590,7 +28586,7 @@ var routes = [{
   name: 'editfiveGSolution',
   path: '/fiveGSolutions/edit/:id',
   component: _components_FiveGSolutions_EditfiveGSolution__WEBPACK_IMPORTED_MODULE_22__["default"]
-}, // Lora Solution
+}, // Lora Solution routes
 {
   name: 'loraSolutions',
   path: '/loraSolutions',
@@ -28603,7 +28599,7 @@ var routes = [{
   name: 'editloraSolutions',
   path: '/loraSolutions/edit/:id',
   component: _components_loraSolutions_EditLoraSolution__WEBPACK_IMPORTED_MODULE_25__["default"]
-}, // NB Solution
+}, // NB Solution routes
 {
   name: 'nbSolutions',
   path: '/nbSolutions',
@@ -28638,25 +28634,6 @@ var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_33__.createRouter)({
   routes: routes
 });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (router);
-
-/***/ }),
-
-/***/ "./resources/menu.js":
-/*!***************************!*\
-  !*** ./resources/menu.js ***!
-  \***************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (['General', [{
-  to: '/',
-  icon: 'desktop-mac',
-  label: 'Dashboard'
-}]]);
 
 /***/ }),
 
@@ -34328,7 +34305,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\n    margin-left: 250px;\n    padding: 10px;\n}\n.topOfThePage\n{\n    margin-top: -50px;\n    background-color: rgba(146, 145, 145, 0.404);\n    margin-left: 250px;\n    padding: 10px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\n    margin-left: 250px;\n    padding: 10px;\n}\n.topOfThePage\n{\n    margin-top: -50px;\n    background-color: rgba(146, 145, 145, 0.404);\n    margin-left: 250px;\n    padding: 10px;\n}\nsection.section.is-main-section {\n    padding: 1.5rem;\n}\n.tile.is-ancestor:not(:last-child) {\n    margin-bottom: 0.75rem;\n}\n.tile:not(.is-child) {\n    display: flex;\n}\n.tile.is-parent {\n    padding: 0.75rem;\n}\n.tile.is-child {\n    margin: 0!important;\n}\n.card-content:last-child, .card-footer:last-child, .card-header:last-child {\n    border-bottom-left-radius: 0.25rem;\n    border-bottom-right-radius: 0.25rem;\n}\n.level.is-mobile, .level.is-mobile .level-left, .level.is-mobile .level-right {\n    display: flex;\n}\n.level.is-mobile .level-item:not(.is-narrow) {\n    flex-grow: 1;\n}\n.card .is-widget-label .subtitle {\n    color: #7a7a7a;\n}\n.level-item .subtitle, .level-item .title {\n    margin-bottom: 0;\n}\n.level.is-mobile .level-item:not(.is-narrow) {\n    flex-grow: 1;\n}\n.card .is-widget-icon .icon {\n    width: 5rem;\n    height: 5rem;\n}\n.icon.is-large {\n    height: 3rem;\n    width: 3rem;\n}\n.icon {\n    -webkit-touch-callout: none;\n    -webkit-user-select: none;\n    -moz-user-select: none;\n    -ms-user-select: none;\n    user-select: none;\n    cursor: inherit;\n}\n.has-text-primary {\n    color: #00d1b2!important;\n}\n.icon {\n    align-items: center;\n    display: inline-flex;\n    justify-content: center;\n    height: 1.5rem;\n    width: 1.5rem;\n}\n\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

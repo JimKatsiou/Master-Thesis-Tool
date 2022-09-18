@@ -13,7 +13,7 @@ class CraeteSensorsCostTable extends Migration
      */
     public function up()
     {
-        Schema::create('sensorsCost', function (Blueprint $table) {
+        Schema::create('sensors_cost', function (Blueprint $table) {
             $table->id();
             $table->double('cost_5g_type_a');
             $table->double('installation_cost_5g_type_a');

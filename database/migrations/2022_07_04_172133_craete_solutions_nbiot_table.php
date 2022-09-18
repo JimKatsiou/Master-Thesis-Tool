@@ -21,7 +21,6 @@ class CraeteSolutionsNbiotTable extends Migration
             $table->integer('number_of_nb_sensors_type_b');
             $table->string('nb_sensors_type_c');
             $table->integer('number_of_nb_sensors_type_c');
-            //$table->foreign('technology_name')->references('name')->on('technologies');
             $table->timestamps();
         });
     }

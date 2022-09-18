@@ -122,7 +122,7 @@ export const routes = [
         component: EditTypeOfSystem
     },
 
-    // Sensors
+    // Sensors routes
     {
         name: 'sensors',
         path: '/sensors',
@@ -139,7 +139,7 @@ export const routes = [
         component: EditSensor
     },
 
-    // Gateways
+    // Gateways routes
     {
         name: 'gateways',
         path: '/gateways',
@@ -156,7 +156,7 @@ export const routes = [
         component: EditGateway
     },
 
-    // 5G Solution
+    // 5G Solution routes
     {
         name: 'fiveGSolutions',
         path: '/fiveGSolutions',
@@ -173,7 +173,7 @@ export const routes = [
         component: EditFiveGSolution
     },
 
-    // Lora Solution
+    // Lora Solution routes
     {
         name: 'loraSolutions',
         path: '/loraSolutions',
@@ -190,7 +190,7 @@ export const routes = [
         component: EditloraSolution
     },
 
-    // NB Solution
+    // NB Solution routes
     {
         name: 'nbSolutions',
         path: '/nbSolutions',
