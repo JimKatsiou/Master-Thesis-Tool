@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class SensorCost extends Model
 {
     use HasFactory;
+    protected $guarded = [];
 
     protected $table = 'sensors_cost';
 }

@@ -8,8 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Battery extends Model
 {
     use HasFactory;
+    protected $guarded = [];
 
-    protected $table = 'sensors_battary';
+    protected $table = 'battery';
 }
 
 ?>

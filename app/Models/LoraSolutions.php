@@ -8,8 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class LoraSolutions extends Model
 {
     use HasFactory;
-    protected $table = 'lora_solutions';
+    protected $guarded = [];
 
+    protected $table = 'lora_solutions';
     protected $fillable = ['id'];
 
 }

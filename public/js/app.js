@@ -23105,11 +23105,14 @@ __webpack_require__.r(__webpack_exports__);
       file_name_2: '',
       file_name_3: '',
       file_name_4: '',
-      file_name_5: ''
+      file_name_5: '',
+      fiveGSolutionData: "",
+      loraSolutionData: "",
+      nbSolutionData: ""
     };
   },
   component: {},
-  mounted: function mounted() {
+  beforeMount: function beforeMount() {
     var _this = this;
 
     this.$axios.get('/sanctum/csrf-cookie').then(function (response) {
@@ -23120,10 +23123,24 @@ __webpack_require__.r(__webpack_exports__);
     this.get_data_5g_wq();
     this.get_data_Lora_wq();
     this.get_data_NB_wq();
-    this.get_data_battery();
-    this.get_data_cost();
   },
-  computed: {},
+  mounted: function mounted() {// this.get_data_battery();
+    // this.get_data_cost();
+  },
+  computed: {
+    fiveGData: function fiveGData() {
+      var reqObject = JSON.parse(JSON.stringify(this.fiveGSolutionData));
+      return reqObject;
+    },
+    loraData: function loraData() {
+      var reqObject = JSON.parse(JSON.stringify(this.loraSolutionData));
+      return reqObject;
+    },
+    nbData: function nbData() {
+      var reqObject = JSON.parse(JSON.stringify(this.nbSolutionData));
+      return reqObject;
+    }
+  },
   methods: {
     get_data_5g_wq: function get_data_5g_wq() // this function fetch data table and it store into json formt and retutn data in json format
     {
@@ -23131,7 +23148,9 @@ __webpack_require__.r(__webpack_exports__);
 
       this.$axios.get('/sanctum/csrf-cookie').then(function (response) {
         _this2.$axios.get('/api/testing-matlab/get_data_5g_wq').then(function (response) {
-          _this2.file_name_1 = response.data + 'file was created successfully!';
+          console.log(response);
+          _this2.file_name_1 = response.data.file_name + 'file was created successfully!';
+          _this2.fiveGSolutionData = response.data.scenario_data;
         })["catch"](function (error) {
           console.error(error);
         });
@@ -23142,7 +23161,8 @@ __webpack_require__.r(__webpack_exports__);
 
       this.$axios.get('/sanctum/csrf-cookie').then(function (response) {
         _this3.$axios.get('/api/testing-matlab/get_data_Lora_wq').then(function (response) {
-          _this3.file_name_2 = response.data + 'file was created successfully!';
+          _this3.file_name_2 = response.data.file_name + 'file was created successfully!';
+          _this3.loraSolutionData = response.data.scenario_data;
         })["catch"](function (error) {
           console.error(error);
         });
@@ -23153,7 +23173,8 @@ __webpack_require__.r(__webpack_exports__);
 
       this.$axios.get('/sanctum/csrf-cookie').then(function (response) {
         _this4.$axios.get('/api/testing-matlab/get_data_NB_wq').then(function (response) {
-          _this4.file_name_3 = response.data + 'file was created successfully!';
+          _this4.file_name_3 = response.data.file_name + 'file was created successfully!';
+          _this4.nbSolutionData = response.data.scenario_data;
         })["catch"](function (error) {
           console.error(error);
         });
@@ -23162,23 +23183,29 @@ __webpack_require__.r(__webpack_exports__);
     get_data_battery: function get_data_battery() {
       var _this5 = this;
 
-      this.$axios.get('/sanctum/csrf-cookie').then(function (response) {
-        _this5.$axios.get('/api/testing-matlab/get_data_battery').then(function (response) {
-          _this5.file_name_4 = response.data + 'file was created successfully!';
-        })["catch"](function (error) {
-          console.error(error);
-        });
+      var payload = {
+        fiveGSolutionData: this.fiveGData,
+        loraSolutionData: this.loraData,
+        nbSolutionData: this.nbData
+      };
+      this.$axios.post('/api/testing-matlab/get_data_battery', payload).then(function (response) {
+        _this5.file_name_4 = response.data + 'file was created successfully!';
+      })["catch"](function (error) {
+        console.error(error);
       });
     },
     get_data_cost: function get_data_cost() {
       var _this6 = this;
 
-      this.$axios.get('/sanctum/csrf-cookie').then(function (response) {
-        _this6.$axios.get('/api/testing-matlab/get_data_cost').then(function (response) {
-          _this6.file_name_5 = response.data + 'file was created successfully!';
-        })["catch"](function (error) {
-          console.error(error);
-        });
+      var payload = {
+        fiveGSolutionData: this.fiveGData,
+        loraSolutionData: this.loraData,
+        nbSolutionData: this.nbData
+      };
+      this.$axios.post('/api/testing-matlab/get_data_cost', payload).then(function (response) {
+        _this6.file_name_5 = response.data + 'file was created successfully!';
+      })["catch"](function (error) {
+        console.error(error);
       });
     }
   }
@@ -25322,7 +25349,19 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   /* TEXT */
   ), _hoisted_16, _hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(this.file_name_3) + " ", 1
   /* TEXT */
-  ), _hoisted_18, _hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(this.file_name_4) + " ", 1
+  ), _hoisted_18, _hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    type: "button",
+    "class": "btn btn-primary",
+    onClick: _cache[0] || (_cache[0] = function ($event) {
+      return $options.get_data_battery();
+    })
+  }, "Primary"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    type: "button",
+    "class": "btn btn-primary",
+    onClick: _cache[1] || (_cache[1] = function ($event) {
+      return $options.get_data_cost();
+    })
+  }, "Cost"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(this.file_name_4) + " ", 1
   /* TEXT */
   ), _hoisted_20, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(this.file_name_5) + " ", 1
   /* TEXT */
@@ -25409,40 +25448,26 @@ var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNo
 
 var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Somethink else");
 
-var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "#",
-  "class": "list-group-item list-group-item-action py-2 ripple"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Calendar")], -1
+var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("hr", null, null, -1
 /* HOISTED */
 );
 
-var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  href: "#",
-  "class": "list-group-item list-group-item-action py-2 ripple"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", null, "Users")], -1
-/* HOISTED */
-);
-
-var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("hr", null, null, -1
-/* HOISTED */
-);
-
-var _hoisted_27 = {
+var _hoisted_25 = {
   "class": "side-bar"
 };
-var _hoisted_28 = {
+var _hoisted_26 = {
   "class": "list-group list-group-flush mx-3 mt-4"
 };
 
-var _hoisted_29 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Home");
+var _hoisted_27 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Home");
 
-var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Login");
+var _hoisted_28 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Login");
 
-var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Register");
+var _hoisted_29 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Register");
 
-var _hoisted_32 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("About");
+var _hoisted_30 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("About");
 
-var _hoisted_33 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", {
+var _hoisted_31 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("main", {
   style: {
     "margin-top": "58px"
   }
@@ -25595,7 +25620,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
     /* STABLE */
 
-  }), _hoisted_24, _hoisted_25, _hoisted_26, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  }), _hoisted_24, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
     "class": "list-group-item list-group-item-action py-2 ripple",
     style: {
       "cursor": "pointer"
@@ -25605,12 +25630,12 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   }, "Logout")])])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
     key: 1
-  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" for non-logged user"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_27, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_28, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" for non-logged user"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_25, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_26, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: "/",
     "class": "list-group-item list-group-item-action py-2 ripple active"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_29];
+      return [_hoisted_27];
     }),
     _: 1
     /* STABLE */
@@ -25620,7 +25645,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "list-group-item list-group-item-action py-2 ripple"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_30];
+      return [_hoisted_28];
     }),
     _: 1
     /* STABLE */
@@ -25630,7 +25655,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "list-group-item list-group-item-action py-2 ripple"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_31];
+      return [_hoisted_29];
     }),
     _: 1
     /* STABLE */
@@ -25640,14 +25665,14 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "list-group-item list-group-item-action py-2 ripple"
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
-      return [_hoisted_32];
+      return [_hoisted_30];
     }),
     _: 1
     /* STABLE */
 
   })])])], 2112
   /* STABLE_FRAGMENT, DEV_ROOT_FRAGMENT */
-  ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Sidebar ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Main Navigation"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Main layout"), _hoisted_33, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Main layout ")], 64
+  ))])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Sidebar ")]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Main Navigation"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Main layout"), _hoisted_31, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Main layout ")], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -25687,7 +25712,7 @@ var _hoisted_5 = {
   "class": "form-group"
 };
 
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, "Type of System", -1
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, "Technology", -1
 /* HOISTED */
 );
 
@@ -25695,7 +25720,7 @@ var _hoisted_7 = {
   "class": "form-group"
 };
 
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, "Technology", -1
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("label", null, "Type of System", -1
 /* HOISTED */
 );
 
@@ -25731,19 +25756,19 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     type: "text",
     "class": "form-control",
     "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
-      return $data.scenario.type_of_system_name = $event;
-    })
-  }, null, 512
-  /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.scenario.type_of_system_name]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-    type: "text",
-    "class": "form-control",
-    "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
       return $data.scenario.technology_name = $event;
     })
   }, null, 512
   /* NEED_PATCH */
-  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.scenario.technology_name]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.scenario.technology_name]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    type: "text",
+    "class": "form-control",
+    "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
+      return $data.scenario.type_of_system_name = $event;
+    })
+  }, null, 512
+  /* NEED_PATCH */
+  ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.scenario.type_of_system_name]])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
     type: "text",
     "class": "form-control",
     "onUpdate:modelValue": _cache[2] || (_cache[2] = function ($event) {

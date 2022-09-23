@@ -7,7 +7,11 @@ use App\Models\FiveGSolutions;
 use App\Models\LoraSolutions;
 use App\Models\NbSolutions;
 use App\Models\Battery;
+use App\Models\Gateway;
+use App\Models\Sensor;
 use App\Models\SensorCost;
+use App\Models\SensorsBatteries;
+use stdClass;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -21,12 +25,13 @@ class MatlabController extends Controller
 
     public function getData5gWQ()
     {
-        $five_g_scenario_data = FiveGSolutions::select('number_of_5g_sensors_type_a', 'number_of_5g_sensors_type_b', 'number_of_5g_sensors_type_c')
-                                ->inRandomOrder()->limit(20)->get();
-
-                                $i = 0;
+        $five_g_scenario_data = FiveGSolutions::inRandomOrder()->limit(20)->get();
+        $i = 0;
         foreach($five_g_scenario_data as $data)
         {
+            $scenario_data[$i]['five_g_sensors_type_a'] = $data['five_g_sensors_type_a'];
+            $scenario_data[$i]['five_g_sensors_type_b'] = $data['five_g_sensors_type_b'];
+            $scenario_data[$i]['five_g_sensors_type_c'] = $data['five_g_sensors_type_c'];
             $scenario_data[$i]['numberOf5gSensorsTypeA'] = $data['number_of_5g_sensors_type_a'];
             $scenario_data[$i]['numberOf5gSensorsTypeB'] = $data['number_of_5g_sensors_type_b'];
             $scenario_data[$i]['numberOf5gSensorsTypeC'] = $data['number_of_5g_sensors_type_c'];
@@ -41,22 +46,28 @@ class MatlabController extends Controller
         Storage::disk('local')->put("MatlabCodes/Inputs-json/". $saved_file,$s_data);
         Storage::disk('public')->put("MatlabCodes/Inputs-json/". $saved_file,$s_data);
 
-        return $file_name;
+        $response = new stdClass();
+        $response->file_name = $file_name;
+        $response->s_data = $s_data;
+        $response->scenario_data = $scenario_data;
+        return $response;
     }
 
     public function get_data_Lora_wq()
     {
-        $lora_scenario_data = LoraSolutions::select('number_of_lora_sensors_type_a', 'number_of_lora_sensors_type_b', 'number_of_lora_sensors_type_c',
-                                            'number_of_lora_gateways_type_a','number_of_lora_gateways_type_b')
-                                ->inRandomOrder()->limit(20)->get();
-
-                                $i = 0;
+        $lora_scenario_data = LoraSolutions::inRandomOrder()->limit(20)->get();
+        $i = 0;
         foreach($lora_scenario_data as $data)
         {
+            $scenario_data[$i]['lora_sensors_type_a'] = $data['lora_sensors_type_a'];
+            $scenario_data[$i]['lora_sensors_type_b'] = $data['lora_sensors_type_b'];
+            $scenario_data[$i]['lora_sensors_type_c'] = $data['lora_sensors_type_c'];
             $scenario_data[$i]['numberOfLoraSensorsTypeA'] = $data['number_of_lora_sensors_type_a'];
             $scenario_data[$i]['numberOfLoraSensorsTypeB'] = $data['number_of_lora_sensors_type_b'];
             $scenario_data[$i]['numberOfLoraSensorsTypeC'] = $data['number_of_lora_sensors_type_c'];
 
+            $scenario_data[$i]['gateways_type_a'] = $data['gateways_type_a'];
+            $scenario_data[$i]['gateways_type_b'] = $data['gateways_type_b'];
             $scenario_data[$i]['numberOfGatewaysTypeA'] = $data['number_of_lora_gateways_type_a'];
             $scenario_data[$i]['numberOfGatewaysTypeB'] = $data['number_of_lora_gateways_type_b'];
             $i++;
@@ -70,17 +81,23 @@ class MatlabController extends Controller
         Storage::disk('local')->put("MatlabCodes/Inputs-json/". $saved_file,$s_data);
         Storage::disk('public')->put("MatlabCodes/Inputs-json/". $saved_file,$s_data);
 
-        return $file_name;
+        $response = new stdClass();
+        $response->file_name = $file_name;
+        $response->s_data = $s_data;
+        $response->scenario_data = $scenario_data;
+        return $response;
     }
 
     public function get_data_NB_wq()
     {
-        $five_g_scenario_data = NbSolutions::select('number_of_nb_sensors_type_a', 'number_of_nb_sensors_type_b', 'number_of_nb_sensors_type_c')
-                                ->inRandomOrder()->limit(20)->get();
+        $five_g_scenario_data = NbSolutions::inRandomOrder()->limit(20)->get();
 
         $i = 0;
         foreach($five_g_scenario_data as $data)
         {
+            $scenario_data[$i]['nb_sensors_type_a'] = $data['nb_sensors_type_a'];
+            $scenario_data[$i]['nb_sensors_type_b'] = $data['nb_sensors_type_b'];
+            $scenario_data[$i]['nb_sensors_type_c'] = $data['nb_sensors_type_c'];
             $scenario_data[$i]['numberOfNBSensorsTypeA'] = $data['number_of_nb_sensors_type_a'];
             $scenario_data[$i]['numberOfNBSensorsTypeB'] = $data['number_of_nb_sensors_type_b'];
             $scenario_data[$i]['numberOfNBSensorsTypeC'] = $data['number_of_nb_sensors_type_c'];
@@ -95,22 +112,76 @@ class MatlabController extends Controller
         Storage::disk('local')->put("MatlabCodes/Inputs-json/". $file_name,$s_data);
         Storage::disk('public')->put("MatlabCodes/Inputs-json/". $file_name,$s_data);
 
-        return $file_name;
+        $response = new stdClass();
+        $response->file_name = $file_name;
+        $response->s_data = $s_data;
+        $response->scenario_data = $scenario_data;
+        return $response;
     }
 
-    public function get_data_battery()
+    public function get_data_battery(Request $request)
     {
-        $battery_scenario_data = Battery::select('name', 'capacity', 'consumption')->where('type', '=', '5G')
-                                ->inRandomOrder()->limit(20)->get();
+        $data = $request->post();
+        $fivegSolutions = $data['fiveGSolutionData'];
+        $loraSolutions = $data['loraSolutionData'];
+        $nbSolutions = $data['nbSolutionData'];
+
+        $i = 0;
+        foreach ($fivegSolutions as $fiveg)
+        {
+            $batteryA = Sensor::select('battery_id')->where('name', '=', $fiveg['five_g_sensors_type_a'])->first();
+            $batteryA = Battery::where('id', $batteryA[0]['battery_id'])->first();
+            $batteries[$i]['battery_capacity_5g_type_a'] = $batteryA->capacity;
+            $batteries[$i]['battery_consumption_5g_type_a'] = $batteryA->consumption;
+
+            $batteries[$i]['battery_capacity_5g_type_b'] = $data['battery_capacity_5g_type_b'];
+            $batteries[$i]['battery_consumption_5g_type_b'] = $data['battery_consumption_5g_type_b'];
+
+            $batteries[$i]['battery_capacity_5g_type_c'] = $data['battery_capacity_5g_type_c'];
+            $batteries[$i]['battery_consumption_5g_type_c'] = $data['battery_consumption_5g_type_c'];
+        }
+
+        $i = 0;
+        foreach ($loraSolutions as $lora)
+        {
+
+        }
+
+        $i = 0;
+        foreach ($nbSolutions as $nb)
+        {
+
+        }
+
+        // $battery_scenario_data = SensorsBatteries::select('name', 'capacity', 'consumption')->where('type', '=', '5G')
+        //                         ->inRandomOrder()->limit(20)->get();
         // Η θα το εξελύξω και θα είναι με βάση τα names από τις παραπάνω
         $i = 0;
-        foreach($battery_scenario_data as $data)
-        {
-            $scenario_data[$i]['numberOf5gSensorsTypeA'] = $data['number_of_5g_sensors_type_a'];
-            $scenario_data[$i]['numberOf5gSensorsTypeB'] = $data['number_of_5g_sensors_type_b'];
-            $scenario_data[$i]['numberOf5gSensorsTypeC'] = $data['number_of_5g_sensors_type_c'];
-            $i++;
-        }
+
+        $scenario_data[$i]['battery_capacity_5g_type_a'] = $data['battery_capacity_5g_type_a'];
+        $scenario_data[$i]['battery_consumption_5g_type_a'] = $data['battery_consumption_5g_type_a'];
+        $scenario_data[$i]['battery_capacity_5g_type_b'] = $data['battery_capacity_5g_type_b'];
+        $scenario_data[$i]['battery_consumption_5g_type_b'] = $data['battery_consumption_5g_type_b'];
+        $scenario_data[$i]['battery_capacity_5g_type_c'] = $data['battery_capacity_5g_type_c'];
+        $scenario_data[$i]['battery_consumption_5g_type_c'] = $data['battery_consumption_5g_type_c'];
+        $scenario_data[$i]['battery_capacity_nb_type_a'] = $data['battery_capacity_nb_type_a'];
+        $scenario_data[$i]['battery_consumption_nb_type_a'] = $data['battery_consumption_nb_type_a'];
+        $scenario_data[$i]['battery_capacity_nb_type_b'] = $data['battery_capacity_nb_type_b'];
+        $scenario_data[$i]['battery_consumption_nb_type_b'] = $data['battery_consumption_nb_type_b'];
+        $scenario_data[$i]['battery_capacity_nb_type_c'] = $data['battery_capacity_nb_type_c'];
+        $scenario_data[$i]['battery_consumption_nb_type_c'] = $data['battery_consumption_nb_type_c'];
+        $scenario_data[$i]['battery_capacity_lora_type_a'] = $data['battery_capacity_lora_type_a'];
+        $scenario_data[$i]['battery_consumption_lora_type_a'] = $data['battery_consumption_lora_type_a'];
+        $scenario_data[$i]['battery_capacity_lora_type_b'] = $data['battery_capacity_lora_type_b'];
+        $scenario_data[$i]['battery_consumption_lora_type_b'] = $data['battery_consumption_lora_type_b'];
+        $scenario_data[$i]['battery_capacity_lora_type_c'] = $data['battery_capacity_lora_type_c'];
+        $scenario_data[$i]['battery_consumption_lora_type_c'] = $data['battery_consumption_lora_type_c'];
+        $scenario_data[$i]['battery_capacity_lora_gateway_type_a'] = $data['battery_capacity_lora_gateway_type_a'];
+        $scenario_data[$i]['battery_consumption_lora_gateway_type_a'] = $data['battery_consumption_lora_gateway_type_a'];
+        $scenario_data[$i]['battery_capacity_lora_gateway_type_b'] = $data['battery_capacity_lora_gateway_type_b'];
+        $scenario_data[$i]['battery_consumption_lora_gateway_type_b'] = $data['battery_consumption_lora_gateway_type_b'];
+        $i++;
+
 
         //For dynamic json file
         $file_name = date('d-m-Y') . '_battery' . '.json'; //create dynamic json file name
@@ -123,19 +194,67 @@ class MatlabController extends Controller
         return $file_name;
     }
 
-    public function get_data_cost()
+    public function get_data_cost(Request $request)
     {
-        $five_g_scenario_data = SensorCost::select('number_of_5g_sensors_type_a', 'number_of_5g_sensors_type_b', 'number_of_5g_sensors_type_c')
-                                ->inRandomOrder()->limit(20)->get();
 
-                                $i = 0;
-        foreach($five_g_scenario_data as $data)
+        $data = $request->post();
+        $fivegSolutions = $data['fiveGSolutionData'];
+        $loraSolutions = $data['loraSolutionData'];
+        $nbSolutions = $data['nbSolutionData'];
+
+        $i = 0;
+        foreach ($fivegSolutions as $fiveg)
         {
-            $scenario_data[$i]['numberOf5gSensorsTypeA'] = $data['number_of_5g_sensors_type_a'];
-            $scenario_data[$i]['numberOf5gSensorsTypeB'] = $data['number_of_5g_sensors_type_b'];
-            $scenario_data[$i]['numberOf5gSensorsTypeC'] = $data['number_of_5g_sensors_type_c'];
+            $sensorA = Sensor::where('name', '=', $fiveg['five_g_sensors_type_a'])->first();
+            $scenario_data[$i]['cost_5g_type_a'] = $sensorA['cost'];
+            $scenario_data[$i]['installation_cost_5g_type_a'] = $sensorA['installation_cost'];
+
+            $sensorB = Sensor::where('name', '=', $fiveg['five_g_sensors_type_b'])->first();
+            $scenario_data[$i]['cost_5g_type_b'] = $sensorB['cost'];
+            $scenario_data[$i]['installation_cost_5g_type_b'] = $sensorB['installation_cost'];
+
+            $sensorC = Sensor::where('name', '=', $fiveg['five_g_sensors_type_c'])->first();
+            $scenario_data[$i]['cost_5g_type_c'] = $sensorC['cost'];
+            $scenario_data[$i]['installation_cost_5g_type_c'] = $sensorC['installation_cost'];
             $i++;
         }
+        $i = 0;
+        foreach ($loraSolutions as $lora)
+        {
+            $sensorA = Sensor::where('name', '=', $fiveg['lora_sensors_type_a'])->first();
+            $scenario_data[$i]['cost_lora_type_a'] = $sensorA['cost'];
+            $scenario_data[$i]['installation_cost_lora_type_a'] = $sensorA['installation_cost'];
+
+            $sensorB = Sensor::where('name', '=', $fiveg['lora_sensors_type_b'])->first();
+            $scenario_data[$i]['cost_lora_type_b'] = $sensorB['cost'];
+            $scenario_data[$i]['installation_cost_lora_type_b'] = $sensorB['installation_cost'];
+
+            $sensorC = Sensor::where('name', '=', $fiveg['lora_sensors_type_c'])->first();
+            $scenario_data[$i]['cost_lora_type_c'] = $sensorC['cost'];
+            $scenario_data[$i]['installation_cost_lora_type_c'] = $sensorC['installation_cost'];
+
+            $sensorC = Gateway::where('name', '=', $fiveg['gateways_type_a'])->first();
+            $scenario_data[$i]['cost_lora_gateway_type_a'] = $sensorC['cost'];
+            $scenario_data[$i]['installation_lora_gateway_type_a'] = $sensorC['installation_cost'];
+
+            $sensorC = Gateway::where('name', '=', $fiveg['gateways_type_b'])->first();
+            $scenario_data[$i]['cost_lora_gateway_type_b'] = $sensorC['cost'];
+            $scenario_data[$i]['installation_lora_gateway_type_b'] = $sensorC['installation_cost'];
+            $i ++;
+        }
+        $i = 0;
+        foreach ($nbSolutions as $nb)
+        {
+
+            $i++;
+        }
+
+            $scenario_data[$i]['cost_nb_type_a'] = $data['cost_nb_type_a'];
+            $scenario_data[$i]['installation_cost_nb_type_a'] = $data['installation_cost_nb_type_a'];
+            $scenario_data[$i]['cost_nb_type_b'] = $data['cost_nb_type_b'];
+            $scenario_data[$i]['installation_cost_nb_type_b'] = $data['installation_cost_nb_type_b'];
+            $scenario_data[$i]['cost_nb_type_c'] = $data['cost_nb_type_c'];
+            $scenario_data[$i]['installation_cost_nb_type_c'] = $data['installation_cost_nb_type_c'];
 
         //For dynamic json file
         $file_name = date('d-m-Y') . '_costs' . '.json'; //create dynamic json file name

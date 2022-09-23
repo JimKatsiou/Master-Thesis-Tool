@@ -89,6 +89,6 @@ Route::group(['prefix' => 'testing-matlab', 'middleware' => 'auth:sanctum'], fun
     Route::get('get_data_5g_wq', [MatlabController::class, 'getData5gWQ']);
     Route::get('get_data_Lora_wq', [MatlabController::class, 'get_data_Lora_wq']);
     Route::get('get_data_NB_wq', [MatlabController::class, 'get_data_NB_wq']);
-    Route::get('get_data_battery', [MatlabController::class, 'get_data_battery']);
-    Route::get('get_data_cost', [MatlabController::class, 'get_data_cost']);
+    Route::post('get_data_battery', [MatlabController::class, 'get_data_battery']);
+    Route::post('get_data_cost', [MatlabController::class, 'get_data_cost']);
 });

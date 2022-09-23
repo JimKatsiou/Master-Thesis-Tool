@@ -38,6 +38,9 @@
 
                 <hr>
                 <p><strong>Extras:</strong></p>
+                <button type="button" class="btn btn-primary" @click="get_data_battery()">Primary</button>
+
+                <button type="button" class="btn btn-primary" @click="get_data_cost()">Cost</button>
                 {{ this.file_name_4}}
                 <br>
                 {{ this.file_name_5}}
@@ -106,13 +109,16 @@
                 file_name_3: '',
                 file_name_4: '',
                 file_name_5: '',
+                fiveGSolutionData: "",
+                loraSolutionData: "",
+                nbSolutionData: "",
             }
         },
         component:{
 
         },
 
-        mounted() {
+        beforeMount() {
             this.$axios.get('/sanctum/csrf-cookie').then(response => {
                 this.$axios.get('/api/testing-matlab/run-matlab')
                 .catch(function (error) {
@@ -123,12 +129,26 @@
             this.get_data_5g_wq();
             this.get_data_Lora_wq();
             this.get_data_NB_wq();
+        },
 
-            this.get_data_battery();
-            this.get_data_cost();
+        mounted() {
+            // this.get_data_battery();
+            // this.get_data_cost();
         },
 
         computed: {
+            fiveGData() {
+                const reqObject = JSON.parse(JSON.stringify(this.fiveGSolutionData));
+                return reqObject;
+            },
+            loraData() {
+                const reqObject = JSON.parse(JSON.stringify(this.loraSolutionData));
+                return reqObject;
+            },
+            nbData() {
+                const reqObject = JSON.parse(JSON.stringify(this.nbSolutionData));
+                return reqObject;
+            },
 
         },
 
@@ -138,7 +158,9 @@
             {
                 this.$axios.get('/sanctum/csrf-cookie').then(response => {
                     this.$axios.get('/api/testing-matlab/get_data_5g_wq').then(response => {
-                        this.file_name_1 = response.data + 'file was created successfully!';
+                        console.log(response);
+                        this.file_name_1 = response.data.file_name + 'file was created successfully!';
+                        this.fiveGSolutionData = response.data.scenario_data;
                     })
                     .catch(function (error) {
                         console.error(error);
@@ -150,7 +172,8 @@
             {
                 this.$axios.get('/sanctum/csrf-cookie').then(response => {
                     this.$axios.get('/api/testing-matlab/get_data_Lora_wq').then(response => {
-                        this.file_name_2 = response.data + 'file was created successfully!';
+                        this.file_name_2 = response.data.file_name + 'file was created successfully!';
+                        this.loraSolutionData = response.data.scenario_data;
                     })
                     .catch(function (error) {
                         console.error(error);
@@ -162,7 +185,8 @@
             {
                 this.$axios.get('/sanctum/csrf-cookie').then(response => {
                     this.$axios.get('/api/testing-matlab/get_data_NB_wq').then(response => {
-                        this.file_name_3 = response.data + 'file was created successfully!';
+                        this.file_name_3 = response.data.file_name + 'file was created successfully!';
+                        this.nbSolutionData = response.data.scenario_data;
                     })
                     .catch(function (error) {
                         console.error(error);
@@ -172,28 +196,33 @@
 
             get_data_battery()
             {
-                this.$axios.get('/sanctum/csrf-cookie').then(response => {
-                    this.$axios.get('/api/testing-matlab/get_data_battery').then(response => {
-                        this.file_name_4 = response.data + 'file was created successfully!';
-                    })
-                    .catch(function (error) {
-                        console.error(error);
-                    });
+                let payload = {
+                    fiveGSolutionData: this.fiveGData,
+                    loraSolutionData: this.loraData,
+                    nbSolutionData: this.nbData
+                }
+                this.$axios.post('/api/testing-matlab/get_data_battery', payload).then(response => {
+                    this.file_name_4 = response.data + 'file was created successfully!';
                 })
+                .catch(function (error) {
+                    console.error(error);
+                });
             },
 
             get_data_cost()
             {
-                this.$axios.get('/sanctum/csrf-cookie').then(response => {
-                    this.$axios.get('/api/testing-matlab/get_data_cost').then(response => {
-                        this.file_name_5 = response.data + 'file was created successfully!';
-                    })
-                    .catch(function (error) {
-                        console.error(error);
-                    });
+                let payload = {
+                    fiveGSolutionData: this.fiveGData,
+                    loraSolutionData: this.loraData,
+                    nbSolutionData: this.nbData
+                }
+                this.$axios.post('/api/testing-matlab/get_data_cost', payload).then(response => {
+                    this.file_name_5 = response.data + 'file was created successfully!';
                 })
-            },
-
+                .catch(function (error) {
+                    console.error(error);
+                });
+            }
         },
     }
 </script>
