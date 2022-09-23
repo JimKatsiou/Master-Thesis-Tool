@@ -3,6 +3,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\Scenario;
+use App\Models\Technologies;
 use Illuminate\Http\Request;
 
 class ScenarioController extends Controller
@@ -26,7 +27,8 @@ class ScenarioController extends Controller
         } else {
             $scenario->description = null;
         }
-
+        $technology_id = Technologies::select('id')->where('name', '=', $request->technology_name)->get();
+        $scenario->technology_id = $technology_id[0]['id'];
         $scenario->save();
 
         return response()->json('The scenario successfully added');

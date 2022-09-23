@@ -7,12 +7,12 @@
             <div class="col-md-6">
                 <form @submit.prevent="addScenario">
                     <div class="form-group">
-                        <label>Type of System</label>
-                        <input type="text" class="form-control" v-model="scenario.type_of_system_name">
-                    </div>
-                    <div class="form-group">
                         <label>Technology</label>
                         <input type="text" class="form-control" v-model="scenario.technology_name">
+                    </div>
+                    <div class="form-group">
+                        <label>Type of System</label>
+                        <input type="text" class="form-control" v-model="scenario.type_of_system_name">
                     </div>
                     <div class="form-group">
                         <label>Description</label>

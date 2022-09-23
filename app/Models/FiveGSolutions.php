@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class FiveGSolutions extends Model
 {
     use HasFactory;
+    protected $guarded = [];
 
     protected $table = 'five_g_solutions';
 

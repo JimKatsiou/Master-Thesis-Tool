@@ -27,8 +27,6 @@
                     <hr>
                     <router-link to="/documentation" class="list-group-item list-group-item-action py-2 ripple">Documentaion</router-link>
                     <router-link to="/" class="list-group-item list-group-item-action py-2 ripple">Somethink else</router-link>
-                    <a href="#" class="list-group-item list-group-item-action py-2 ripple"><span>Calendar</span> </a>
-                    <a href="#" class="list-group-item list-group-item-action py-2 ripple"><span>Users</span></a>
                     <hr>
                     <a class="list-group-item list-group-item-action py-2 ripple" style="cursor: pointer;" @click="logout">Logout</a>
                 </div>

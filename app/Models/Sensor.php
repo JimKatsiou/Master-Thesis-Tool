@@ -10,9 +10,10 @@ class Sensor extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    protected $cast = ['technology_id' => 'integer'];
 
     protected $table = 'sensors';
+    protected $cast = ['technology_id' => 'integer'];
+
 }
 
 

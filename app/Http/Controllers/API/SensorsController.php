@@ -27,6 +27,8 @@ class SensorsController extends Controller
         } else {
             $sensor->description = null;
         }
+        $sensor->cost = 100;
+        $sensor->installation_cost = 50;
 
         $sensor->save();
 
