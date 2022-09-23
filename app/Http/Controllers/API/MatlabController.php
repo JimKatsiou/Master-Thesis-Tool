@@ -234,29 +234,20 @@ class MatlabController extends Controller
             $scenario_data[$i]['installation_cost_lora_type_c'] = $sensorC['installation_cost'];
 
             $sensorC = Gateway::where('name', '=', $fiveg['gateways_type_a'])->first();
-            $scenario_data[$i]['cost_lora_type_c'] = $sensorC['cost'];
-            $scenario_data[$i]['installation_cost_lora_type_c'] = $sensorC['installation_cost'];
+            $scenario_data[$i]['cost_lora_gateway_type_a'] = $sensorC['cost'];
+            $scenario_data[$i]['installation_lora_gateway_type_a'] = $sensorC['installation_cost'];
 
             $sensorC = Gateway::where('name', '=', $fiveg['gateways_type_b'])->first();
-            $scenario_data[$i]['cost_lora_type_c'] = $sensorC['cost'];
-            $scenario_data[$i]['installation_cost_lora_type_c'] = $sensorC['installation_cost'];
-
-
-            $scenario_data[$i]['installation_cost_lora_type_c'] = $data['installation_cost_lora_type_c'];
-            $scenario_data[$i]['cost_lora_gateway_type_a'] = $data['cost_lora_gateway_type_a'];
-            $scenario_data[$i]['installation_lora_gateway_type_a'] = $data['installation_lora_gateway_type_a'];
-            $scenario_data[$i]['cost_lora_gateway_type_b'] = $data['cost_lora_gateway_type_b'];
-            $scenario_data[$i]['installation_lora_gateway_type_b'] = $data['installation_lora_gateway_type_b'];
+            $scenario_data[$i]['cost_lora_gateway_type_b'] = $sensorC['cost'];
+            $scenario_data[$i]['installation_lora_gateway_type_b'] = $sensorC['installation_cost'];
+            $i ++;
         }
-
         $i = 0;
         foreach ($nbSolutions as $nb)
         {
 
+            $i++;
         }
-
-        $i = 0;
-
 
             $scenario_data[$i]['cost_nb_type_a'] = $data['cost_nb_type_a'];
             $scenario_data[$i]['installation_cost_nb_type_a'] = $data['installation_cost_nb_type_a'];
@@ -264,9 +255,6 @@ class MatlabController extends Controller
             $scenario_data[$i]['installation_cost_nb_type_b'] = $data['installation_cost_nb_type_b'];
             $scenario_data[$i]['cost_nb_type_c'] = $data['cost_nb_type_c'];
             $scenario_data[$i]['installation_cost_nb_type_c'] = $data['installation_cost_nb_type_c'];
-
-            $i++;
-
 
         //For dynamic json file
         $file_name = date('d-m-Y') . '_costs' . '.json'; //create dynamic json file name
