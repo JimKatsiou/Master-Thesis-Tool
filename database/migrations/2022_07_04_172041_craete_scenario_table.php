@@ -31,6 +31,6 @@ class CraeteScenarioTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Scenarios');
+        Schema::dropIfExists('scenarios');
     }
 }

@@ -33706,7 +33706,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\n    margin-left: 250px;\n    padding: 10px;\n}\n.topOfThePage\n{\n    margin-top: -50px;\n    background-color: rgba(146, 145, 145, 0.404);\n    margin-left: 250px;\n    padding: 10px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\n.topOfThePage\r\n{\r\n    margin-top: -50px;\r\n    background-color: rgba(146, 145, 145, 0.404);\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -33730,7 +33730,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\n    margin-left: 250px;\n    padding: 10px;\n}\n.topOfThePage\n{\n    margin-top: -50px;\n    background-color: rgba(146, 145, 145, 0.404);\n    margin-left: 250px;\n    padding: 10px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\n.topOfThePage\r\n{\r\n    margin-top: -50px;\r\n    background-color: rgba(146, 145, 145, 0.404);\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -33754,7 +33754,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\n    margin-left: 250px;\n    padding: 10px;\n}\n.topOfThePage\n{\n    margin-top: -50px;\n    background-color: rgba(146, 145, 145, 0.404);\n    margin-left: 250px;\n    padding: 10px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\n.topOfThePage\r\n{\r\n    margin-top: -50px;\r\n    background-color: rgba(146, 145, 145, 0.404);\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -33778,7 +33778,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\n    margin-left: 250px;\n    padding: 10px;\n}\n.topOfThePage\n{\n    margin-top: -50px;\n    background-color: rgba(146, 145, 145, 0.404);\n    margin-left: 250px;\n    padding: 10px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\n.topOfThePage\r\n{\r\n    margin-top: -50px;\r\n    background-color: rgba(146, 145, 145, 0.404);\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -33802,7 +33802,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\n    margin-left: 250px;\n    padding: 10px;\n}\n.topOfThePage\n{\n    margin-top: -50px;\n    background-color: rgba(146, 145, 145, 0.404);\n    margin-left: 250px;\n    padding: 10px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\n.topOfThePage\r\n{\r\n    margin-top: -50px;\r\n    background-color: rgba(146, 145, 145, 0.404);\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -33826,7 +33826,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\n    margin-left: 250px;\n    padding: 10px;\n}\n.topOfThePage\n{\n    margin-top: -50px;\n    background-color: rgba(146, 145, 145, 0.404);\n    margin-left: 250px;\n    padding: 10px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\n.topOfThePage\r\n{\r\n    margin-top: -50px;\r\n    background-color: rgba(146, 145, 145, 0.404);\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -33850,7 +33850,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\n    margin-left: 250px;\n    padding: 10px;\n}\n.topOfThePage\n{\n    margin-top: -50px;\n    background-color: rgba(146, 145, 145, 0.404);\n    margin-left: 250px;\n    padding: 10px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\n.topOfThePage\r\n{\r\n    margin-top: -50px;\r\n    background-color: rgba(146, 145, 145, 0.404);\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -33874,7 +33874,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nbody {\n  background-color: #fbfbfb;\n}\n@media (min-width: 991.98px) {\nmain {\n    padding-left: 240px;\n}\n}\n\n/* Sidebar */\n.sidebar {\n    height: 100%; /* Full-height: remove this if you want \"auto\" height */\n    width: 250px; /* Set the width of the sidebar */\n    position: absolute;\n    top: 0; /* Stay at the top */\n    bottom: 0;\n    left: 0;\n    padding: 10px 0 0; /* Height of navbar */\n    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);\n    z-index: 1;\n}\n@media (max-width: 991.98px) {\n.sidebar {\n    width: 100%;\n}\n}\n.sidebar .active {\n  border-radius: 5px;\n  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);\n}\n\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nbody {\r\n  background-color: #fbfbfb;\n}\n@media (min-width: 991.98px) {\nmain {\r\n    padding-left: 240px;\n}\n}\r\n\r\n/* Sidebar */\n.sidebar {\r\n    height: 100%; /* Full-height: remove this if you want \"auto\" height */\r\n    width: 250px; /* Set the width of the sidebar */\r\n    position: absolute;\r\n    top: 0; /* Stay at the top */\r\n    bottom: 0;\r\n    left: 0;\r\n    padding: 10px 0 0; /* Height of navbar */\r\n    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);\r\n    z-index: 1;\n}\n@media (max-width: 991.98px) {\n.sidebar {\r\n    width: 100%;\n}\n}\n.sidebar .active {\r\n  border-radius: 5px;\r\n  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);\n}\r\n\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -33898,7 +33898,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\n    margin-left: 250px;\n    padding: 10px;\n}\n.topOfThePage\n{\n    margin-top: -50px;\n    background-color: rgba(146, 145, 145, 0.404);\n    margin-left: 250px;\n    padding: 10px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\n.topOfThePage\r\n{\r\n    margin-top: -50px;\r\n    background-color: rgba(146, 145, 145, 0.404);\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -33922,7 +33922,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\n    margin-left: 250px;\n    padding: 10px;\n}\n.topOfThePage\n{\n    margin-top: -50px;\n    background-color: rgba(146, 145, 145, 0.404);\n    margin-left: 250px;\n    padding: 10px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\n.topOfThePage\r\n{\r\n    margin-top: -50px;\r\n    background-color: rgba(146, 145, 145, 0.404);\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -33946,7 +33946,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\n    margin-left: 250px;\n    padding: 10px;\n}\n.topOfThePage\n{\n    margin-top: -50px;\n    background-color: rgba(146, 145, 145, 0.404);\n    margin-left: 250px;\n    padding: 10px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\n.topOfThePage\r\n{\r\n    margin-top: -50px;\r\n    background-color: rgba(146, 145, 145, 0.404);\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -33970,7 +33970,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\n    margin-left: 250px;\n    padding: 10px;\n}\n.topOfThePage\n{\n    margin-top: -50px;\n    background-color: rgba(146, 145, 145, 0.404);\n    margin-left: 250px;\n    padding: 10px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\n.topOfThePage\r\n{\r\n    margin-top: -50px;\r\n    background-color: rgba(146, 145, 145, 0.404);\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -33994,7 +33994,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\n    margin-left: 250px;\n    padding: 10px;\n}\n.topOfThePage\n{\n    margin-top: -50px;\n    background-color: rgba(146, 145, 145, 0.404);\n    margin-left: 250px;\n    padding: 10px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\n.topOfThePage\r\n{\r\n    margin-top: -50px;\r\n    background-color: rgba(146, 145, 145, 0.404);\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -34018,7 +34018,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\n    margin-left: 250px;\n    padding: 10px;\n}\n.topOfThePage\n{\n    margin-top: -50px;\n    background-color: rgba(146, 145, 145, 0.404);\n    margin-left: 250px;\n    padding: 10px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\n.topOfThePage\r\n{\r\n    margin-top: -50px;\r\n    background-color: rgba(146, 145, 145, 0.404);\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -34042,7 +34042,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\n    margin-left: 250px;\n    padding: 10px;\n}\n.topOfThePage\n{\n    margin-top: -50px;\n    background-color: rgba(146, 145, 145, 0.404);\n    margin-left: 250px;\n    padding: 10px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\n.topOfThePage\r\n{\r\n    margin-top: -50px;\r\n    background-color: rgba(146, 145, 145, 0.404);\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -34066,7 +34066,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\n    margin-left: 250px;\n    padding: 10px;\n}\n.topOfThePage\n{\n    margin-top: -50px;\n    background-color: rgba(146, 145, 145, 0.404);\n    margin-left: 250px;\n    padding: 10px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\n.topOfThePage\r\n{\r\n    margin-top: -50px;\r\n    background-color: rgba(146, 145, 145, 0.404);\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -34090,7 +34090,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\n    margin-left: 250px;\n    padding: 10px;\n}\n.topOfThePage\n{\n    margin-top: -50px;\n    background-color: rgba(146, 145, 145, 0.404);\n    margin-left: 250px;\n    padding: 10px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\n.topOfThePage\r\n{\r\n    margin-top: -50px;\r\n    background-color: rgba(146, 145, 145, 0.404);\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -34114,7 +34114,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\n    margin-left: 250px;\n    padding: 10px;\n}\n.topOfThePage\n{\n    margin-top: -50px;\n    background-color: rgba(146, 145, 145, 0.404);\n    margin-left: 250px;\n    padding: 10px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\n.topOfThePage\r\n{\r\n    margin-top: -50px;\r\n    background-color: rgba(146, 145, 145, 0.404);\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -34138,7 +34138,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\n    margin-left: 250px;\n    padding: 10px;\n}\n.topOfThePage\n{\n    margin-top: -50px;\n    background-color: rgba(146, 145, 145, 0.404);\n    margin-left: 250px;\n    padding: 10px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\n.topOfThePage\r\n{\r\n    margin-top: -50px;\r\n    background-color: rgba(146, 145, 145, 0.404);\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -34162,7 +34162,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\n    margin-left: 250px;\n    padding: 10px;\n}\n.topOfThePage\n{\n    margin-top: -50px;\n    background-color: rgba(146, 145, 145, 0.404);\n    margin-left: 250px;\n    padding: 10px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\n.topOfThePage\r\n{\r\n    margin-top: -50px;\r\n    background-color: rgba(146, 145, 145, 0.404);\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -34186,7 +34186,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\n    margin-left: 250px;\n    padding: 10px;\n}\n.topOfThePage\n{\n    margin-top: -50px;\n    background-color: rgba(146, 145, 145, 0.404);\n    margin-left: 250px;\n    padding: 10px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\n.topOfThePage\r\n{\r\n    margin-top: -50px;\r\n    background-color: rgba(146, 145, 145, 0.404);\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -34210,7 +34210,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\n    margin-left: 250px;\n    padding: 10px;\n}\n.topOfThePage\n{\n    margin-top: -50px;\n    background-color: rgba(146, 145, 145, 0.404);\n    margin-left: 250px;\n    padding: 10px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\n.topOfThePage\r\n{\r\n    margin-top: -50px;\r\n    background-color: rgba(146, 145, 145, 0.404);\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -34234,7 +34234,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\n    margin-left: 250px;\n    padding: 10px;\n}\n.topOfThePage\n{\n    margin-top: -50px;\n    background-color: rgba(146, 145, 145, 0.404);\n    margin-left: 250px;\n    padding: 10px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\n.topOfThePage\r\n{\r\n    margin-top: -50px;\r\n    background-color: rgba(146, 145, 145, 0.404);\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -34258,7 +34258,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\n    margin-left: 250px;\n    padding: 10px;\n}\n.topOfThePage\n{\n    margin-top: -50px;\n    background-color: rgba(146, 145, 145, 0.404);\n    margin-left: 250px;\n    padding: 10px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\n.topOfThePage\r\n{\r\n    margin-top: -50px;\r\n    background-color: rgba(146, 145, 145, 0.404);\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -34282,7 +34282,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\n    margin-left: 250px;\n    padding: 10px;\n}\n.topOfThePage\n{\n    margin-top: -50px;\n    background-color: rgba(146, 145, 145, 0.404);\n    margin-left: 250px;\n    padding: 10px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\n.topOfThePage\r\n{\r\n    margin-top: -50px;\r\n    background-color: rgba(146, 145, 145, 0.404);\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -34306,7 +34306,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\n    margin-left: 250px;\n    padding: 10px;\n}\n.topOfThePage\n{\n    margin-top: -50px;\n    background-color: rgba(146, 145, 145, 0.404);\n    margin-left: 250px;\n    padding: 10px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\n.topOfThePage\r\n{\r\n    margin-top: -50px;\r\n    background-color: rgba(146, 145, 145, 0.404);\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -34330,7 +34330,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\n    margin-left: 250px;\n    padding: 10px;\n}\n.topOfThePage\n{\n    margin-top: -50px;\n    background-color: rgba(146, 145, 145, 0.404);\n    margin-left: 250px;\n    padding: 10px;\n}\nsection.section.is-main-section {\n    padding: 1.5rem;\n}\n.tile.is-ancestor:not(:last-child) {\n    margin-bottom: 0.75rem;\n}\n.tile:not(.is-child) {\n    display: flex;\n}\n.tile.is-parent {\n    padding: 0.75rem;\n}\n.tile.is-child {\n    margin: 0!important;\n}\n.card-content:last-child, .card-footer:last-child, .card-header:last-child {\n    border-bottom-left-radius: 0.25rem;\n    border-bottom-right-radius: 0.25rem;\n}\n.level.is-mobile, .level.is-mobile .level-left, .level.is-mobile .level-right {\n    display: flex;\n}\n.level.is-mobile .level-item:not(.is-narrow) {\n    flex-grow: 1;\n}\n.card .is-widget-label .subtitle {\n    color: #7a7a7a;\n}\n.level-item .subtitle, .level-item .title {\n    margin-bottom: 0;\n}\n.level.is-mobile .level-item:not(.is-narrow) {\n    flex-grow: 1;\n}\n.card .is-widget-icon .icon {\n    width: 5rem;\n    height: 5rem;\n}\n.icon.is-large {\n    height: 3rem;\n    width: 3rem;\n}\n.icon {\n    -webkit-touch-callout: none;\n    -webkit-user-select: none;\n    -moz-user-select: none;\n    -ms-user-select: none;\n    user-select: none;\n    cursor: inherit;\n}\n.has-text-primary {\n    color: #00d1b2!important;\n}\n.icon {\n    align-items: center;\n    display: inline-flex;\n    justify-content: center;\n    height: 1.5rem;\n    width: 1.5rem;\n}\n\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\n.topOfThePage\r\n{\r\n    margin-top: -50px;\r\n    background-color: rgba(146, 145, 145, 0.404);\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\nsection.section.is-main-section {\r\n    padding: 1.5rem;\n}\n.tile.is-ancestor:not(:last-child) {\r\n    margin-bottom: 0.75rem;\n}\n.tile:not(.is-child) {\r\n    display: flex;\n}\n.tile.is-parent {\r\n    padding: 0.75rem;\n}\n.tile.is-child {\r\n    margin: 0!important;\n}\n.card-content:last-child, .card-footer:last-child, .card-header:last-child {\r\n    border-bottom-left-radius: 0.25rem;\r\n    border-bottom-right-radius: 0.25rem;\n}\n.level.is-mobile, .level.is-mobile .level-left, .level.is-mobile .level-right {\r\n    display: flex;\n}\n.level.is-mobile .level-item:not(.is-narrow) {\r\n    flex-grow: 1;\n}\n.card .is-widget-label .subtitle {\r\n    color: #7a7a7a;\n}\n.level-item .subtitle, .level-item .title {\r\n    margin-bottom: 0;\n}\n.level.is-mobile .level-item:not(.is-narrow) {\r\n    flex-grow: 1;\n}\n.card .is-widget-icon .icon {\r\n    width: 5rem;\r\n    height: 5rem;\n}\n.icon.is-large {\r\n    height: 3rem;\r\n    width: 3rem;\n}\n.icon {\r\n    -webkit-touch-callout: none;\r\n    -webkit-user-select: none;\r\n    -moz-user-select: none;\r\n    -ms-user-select: none;\r\n    user-select: none;\r\n    cursor: inherit;\n}\n.has-text-primary {\r\n    color: #00d1b2!important;\n}\n.icon {\r\n    align-items: center;\r\n    display: inline-flex;\r\n    justify-content: center;\r\n    height: 1.5rem;\r\n    width: 1.5rem;\n}\r\n\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -34354,7 +34354,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n#intro[data-v-b3c5cf30]\n    {\n        background-image: url(\"https://ciobusinessreview.com/wp-content/uploads/2022/01/2-750x430.jpg\");\n}\n    /* Height for devices larger than 576px */\n@media (min-width: 992px) {\n#intro[data-v-b3c5cf30]\n        {\n            margin-top: -58.59px;\n}\n}\n.navbar .nav-link[data-v-b3c5cf30] {\n        color: #fff !important;\n}\n.main[data-v-b3c5cf30] {\n  margin-left: 10px; /* Same as the width of the sidenav */\n  font-size: 28px; /* Increased text to enable scrolling */\n  padding: 0px 10px;\n}\n.nextOfSideBar[data-v-b3c5cf30] {\n    margin-left: 250px;\n    padding: 10px;\n}\n.topOfThePage[data-v-b3c5cf30]\n{\n    margin-top: -50px;\n    background-color: rgba(146, 145, 145, 0.404);\n    margin-left: 250px;\n    padding: 10px;\n}\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n#intro[data-v-b3c5cf30]\r\n    {\r\n        background-image: url(\"https://ciobusinessreview.com/wp-content/uploads/2022/01/2-750x430.jpg\");\n}\r\n    /* Height for devices larger than 576px */\n@media (min-width: 992px) {\n#intro[data-v-b3c5cf30]\r\n        {\r\n            margin-top: -58.59px;\n}\n}\n.navbar .nav-link[data-v-b3c5cf30] {\r\n        color: #fff !important;\n}\n.main[data-v-b3c5cf30] {\r\n  margin-left: 10px; /* Same as the width of the sidenav */\r\n  font-size: 28px; /* Increased text to enable scrolling */\r\n  padding: 0px 10px;\n}\n.nextOfSideBar[data-v-b3c5cf30] {\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\n.topOfThePage[data-v-b3c5cf30]\r\n{\r\n    margin-top: -50px;\r\n    background-color: rgba(146, 145, 145, 0.404);\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

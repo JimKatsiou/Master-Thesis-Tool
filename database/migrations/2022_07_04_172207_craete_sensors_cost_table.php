@@ -52,6 +52,6 @@ class CraeteSensorsCostTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('SensorsCost');
+        Schema::dropIfExists('sensors_cost');
     }
 }

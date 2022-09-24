@@ -32,6 +32,6 @@ class CraeteSolutions5gTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('5g_solutions');
+        Schema::dropIfExists('five_g_solutions');
     }
 }

@@ -15,9 +15,9 @@ class AddColumnsToLoraSolutionsTable extends Migration
     {
         Schema::table('lora_solutions', function (Blueprint $table) {
             $table->string('gateways_type_a')->after('number_of_lora_sensors_type_c');
-            $table->string('number_of_lora_gateways_type_a')->default(null)->after('gateways_type_a');
+            $table->integer('number_of_lora_gateways_type_a')->default(null)->after('gateways_type_a');
             $table->string('gateways_type_b')->after('number_of_lora_gateways_type_a');
-            $table->string('number_of_lora_gateways_type_b')->default(null)->after('gateways_type_b');
+            $table->integer('number_of_lora_gateways_type_b')->default(null)->after('gateways_type_b');
         });
     }
 

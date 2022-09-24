@@ -30,6 +30,6 @@ class CraeteSensorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('Sensors');
+        Schema::dropIfExists('sensors');
     }
 }
