@@ -33,6 +33,8 @@ Route::group(['prefix' => 'technologies', 'middleware' => 'auth:sanctum'], funct
     Route::get('edit/{id}', [TechnologyController::class, 'edit']);
     Route::post('update/{id}', [TechnologyController::class, 'update']);
     Route::delete('delete/{id}', [TechnologyController::class, 'delete']);
+
+    Route::get('get-technologies', [TechnologyController::class, 'getAllTechnologies']);
 });
 
 Route::group(['prefix' => 'type_of_systems', 'middleware' => 'auth:sanctum'], function () {
@@ -41,6 +43,9 @@ Route::group(['prefix' => 'type_of_systems', 'middleware' => 'auth:sanctum'], fu
     Route::get('edit/{id}', [TypeOfSystemController::class, 'edit']);
     Route::post('update/{id}', [TypeOfSystemController::class, 'update']);
     Route::delete('delete/{id}', [TypeOfSystemController::class, 'delete']);
+
+    Route::get('get-type-of-systems', [TypeOfSystemController::class, 'getAllTypesOfSystems']);
+    Route::get('get-selected-system', [TypeOfSystemController::class, 'getSelectedSystem']);
 });
 
 Route::group(['prefix' => 'sensors', 'middleware' => 'auth:sanctum'], function () {
@@ -85,9 +90,9 @@ Route::group(['prefix' => 'nbSolutions', 'middleware' => 'auth:sanctum'], functi
 
 
 Route::group(['prefix' => 'testing-matlab', 'middleware' => 'auth:sanctum'], function () {
-    Route::get('run-matlab', [MatlabController::class, 'runMatlab']);
+    Route::get('testing-matlab-next/:systemId', [MatlabController::class, 'runMatlab']);
     Route::get('get_data_5g_wq', [MatlabController::class, 'getData5gWQ']);
-    Route::get('get_data_Lora_wq', [MatlabController::class, 'get_data_Lora_wq']);
+    Route::post('get_data_Lora_wq', [MatlabController::class, 'get_data_Lora_wq']);
     Route::get('get_data_NB_wq', [MatlabController::class, 'get_data_NB_wq']);
     Route::post('get_data_battery', [MatlabController::class, 'get_data_battery']);
     Route::post('get_data_cost', [MatlabController::class, 'get_data_cost']);

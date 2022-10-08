@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Models\Technologies;
 use Illuminate\Http\Request;
+use stdClass;
 
 class TechnologyController extends Controller
 {
@@ -49,5 +50,23 @@ class TechnologyController extends Controller
         $technology->delete();
 
         return response()->json('The technology successfully deleted');
+    }
+
+    public function getAllTechnologies()
+    {
+        $response = new stdClass();
+
+        $technoligies = Technologies::all();
+        $i = 0;
+        foreach ($technoligies as $technology)
+        {
+            $tech[$i]['name'] = $technology['name'];
+            $i++;
+        }
+        return $tech;
+
+        // $response->object = $technoligies;
+        // dd($response);
+        // return $response;
     }
 }

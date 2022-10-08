@@ -12,7 +12,17 @@
                     </div>
                     <div class="form-group">
                         <label>Technology</label>
-                        <input type="text" class="form-control" v-model="sensor.technology_id">
+                        <v-select :options="technologies"
+                            v-model="sensor.technology_id" :placeholder="'Select technoly'">
+                        </v-select>
+                    </div>
+                    <div class="form-group">
+                        <label>Sensor cost</label>
+                        <input type="text" class="form-control" v-model="sensor.cost">
+                    </div>
+                    <div class="form-group">
+                        <label>installation cost</label>
+                        <input type="text" class="form-control" v-model="sensor.installation_cost">
                     </div>
                     <div class="form-group">
                         <label>Description</label>
@@ -28,11 +38,18 @@
 </template>
 
 <script>
+import vSelect from 'vue-select';
+import "vue-select/dist/vue-select.css";
+
 export default {
     data() {
         return {
-            sensor: {}
+            sensor: {},
+            technologies: [],
         }
+    },
+    components: {
+         vSelect,
     },
     methods: {
         addSensor() {
@@ -52,7 +69,23 @@ export default {
             window.location.href = "/";
         }
         next();
-    }
+    },
+    mounted() {
+        this.$axios.get('/sanctum/csrf-cookie').then(response => {
+            this.$axios.get('/api/technologies/get-technologies').then(response => {
+                let technologies = response.data;
+                let tech = []
+                for (let i = 0; i < technologies.length; i++)
+                {
+                    tech[i] = technologies[i]['name'];
+                }
+                this.technologies = tech;
+            })
+            .catch(function (error) {
+                console.error(error);
+            });
+        })
+    },
 }
 </script>
 

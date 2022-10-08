@@ -9,8 +9,6 @@ use App\Models\NbSolutions;
 use App\Models\Battery;
 use App\Models\Gateway;
 use App\Models\Sensor;
-use App\Models\SensorCost;
-use App\Models\SensorsBatteries;
 use stdClass;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -20,7 +18,7 @@ class MatlabController extends Controller
     // This function runs Matlab
     public function runMatlab()
     {
-        exec("matlab.exe");
+        //exec("matlab.exe");
     }
 
     public function getData5gWQ()
@@ -53,8 +51,10 @@ class MatlabController extends Controller
         return $response;
     }
 
-    public function get_data_Lora_wq()
+    public function get_data_Lora_wq(Request $request)
     {
+        $data = $request->post();
+        dd($data);
         $lora_scenario_data = LoraSolutions::inRandomOrder()->limit(20)->get();
         $i = 0;
         foreach($lora_scenario_data as $data)
@@ -153,8 +153,6 @@ class MatlabController extends Controller
 
         }
 
-        // $battery_scenario_data = SensorsBatteries::select('name', 'capacity', 'consumption')->where('type', '=', '5G')
-        //                         ->inRandomOrder()->limit(20)->get();
         // Η θα το εξελύξω και θα είναι με βάση τα names από τις παραπάνω
         $i = 0;
 

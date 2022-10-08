@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use App\Models\TypeOfSystem;
 use Illuminate\Http\Request;
+use stdClass;
 
 class TypeOfSystemController extends Controller
 {
@@ -64,6 +65,30 @@ class TypeOfSystemController extends Controller
         $type_of_system->delete();
 
         return response()->json('The type of system successfully deleted');
+    }
+
+    public function getAllTypesOfSystems()
+    {
+        $response = new stdClass();
+
+        $type_of_systems = TypeOfSystem::all();
+        $i = 0;
+        foreach ($type_of_systems as $system)
+        {
+            $tos[$i]['name'] = $system['name'];
+            $i++;
+        }
+        return $tos;
+
+        // $response->object = $technoligies;
+        // dd($response);
+        // return $response;
+    }
+
+    public function getSelectedSystem(Request $request)
+    {
+        $data = $request->post();
+        dd($data);
     }
 
 }

@@ -1,47 +1,40 @@
 <template>
-    <div class="topOfThePage">
-        <h3>ALGORITHMS</h3>
+    <div class="matlabTopOfThePage">
     </div>
     <div class="nextOfSideBar">
         <div class="row justify-content-center">
-            <div class="col-md-12">
-            <router-link to="/dashboard" class="btn btn-danger">Back to Dashboard</router-link>
-            </div>
+
         </div>
-        <hr>
         <div class="card">
-            <div class="card-header">
-                <h2 aling="center">MATLAB was opened, wait a while for the necessary processes to load </h2>
-            </div>
             <div class="card-body">
-                <h3></h3>
+                <h2 aling="center">MATLAB was opened, wait a while for the necessary processes to load </h2>
             </div>
         </div>
         <br>
-        <h5> <b> STEP 1: </b> Update inpunt with the curent enabled scenarios </h5>
+        <h5> <b> STEP 1: </b> Update inpunt with the current enabled scenarios </h5>
         <div class="card">
             <div class="card-header">
                 <h2>Update</h2>
             </div>
             <div class="card-body">
 
-                <p>Scenario: <strong>Water quality - 5G Techonoly</strong></p>
+                <p>Scenario: <strong>5G Techonoly</strong></p>
                 {{ this.file_name_1}}
 
                 <hr>
-                <p>Scenario: <strong>Water quality - NB-Iot Techonoly</strong></p>
+                <p>Scenario: <strong>NB-Iot Techonoly</strong></p>
                 {{ this.file_name_2}}
 
                 <hr>
-                <p>Scenario: <strong>Water quality - LoRa Techonoly</strong></p>
+                <p>Scenario: <strong>LoRa Techonoly</strong></p>
                 {{ this.file_name_3}}
 
                 <hr>
                 <p><strong>Extras:</strong></p>
-                <button type="button" class="btn btn-primary" @click="get_data_battery()">Primary</button>
-
-                <button type="button" class="btn btn-primary" @click="get_data_cost()">Cost</button>
+                <button type="button" class="btn btn-primary" @click="get_data_battery()">Calculate Battery</button>
+                <br>
                 {{ this.file_name_4}}
+                <button type="button" class="btn btn-primary" @click="get_data_cost()">Calculate Cost</button>
                 <br>
                 {{ this.file_name_5}}
                 <br>
@@ -98,9 +91,11 @@
 </template>
 
 <script>
-    import axios from 'axios';
+    import { throwStatement } from '@babel/types';
+import axios from 'axios';
 
     export default {
+        name:'Matlab',
         data() {
             return {
                 matlab_status: '',
@@ -112,6 +107,12 @@
                 fiveGSolutionData: "",
                 loraSolutionData: "",
                 nbSolutionData: "",
+            }
+        },
+        props: {
+            system: {
+                type: String,
+                require: true
             }
         },
         component:{
@@ -126,9 +127,18 @@
                 });
             })
 
-            this.get_data_5g_wq();
+
+            // this.$axios.get('/sanctum/csrf-cookie').then(response => {
+            //     console.log('system =', this.system)
+            //     this.$axios.get('/api/type_of_systems/get-selected-system', this.system)
+            //     .catch(function (error) {
+            //         console.error(error);
+            //     });
+            // })
+
+            // this.get_data_5g_wq();
             this.get_data_Lora_wq();
-            this.get_data_NB_wq();
+            // this.get_data_NB_wq();
         },
 
         mounted() {
@@ -158,8 +168,7 @@
             {
                 this.$axios.get('/sanctum/csrf-cookie').then(response => {
                     this.$axios.get('/api/testing-matlab/get_data_5g_wq').then(response => {
-                        console.log(response);
-                        this.file_name_1 = response.data.file_name + 'file was created successfully!';
+                        this.file_name_1 = response.data.file_name + ' ' + 'file was created successfully!';
                         this.fiveGSolutionData = response.data.scenario_data;
                     })
                     .catch(function (error) {
@@ -167,12 +176,15 @@
                     });
                 })
             },
-
             get_data_Lora_wq()
             {
+                let payload = {
+                    system: this.system
+                }
+                console.log('payload ==', payload);
                 this.$axios.get('/sanctum/csrf-cookie').then(response => {
-                    this.$axios.get('/api/testing-matlab/get_data_Lora_wq').then(response => {
-                        this.file_name_2 = response.data.file_name + 'file was created successfully!';
+                    this.$axios.post('/api/testing-matlab/get_data_Lora_wq', payload).then(response => {
+                        this.file_name_2 = response.data.file_name + ' ' + 'file was created successfully!';
                         this.loraSolutionData = response.data.scenario_data;
                     })
                     .catch(function (error) {
@@ -180,12 +192,11 @@
                     });
                 })
             },
-
             get_data_NB_wq()
             {
                 this.$axios.get('/sanctum/csrf-cookie').then(response => {
                     this.$axios.get('/api/testing-matlab/get_data_NB_wq').then(response => {
-                        this.file_name_3 = response.data.file_name + 'file was created successfully!';
+                        this.file_name_3 = response.data.file_name  + ' ' +  'file was created successfully!';
                         this.nbSolutionData = response.data.scenario_data;
                     })
                     .catch(function (error) {
@@ -193,7 +204,6 @@
                     });
                 })
             },
-
             get_data_battery()
             {
                 let payload = {
@@ -202,7 +212,7 @@
                     nbSolutionData: this.nbData
                 }
                 this.$axios.post('/api/testing-matlab/get_data_battery', payload).then(response => {
-                    this.file_name_4 = response.data + 'file was created successfully!';
+                    this.file_name_4 = response.data  + ' ' +  'file was created successfully!';
                 })
                 .catch(function (error) {
                     console.error(error);
@@ -217,7 +227,7 @@
                     nbSolutionData: this.nbData
                 }
                 this.$axios.post('/api/testing-matlab/get_data_cost', payload).then(response => {
-                    this.file_name_5 = response.data + 'file was created successfully!';
+                    this.file_name_5 = response.data  + ' ' +  'file was created successfully!';
                 })
                 .catch(function (error) {
                     console.error(error);
@@ -237,6 +247,13 @@
 {
     margin-top: -50px;
     background-color: rgba(146, 145, 145, 0.404);
+    margin-left: 250px;
+    padding: 10px;
+}
+
+.matlabTopOfThePage
+{
+    margin-top: -80px;
     margin-left: 250px;
     padding: 10px;
 }

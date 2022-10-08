@@ -47,7 +47,6 @@ class LoraSolutionsController extends Controller
     public function update($id, Request $request)
     {
         $loraSolution = LoraSolutions::find($id);
-        dd($loraSolution);
         $loraSolution->update($request->all());
 
         return response()->json('The lora Solution successfully updated');

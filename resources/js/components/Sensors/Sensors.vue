@@ -9,6 +9,8 @@
                 <th>ID</th>
                 <th>Name</th>
                 <th>Technology</th>
+                <th>Cost</th>
+                <th>Installation cost</th>
                 <th>Description</th>
                 <th>Updated At</th>
                 <th>Actions</th>
@@ -18,7 +20,9 @@
             <tr v-for="sensor in sensors" :key="sensor.id">
                 <td>{{ sensor.id }}</td>
                 <td>{{ sensor.name }}</td>
-                <td>{{ sensor.technology_id }}</td>
+                <td>{{ sensor.technology_name }}</td>
+                <td>{{ sensor.cost }}</td>
+                <td>{{ sensor.installation_cost }}</td>
                 <td>{{ sensor.description }}</td>
                 <td>{{ sensor.updated_at }}</td>
                 <td>

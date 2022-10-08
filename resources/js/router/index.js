@@ -38,7 +38,8 @@ import NbSolutions from '../components/nbSolutions/nbSolutions'
 import AddNbSolution from '../components/nbSolutions/AddnbSolution'
 import EditNbSolution from '../components/nbSolutions/EditNbSolution'
 
-import Matlab from '../components/Matlab/Matlab'
+import matlab from '../components/Matlab/Matlab'
+import FirstStep from '../components/Matlab/FirstStep'
 
 import Charts from '../components/Charts/Charts'
 import TablesView from '../components/Tables/TablesView'
@@ -214,10 +215,18 @@ export const routes = [
     },
 
     {
+        name: 'matlab',
+        path: '/testing-matlab-next/:system',
+        component: matlab,
+        props: true
+    },
+
+    {
         name: 'testing-matlab',
         path: '/testing-matlab',
-        component: Matlab
+        component: FirstStep
     },
+
 
     {
         name: 'Tables',

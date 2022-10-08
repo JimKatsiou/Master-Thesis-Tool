@@ -8,11 +8,21 @@
                 <form @submit.prevent="addScenario">
                     <div class="form-group">
                         <label>Technology</label>
-                        <input type="text" class="form-control" v-model="scenario.technology_name">
+                        <v-select :options="technologies"
+                            v-model="scenario.technology_name" :placeholder="'Select technoly'">
+                        </v-select>
                     </div>
                     <div class="form-group">
                         <label>Type of System</label>
                         <input type="text" class="form-control" v-model="scenario.type_of_system_name">
+                    </div>
+                    <div class="form-group">
+                        <label>Cost</label>
+                        <input type="text" class="form-control" v-model="scenario.cost">
+                    </div>
+                    <div class="form-group">
+                        <label>Installation cost</label>
+                        <input type="text" class="form-control" v-model="scenario.installation_cost">
                     </div>
                     <div class="form-group">
                         <label>Description</label>
@@ -28,12 +38,20 @@
 </template>
 
 <script>
+import vSelect from 'vue-select';
+import "vue-select/dist/vue-select.css";
+
 export default {
     data() {
         return {
-            scenario: {}
+            scenario: {},
+            technologies: [],
         }
     },
+    components: {
+         vSelect,
+    },
+
     methods: {
         addScenario() {
             this.$axios.get('/sanctum/csrf-cookie').then(response => {
@@ -45,14 +63,30 @@ export default {
                         console.error(error);
                     });
             })
-        }
+        },
     },
     beforeRouteEnter(to, from, next) {
         if (!window.Laravel.isLoggedin) {
             window.location.href = "/";
         }
         next();
-    }
+    },
+    mounted() {
+        this.$axios.get('/sanctum/csrf-cookie').then(response => {
+            this.$axios.get('/api/technologies/get-technologies').then(response => {
+                let technologies = response.data;
+                let tech = []
+                for (let i = 0; i < technologies.length; i++)
+                {
+                    tech[i] = technologies[i]['name'];
+                }
+                this.technologies = tech;
+            })
+            .catch(function (error) {
+                console.error(error);
+            });
+        })
+    },
 }
 </script>
 

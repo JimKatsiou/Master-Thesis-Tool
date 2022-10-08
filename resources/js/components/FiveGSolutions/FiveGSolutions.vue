@@ -23,11 +23,11 @@
             <tbody>
             <tr v-for="fiveGSolution in fiveGSolutions" :key="fiveGSolution.id">
                 <td>{{ fiveGSolution.id }}</td>
-                <td>{{ fiveGSolution.sensors_type_a }}</td>
+                <td>{{ fiveGSolution.five_g_sensors_type_a }}</td>
                 <td>{{ fiveGSolution.number_of_5g_sensors_type_a }}</td>
-                <td>{{ fiveGSolution.sensors_type_b }}</td>
+                <td>{{ fiveGSolution.five_g_sensors_type_b }}</td>
                 <td>{{ fiveGSolution.number_of_5g_sensors_type_b }}</td>
-                <td>{{ fiveGSolution.sensors_type_c }}</td>
+                <td>{{ fiveGSolution.five_g_sensors_type_c }}</td>
                 <td>{{ fiveGSolution.number_of_5g_sensors_type_c }}</td>
                 <td>{{ fiveGSolution.updated_at }}</td>
                 <td>

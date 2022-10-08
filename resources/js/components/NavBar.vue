@@ -10,11 +10,11 @@
                 <div class="list-group list-group-flush mx-3 mt-4">
                     <router-link to="/dashboard" class="list-group-item list-group-item-action py-2 ripple active">Dashboard</router-link>
                     <hr>
-                    <router-link to="/scenarios" class="list-group-item list-group-item-action py-2 ripple">Scenarios</router-link>
-                    <router-link to="/technologies" class="list-group-item list-group-item-action py-2 ripple">Technologies</router-link>
                     <router-link to="/type_of_systems" class="list-group-item list-group-item-action py-2 ripple">Type of systems</router-link>
+                    <router-link to="/technologies" class="list-group-item list-group-item-action py-2 ripple">Technologies</router-link>
                     <router-link to="/sensors" class="list-group-item list-group-item-action py-2 ripple">Sensors</router-link>
                     <router-link to="/gateways" class="list-group-item list-group-item-action py-2 ripple">Gateways</router-link>
+                    <router-link to="/scenarios" class="list-group-item list-group-item-action py-2 ripple">Scenarios</router-link>
                     <hr>
                     <router-link to="/testing-matlab" class="list-group-item list-group-item-action py-2 ripple">Testing - Matlab</router-link>
                     <hr>
@@ -37,7 +37,7 @@
                     <router-link to="/" class="list-group-item list-group-item-action py-2 ripple active">Home</router-link>
                     <router-link to="/login" class="list-group-item list-group-item-action py-2 ripple">Login</router-link>
                     <router-link to="/register" class="list-group-item list-group-item-action py-2 ripple">Register</router-link>
-                    <router-link to="/about" class="list-group-item list-group-item-action py-2 ripple">About</router-link>
+                    <!-- <router-link to="/about" class="list-group-item list-group-item-action py-2 ripple">About</router-link> -->
                 </div>
             </div>
         </div>

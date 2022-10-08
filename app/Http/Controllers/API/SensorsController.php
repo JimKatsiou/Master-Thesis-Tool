@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\Sensor;
+use App\Models\Technologies;
 use Illuminate\Http\Request;
 
 class SensorsController extends Controller
@@ -21,14 +22,16 @@ class SensorsController extends Controller
         $sensor = new Sensor();
 
         $sensor->name = $request->name;
-        $sensor->technology_id = $request->technology_id;
+        $sensor->technology_name = $request->technology_name;
+        $technology_id = Technologies::select('id')->where('name', $request->technology_id)->first();
+        $sensor->technology_id = $technology_id['id'];
         if(isset($request->description)){
             $sensor->description = $request->description;
         } else {
             $sensor->description = null;
         }
-        $sensor->cost = 100;
-        $sensor->installation_cost = 50;
+        $sensor->cost = $request->cost;
+        $sensor->installation_cost = $request->installation_cost;
 
         $sensor->save();
 
