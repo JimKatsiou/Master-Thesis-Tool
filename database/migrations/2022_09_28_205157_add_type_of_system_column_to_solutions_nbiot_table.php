@@ -14,7 +14,7 @@ class AddTypeOfSystemColumnToSolutionsNbiotTable extends Migration
     public function up()
     {
         Schema::table('nb_iot_solutions', function (Blueprint $table) {
-            $table->string('technology_name')->after('number_of_5g_sensors_type_c');
+            $table->string('technology_name')->after('number_of_nb_sensors_type_c');
         });
     }
 
