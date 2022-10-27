@@ -121,7 +121,7 @@ export default ({
 
 /* Sidebar */
 .sidebar {
-    height: 100%; /* Full-height: remove this if you want "auto" height */
+    height: 100%;  /* Full-height: remove this if you want "auto" height */
     width: 250px; /* Set the width of the sidebar */
     position: absolute;
     top: 0; /* Stay at the top */

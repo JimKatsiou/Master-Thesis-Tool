@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddTypeOfSystemColumnToSolutions5gTable extends Migration
+class AddBatteryIdColumnToSensorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddTypeOfSystemColumnToSolutions5gTable extends Migration
      */
     public function up()
     {
-        Schema::table('five_g_solutions', function (Blueprint $table) {
-            $table->string('type_of_system')->after('number_of_5g_sensors_type_c');
+        Schema::table('sensors', function (Blueprint $table) {
+            $table->integer('battery_id')->after('technology_name');
         });
     }
 
@@ -25,8 +25,8 @@ class AddTypeOfSystemColumnToSolutions5gTable extends Migration
      */
     public function down()
     {
-        Schema::table('five_g_solutions', function (Blueprint $table) {
-            $table->dropColumn('type_of_system');
+        Schema::table('sensors', function (Blueprint $table) {
+            $table->dropColumn('battery_id');
         });
     }
 }

@@ -14,7 +14,7 @@ class AddTypeOfSystemColumnToSolutionsLoraTable extends Migration
     public function up()
     {
         Schema::table('lora_solutions', function (Blueprint $table) {
-            $table->string('technology_name')->after('number_of_lora_gateways_type_b');
+            $table->string('type_of_system')->after('number_of_lora_gateways_type_b');
         });
     }
 
@@ -26,7 +26,7 @@ class AddTypeOfSystemColumnToSolutionsLoraTable extends Migration
     public function down()
     {
         Schema::table('lora_solutions', function (Blueprint $table) {
-            $table->dropColumn('technology_name');
+            $table->dropColumn('type_of_system');
         });
     }
 }

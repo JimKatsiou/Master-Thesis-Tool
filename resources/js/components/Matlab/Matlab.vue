@@ -7,7 +7,7 @@
         </div>
         <div class="card">
             <div class="card-body">
-                <h2 aling="center">MATLAB was opened, wait a while for the necessary processes to load </h2>
+                <h2 aling="center">MATLAB was opened, wait a while for the necessary processes to load.</h2>
             </div>
         </div>
         <br>
@@ -30,19 +30,19 @@
                 {{ this.file_name_3}}
 
                 <hr>
-                <p><strong>Extras:</strong></p>
+                <p><strong>Press the buttons below to generate data:</strong></p>
                 <button type="button" class="btn btn-primary" @click="get_data_battery()">Calculate Battery</button>
-                <br>
+                <br><br>
                 {{ this.file_name_4}}
+                <hr>
                 <button type="button" class="btn btn-primary" @click="get_data_cost()">Calculate Cost</button>
-                <br>
+                <br><br>
                 {{ this.file_name_5}}
-                <br>
             </div>
         </div>
 
         <br>
-        <h5> <b> STEP 2: </b> Run which ever algorith you want. </h5>
+        <h5> <b> STEP 2: </b>Run whichever algorithm you want. (Selected system: <b>{{ this.system }}</b>)</h5>
         <div class="card">
         <div class="card-header">
             <h2>Greedy code, find cheapest scenarios</h2>
@@ -51,18 +51,18 @@
         <ul>
             <li>
                 <h5> For cost-effective scenario:</h5>
-                <h6> Direcory: <b> MattlabCodes/Greedy_CostEffective_Scenrio.m </b> </h6>
+                <h6> Direcory: <b> storage/MattlabCodes/Greedy_CostEffective_Scenrio.m </b> </h6>
             </li>
             <hr>
             <li>
                 <h5> For energy-effective scenario: </h5>
-                <h6> Direcory: <b> MattlabCodes/Greedy_EnergyEffective_Scenrio.m </b> </h6>
+                <h6> Direcory: <b> storage/MattlabCodes/Greedy_EnergyEffective_Scenrio.m </b> </h6>
             </li>
-            <hr>
+            <!-- <hr>
             <li>
                 <h5> For most-effective scenario (both cost and energy): </h5>
                 <h6> Direcory: <b> MattlabCodes/Greedy_MostEffective_Scenrio.m </b> </h6>
-            </li>
+            </li> -->
         </ul>
         </div>
     </div>
@@ -74,6 +74,8 @@
         <div class="card-body">
         <ul>
             <li>
+                <h5> For most-effective scenario: </h5>
+                <h6> Direcory: <b> storage/MattlabCodes/Main_GA.m </b> </h6>
             </li>
         </ul>
         </div>
@@ -121,29 +123,18 @@ import axios from 'axios';
 
         beforeMount() {
             this.$axios.get('/sanctum/csrf-cookie').then(response => {
-                this.$axios.get('/api/testing-matlab/run-matlab')
+                this.$axios.get('/api/testing-matlab/testing-matlab-next/runMatlab')
                 .catch(function (error) {
                     console.error(error);
                 });
             })
-
-
-            // this.$axios.get('/sanctum/csrf-cookie').then(response => {
-            //     console.log('system =', this.system)
-            //     this.$axios.get('/api/type_of_systems/get-selected-system', this.system)
-            //     .catch(function (error) {
-            //         console.error(error);
-            //     });
-            // })
-
-            // this.get_data_5g_wq();
+            this.get_data_5g_wq();
             this.get_data_Lora_wq();
-            // this.get_data_NB_wq();
+            this.get_data_NB_wq();
         },
 
         mounted() {
-            // this.get_data_battery();
-            // this.get_data_cost();
+
         },
 
         computed: {
@@ -166,8 +157,11 @@ import axios from 'axios';
 
             get_data_5g_wq() // this function fetch data table and it store into json formt and retutn data in json format
             {
+                let payload = {
+                    system: this.system
+                }
                 this.$axios.get('/sanctum/csrf-cookie').then(response => {
-                    this.$axios.get('/api/testing-matlab/get_data_5g_wq').then(response => {
+                    this.$axios.post('/api/testing-matlab/get_data_5g_wq', payload).then(response => {
                         this.file_name_1 = response.data.file_name + ' ' + 'file was created successfully!';
                         this.fiveGSolutionData = response.data.scenario_data;
                     })
@@ -176,12 +170,12 @@ import axios from 'axios';
                     });
                 })
             },
+
             get_data_Lora_wq()
             {
                 let payload = {
                     system: this.system
                 }
-                console.log('payload ==', payload);
                 this.$axios.get('/sanctum/csrf-cookie').then(response => {
                     this.$axios.post('/api/testing-matlab/get_data_Lora_wq', payload).then(response => {
                         this.file_name_2 = response.data.file_name + ' ' + 'file was created successfully!';
@@ -192,10 +186,14 @@ import axios from 'axios';
                     });
                 })
             },
+
             get_data_NB_wq()
             {
+                let payload = {
+                    system: this.system
+                }
                 this.$axios.get('/sanctum/csrf-cookie').then(response => {
-                    this.$axios.get('/api/testing-matlab/get_data_NB_wq').then(response => {
+                    this.$axios.post('/api/testing-matlab/get_data_NB_wq', payload).then(response => {
                         this.file_name_3 = response.data.file_name  + ' ' +  'file was created successfully!';
                         this.nbSolutionData = response.data.scenario_data;
                     })
@@ -204,6 +202,7 @@ import axios from 'axios';
                     });
                 })
             },
+
             get_data_battery()
             {
                 let payload = {
@@ -212,7 +211,8 @@ import axios from 'axios';
                     nbSolutionData: this.nbData
                 }
                 this.$axios.post('/api/testing-matlab/get_data_battery', payload).then(response => {
-                    this.file_name_4 = response.data  + ' ' +  'file was created successfully!';
+                    this.file_name_4 = response.data.file_name  + ' ' +  'file was created successfully!';
+                    this.battery_data = response.data.scenario_data;
                 })
                 .catch(function (error) {
                     console.error(error);
@@ -227,7 +227,8 @@ import axios from 'axios';
                     nbSolutionData: this.nbData
                 }
                 this.$axios.post('/api/testing-matlab/get_data_cost', payload).then(response => {
-                    this.file_name_5 = response.data  + ' ' +  'file was created successfully!';
+                    this.file_name_5 = response.data.file_name  + ' ' +  'file was created successfully!';
+                    this.battery_data = response.data.scenario_data;
                 })
                 .catch(function (error) {
                     console.error(error);

@@ -39450,23 +39450,15 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     this.$axios.get('/sanctum/csrf-cookie').then(function (response) {
-      _this.$axios.get('/api/testing-matlab/run-matlab')["catch"](function (error) {
+      _this.$axios.get('/api/testing-matlab/testing-matlab-next/runMatlab')["catch"](function (error) {
         console.error(error);
       });
-    }); // this.$axios.get('/sanctum/csrf-cookie').then(response => {
-    //     console.log('system =', this.system)
-    //     this.$axios.get('/api/type_of_systems/get-selected-system', this.system)
-    //     .catch(function (error) {
-    //         console.error(error);
-    //     });
-    // })
-    // this.get_data_5g_wq();
-
-    this.get_data_Lora_wq(); // this.get_data_NB_wq();
+    });
+    this.get_data_5g_wq();
+    this.get_data_Lora_wq();
+    this.get_data_NB_wq();
   },
-  mounted: function mounted() {// this.get_data_battery();
-    // this.get_data_cost();
-  },
+  mounted: function mounted() {},
   computed: {
     fiveGData: function fiveGData() {
       var reqObject = JSON.parse(JSON.stringify(this.fiveGSolutionData));
@@ -39486,8 +39478,11 @@ __webpack_require__.r(__webpack_exports__);
     {
       var _this2 = this;
 
+      var payload = {
+        system: this.system
+      };
       this.$axios.get('/sanctum/csrf-cookie').then(function (response) {
-        _this2.$axios.get('/api/testing-matlab/get_data_5g_wq').then(function (response) {
+        _this2.$axios.post('/api/testing-matlab/get_data_5g_wq', payload).then(function (response) {
           _this2.file_name_1 = response.data.file_name + ' ' + 'file was created successfully!';
           _this2.fiveGSolutionData = response.data.scenario_data;
         })["catch"](function (error) {
@@ -39501,7 +39496,6 @@ __webpack_require__.r(__webpack_exports__);
       var payload = {
         system: this.system
       };
-      console.log('payload ==', payload);
       this.$axios.get('/sanctum/csrf-cookie').then(function (response) {
         _this3.$axios.post('/api/testing-matlab/get_data_Lora_wq', payload).then(function (response) {
           _this3.file_name_2 = response.data.file_name + ' ' + 'file was created successfully!';
@@ -39514,8 +39508,11 @@ __webpack_require__.r(__webpack_exports__);
     get_data_NB_wq: function get_data_NB_wq() {
       var _this4 = this;
 
+      var payload = {
+        system: this.system
+      };
       this.$axios.get('/sanctum/csrf-cookie').then(function (response) {
-        _this4.$axios.get('/api/testing-matlab/get_data_NB_wq').then(function (response) {
+        _this4.$axios.post('/api/testing-matlab/get_data_NB_wq', payload).then(function (response) {
           _this4.file_name_3 = response.data.file_name + ' ' + 'file was created successfully!';
           _this4.nbSolutionData = response.data.scenario_data;
         })["catch"](function (error) {
@@ -39532,7 +39529,8 @@ __webpack_require__.r(__webpack_exports__);
         nbSolutionData: this.nbData
       };
       this.$axios.post('/api/testing-matlab/get_data_battery', payload).then(function (response) {
-        _this5.file_name_4 = response.data + ' ' + 'file was created successfully!';
+        _this5.file_name_4 = response.data.file_name + ' ' + 'file was created successfully!';
+        _this5.battery_data = response.data.scenario_data;
       })["catch"](function (error) {
         console.error(error);
       });
@@ -39546,7 +39544,8 @@ __webpack_require__.r(__webpack_exports__);
         nbSolutionData: this.nbData
       };
       this.$axios.post('/api/testing-matlab/get_data_cost', payload).then(function (response) {
-        _this6.file_name_5 = response.data + ' ' + 'file was created successfully!';
+        _this6.file_name_5 = response.data.file_name + ' ' + 'file was created successfully!';
+        _this6.battery_data = response.data.scenario_data;
       })["catch"](function (error) {
         console.error(error);
       });
@@ -41729,7 +41728,7 @@ var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   "class": "card-body"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h2", {
   aling: "center"
-}, "MATLAB was opened, wait a while for the necessary processes to load ")])], -1
+}, "MATLAB was opened, wait a while for the necessary processes to load.")])], -1
 /* HOISTED */
 );
 
@@ -41779,7 +41778,7 @@ var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Extras:")], -1
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("strong", null, "Press the buttons below to generate data:")], -1
 /* HOISTED */
 );
 
@@ -41791,11 +41790,31 @@ var _hoisted_18 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElement
 /* HOISTED */
 );
 
-var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+var _hoisted_19 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("hr", null, null, -1
 /* HOISTED */
 );
 
-var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<br><h5><b> STEP 2: </b> Run which ever algorith you want. </h5><div class=\"card\"><div class=\"card-header\"><h2>Greedy code, find cheapest scenarios</h2></div><div class=\"card-body\"><ul><li><h5> For cost-effective scenario:</h5><h6> Direcory: <b> MattlabCodes/Greedy_CostEffective_Scenrio.m </b></h6></li><hr><li><h5> For energy-effective scenario: </h5><h6> Direcory: <b> MattlabCodes/Greedy_EnergyEffective_Scenrio.m </b></h6></li><hr><li><h5> For most-effective scenario (both cost and energy): </h5><h6> Direcory: <b> MattlabCodes/Greedy_MostEffective_Scenrio.m </b></h6></li></ul></div></div><div class=\"card\"><div class=\"card-header\"><h2>Genetic Algorithm</h2></div><div class=\"card-body\"><ul><li></li></ul></div></div><br><h5><b> STEP 3: </b> Results creation. </h5><div class=\"card\"><div class=\"card-header\"><h2>Results</h2></div></div>", 7);
+var _hoisted_20 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+/* HOISTED */
+);
+
+var _hoisted_21 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+/* HOISTED */
+);
+
+var _hoisted_22 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+/* HOISTED */
+);
+
+var _hoisted_23 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("b", null, " STEP 2: ", -1
+/* HOISTED */
+);
+
+var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Run whichever algorithm you want. (Selected system: ");
+
+var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(")");
+
+var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"card\"><div class=\"card-header\"><h2>Greedy code, find cheapest scenarios</h2></div><div class=\"card-body\"><ul><li><h5> For cost-effective scenario:</h5><h6> Direcory: <b> storage/MattlabCodes/Greedy_CostEffective_Scenrio.m </b></h6></li><hr><li><h5> For energy-effective scenario: </h5><h6> Direcory: <b> storage/MattlabCodes/Greedy_EnergyEffective_Scenrio.m </b></h6></li><!-- &lt;hr&gt;\n            &lt;li&gt;\n                &lt;h5&gt; For most-effective scenario (both cost and energy): &lt;/h5&gt;\n                &lt;h6&gt; Direcory: &lt;b&gt; MattlabCodes/Greedy_MostEffective_Scenrio.m &lt;/b&gt; &lt;/h6&gt;\n            &lt;/li&gt; --></ul></div></div><div class=\"card\"><div class=\"card-header\"><h2>Genetic Algorithm</h2></div><div class=\"card-body\"><ul><li><h5> For most-effective scenario: </h5><h6> Direcory: <b> storage/MattlabCodes/Main_GA.m </b></h6></li></ul></div></div><br><h5><b> STEP 3: </b> Results creation. </h5><div class=\"card\"><div class=\"card-header\"><h2>Results</h2></div></div>", 5);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, _hoisted_4, _hoisted_5, _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_7, [_hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(this.file_name_1) + " ", 1
@@ -41810,17 +41829,19 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     onClick: _cache[0] || (_cache[0] = function ($event) {
       return $options.get_data_battery();
     })
-  }, "Calculate Battery"), _hoisted_17, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(this.file_name_4) + " ", 1
+  }, "Calculate Battery"), _hoisted_17, _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(this.file_name_4) + " ", 1
   /* TEXT */
-  ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  ), _hoisted_19, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     type: "button",
     "class": "btn btn-primary",
     onClick: _cache[1] || (_cache[1] = function ($event) {
       return $options.get_data_cost();
     })
-  }, "Calculate Cost"), _hoisted_18, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(this.file_name_5) + " ", 1
+  }, "Calculate Cost"), _hoisted_20, _hoisted_21, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(this.file_name_5), 1
   /* TEXT */
-  ), _hoisted_19])]), _hoisted_20])], 64
+  )])]), _hoisted_22, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("h5", null, [_hoisted_23, _hoisted_24, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("b", null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(this.system), 1
+  /* TEXT */
+  ), _hoisted_25]), _hoisted_26])], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -50446,7 +50467,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nbody {\n  background-color: #fbfbfb;\n}\n@media (min-width: 991.98px) {\nmain {\n    padding-left: 240px;\n}\n}\n\n/* Sidebar */\n.sidebar {\n    height: 100%; /* Full-height: remove this if you want \"auto\" height */\n    width: 250px; /* Set the width of the sidebar */\n    position: absolute;\n    top: 0; /* Stay at the top */\n    bottom: 0;\n    left: 0;\n    padding: 10px 0 0; /* Height of navbar */\n    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);\n    z-index: 1;\n}\n@media (max-width: 991.98px) {\n.sidebar {\n    width: 100%;\n}\n}\n.sidebar .active {\n  border-radius: 5px;\n  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);\n}\n\n\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nbody {\n  background-color: #fbfbfb;\n}\n@media (min-width: 991.98px) {\nmain {\n    padding-left: 240px;\n}\n}\n\n/* Sidebar */\n.sidebar {\n    height: 100%;  /* Full-height: remove this if you want \"auto\" height */\n    width: 250px; /* Set the width of the sidebar */\n    position: absolute;\n    top: 0; /* Stay at the top */\n    bottom: 0;\n    left: 0;\n    padding: 10px 0 0; /* Height of navbar */\n    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);\n    z-index: 1;\n}\n@media (max-width: 991.98px) {\n.sidebar {\n    width: 100%;\n}\n}\n.sidebar .active {\n  border-radius: 5px;\n  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);\n}\n\n\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
