@@ -87,13 +87,18 @@
         <div class="card-header">
             <h2>Results</h2>
         </div>
+        <div class="card-body">
+            <div class="row">
+                <button type="button" class="btn btn-primary" @click="getAllResults()">Fetch results</button>
+            </div>
+        </div>
     </div>
 
 </div>
 </template>
 
 <script>
-    import { throwStatement } from '@babel/types';
+import { throwStatement } from '@babel/types';
 import axios from 'axios';
 
     export default {
@@ -233,6 +238,19 @@ import axios from 'axios';
                 .catch(function (error) {
                     console.error(error);
                 });
+            },
+
+            getAllResults()
+            {
+                this.$axios.get('/sanctum/csrf-cookie').then(response => {
+                    this.$axios.get('/api/testing-matlab/fetch-results').then(response => {
+                        this.$toaster.success('Your toaster success message.')
+                        toastr.success('you are logged in');
+                    })
+                    .catch(function (error) {
+                        console.error(error);
+                    });
+                })
             }
         },
     }

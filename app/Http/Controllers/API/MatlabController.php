@@ -18,7 +18,7 @@ class MatlabController extends Controller
     // This function runs Matlab
     public function runMatlab()
     {
-        exec("matlab.exe");
+        //exec("matlab.exe");
     }
 
     public function getData5gWQ(Request $request)
@@ -193,10 +193,10 @@ class MatlabController extends Controller
             $batteries[$i]['battery_consumption_lora_type_c'] = $batteryC->capacity;
 
             $batteries[$i]['battery_capacity_lora_gateway_type_a'] = $batteryGA->capacity;
-            $batteries[$i]['battery_consumption_lora_type_a'] = $batteryGA->capacity;
+            $batteries[$i]['battery_consumption_lora_gateway_type_a'] = $batteryGA->capacity;
 
             $batteries[$i]['battery_capacity_lora_gateway_type_b'] = $batteryGB->capacity;
-            $batteries[$i]['battery_consumption_lora_type_b'] = $batteryGB->capacity;
+            $batteries[$i]['battery_consumption_lora_gateway_type_b'] = $batteryGB->capacity;
             $i++;
         }
 
@@ -347,6 +347,15 @@ class MatlabController extends Controller
         $response->s_data = $s_data;
         $response->scenario_data = $scenario_data;
         return $response;
+    }
+
+    public function fetch_results()
+    {
+        $cheap_5g_solutions = json_decode(file_get_contents(storage_path() . "/app/public/MatlabCodes/Results/Greedy/cost-effective-5g-solutions_by_cost.json"), true);
+
+        echo "<pre>";
+        print_r($cheap_5g_solutions);
+
     }
 }
 ?>
