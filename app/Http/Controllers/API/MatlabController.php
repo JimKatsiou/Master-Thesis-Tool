@@ -8,6 +8,8 @@ use App\Models\LoraSolutions;
 use App\Models\NbSolutions;
 use App\Models\Battery;
 use App\Models\Gateway;
+use App\Models\Result;
+use App\Models\ResultsConfig;
 use App\Models\Sensor;
 use stdClass;
 use Illuminate\Http\Request;
@@ -351,10 +353,78 @@ class MatlabController extends Controller
 
     public function fetch_results()
     {
-        $cheap_5g_solutions = json_decode(file_get_contents(storage_path() . "/app/public/MatlabCodes/Results/Greedy/cost-effective-5g-solutions_by_cost.json"), true);
+        $cost_effective_5g_solutions_by_cost = json_decode(file_get_contents(storage_path() . "/app/public/MatlabCodes/Results/Greedy/cost-effective-5g-solutions_by_cost.json"), true);
+        $cheap_5g_solutions = json_decode(file_get_contents(storage_path() . "/app/public/MatlabCodes/Results/Greedy/cost-effective-5g-solutions_by_solution.json"), true);
 
-        echo "<pre>";
-        print_r($cheap_5g_solutions);
+        // $cheap_5g_solutions = json_decode(file_get_contents(storage_path() . "/app/public/MatlabCodes/Results/Greedy/cost-effective-5g-solutions_by_solution.json"), true);
+        // $cheap_5g_solutions = json_decode(file_get_contents(storage_path() . "/app/public/MatlabCodes/Results/Greedy/cost-effective-5g-solutions_by_solution.json"), true);
+        // $cheap_5g_solutions = json_decode(file_get_contents(storage_path() . "/app/public/MatlabCodes/Results/Greedy/cost-effective-5g-solutions_by_solution.json"), true);
+        // $cheap_5g_solutions = json_decode(file_get_contents(storage_path() . "/app/public/MatlabCodes/Results/Greedy/cost-effective-5g-solutions_by_solution.json"), true);
+        // $cheap_5g_solutions = json_decode(file_get_contents(storage_path() . "/app/public/MatlabCodes/Results/Greedy/cost-effective-5g-solutions_by_solution.json"), true);
+
+
+
+        // echo "<pre>";
+        // print_r($cheap_5g_solutions);
+
+        //dd($cost_effective_5g_solutions_by_cost, $cheap_5g_solutions);
+
+        $merged = array_merge($cost_effective_5g_solutions_by_cost,$cheap_5g_solutions);
+       // dd(count($merged));
+
+        // Results
+        $last_simulation_number = ResultsConfig::first();
+        if($last_simulation_number != null)
+        {
+            $last_number = $last_simulation_number->last_number;
+        } else {
+            $last_simulation_number = new ResultsConfig();
+            $last_number = 0;
+        }
+
+        $new_results = new Result();
+
+        $new_results->simulation_nubmer = $last_number + 1;
+        // $new_results->simulation_name = ;
+        $new_results->technology = '5G';
+        $new_results->type_of_system = 'Water Quality';
+        $new_results->execution_date = date('d-m-y h:i:s');
+
+        // $new_results->cheapest_5g_solutionTableCost = ;
+        // $new_results->cheapest_5g_solutionTable = ;
+
+        // $new_results->cheapest_lora_solutionTableCost = ;
+        // $new_results->cheapest_lora_solutionTable = ;
+
+        // $new_results->cheapest_nb_solutionTableCost = ;
+        // $new_results->cheapest_nb_solutionTable = ;
+
+        // $new_results->best_5g_solutionTableBL = ;
+        // $new_results->best_5g_solutionTableBL = ;
+        // $new_results->best_5g_solutionTable = ;
+
+        // $new_results->best_lora_gateway_solutionTableBL = ;
+        // $new_results->best_lora_gateway_solutionTableBL_sensorsBL = ;
+        // $new_results->best_lora_solutionTableBL = ;
+        // $new_results->best_lora_solutionTableBL_GatewaysBL= ;
+        // $new_results->best_lora_gateway_solutionTable = ;
+        // $new_results->best_lora_solutionTable = ;
+
+        // $new_results->best_nb_solutionTableBL = ;
+        // $new_results->best_nb_solutionTable = ;
+
+        $new_results->save();
+
+        dd($last_simulation_number);
+        $last_simulation_number->last_number = $new_results->simulation_nubmer;
+        $last_simulation_number->save();
+
+
+        // for ($i=0; $i < count($merged); $i++)
+        // {
+
+        // }
+
 
     }
 }
