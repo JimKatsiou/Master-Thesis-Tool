@@ -41827,7 +41827,7 @@ var _hoisted_24 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNo
 
 var _hoisted_25 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(")");
 
-var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"card\"><div class=\"card-header\"><h2>Greedy code, find cheapest scenarios</h2></div><div class=\"card-body\"><ul><li><h5> For cost-effective scenario:</h5><h6> Direcory: <b> storage/MattlabCodes/Greedy_CostEffective_Scenrio.m </b></h6></li><hr><li><h5> For energy-effective scenario: </h5><h6> Direcory: <b> storage/MattlabCodes/Greedy_EnergyEffective_Scenrio.m </b></h6></li><!-- &lt;hr&gt;\r\n            &lt;li&gt;\r\n                &lt;h5&gt; For most-effective scenario (both cost and energy): &lt;/h5&gt;\r\n                &lt;h6&gt; Direcory: &lt;b&gt; MattlabCodes/Greedy_MostEffective_Scenrio.m &lt;/b&gt; &lt;/h6&gt;\r\n            &lt;/li&gt; --></ul></div></div><div class=\"card\"><div class=\"card-header\"><h2>Genetic Algorithm</h2></div><div class=\"card-body\"><ul><li><h5> For most-effective scenario: </h5><h6> Direcory: <b> storage/MattlabCodes/Main_GA.m </b></h6></li></ul></div></div><br><h5><b> STEP 3: </b> Results creation. </h5>", 4);
+var _hoisted_26 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"card\"><div class=\"card-header\"><h2>Greedy code, find cheapest scenarios</h2></div><div class=\"card-body\"><ul><li><h5> For cost-effective scenario:</h5><h6> Direcory: <b> storage/MattlabCodes/Greedy_CostEffective_Scenrio.m </b></h6></li><hr><li><h5> For energy-effective scenario: </h5><h6> Direcory: <b> storage/MattlabCodes/Greedy_EnergyEffective_Scenrio.m </b></h6></li><!-- &lt;hr&gt;\n            &lt;li&gt;\n                &lt;h5&gt; For most-effective scenario (both cost and energy): &lt;/h5&gt;\n                &lt;h6&gt; Direcory: &lt;b&gt; MattlabCodes/Greedy_MostEffective_Scenrio.m &lt;/b&gt; &lt;/h6&gt;\n            &lt;/li&gt; --></ul></div></div><div class=\"card\"><div class=\"card-header\"><h2>Genetic Algorithm</h2></div><div class=\"card-body\"><ul><li><h5> For most-effective scenario: </h5><h6> Direcory: <b> storage/MattlabCodes/Main_GA.m </b></h6></li></ul></div></div><br><h5><b> STEP 3: </b> Results creation. </h5>", 4);
 
 var _hoisted_30 = {
   "class": "card"
@@ -50482,7 +50482,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\n.topOfThePage\r\n{\r\n    margin-top: -50px;\r\n    background-color: rgba(146, 145, 145, 0.404);\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\n.matlabTopOfThePage\r\n{\r\n    margin-top: -80px;\r\n    margin-left: 250px;\r\n    padding: 10px;\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.nextOfSideBar {\n    margin-left: 250px;\n    padding: 10px;\n}\n.topOfThePage\n{\n    margin-top: -50px;\n    background-color: rgba(146, 145, 145, 0.404);\n    margin-left: 250px;\n    padding: 10px;\n}\n.matlabTopOfThePage\n{\n    margin-top: -80px;\n    margin-left: 250px;\n    padding: 10px;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
