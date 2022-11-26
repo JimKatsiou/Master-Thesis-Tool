@@ -242,10 +242,13 @@ import axios from 'axios';
 
             getAllResults()
             {
+                let payload = {
+                    system: this.system
+                }
                 this.$axios.get('/sanctum/csrf-cookie').then(response => {
-                    this.$axios.get('/api/testing-matlab/fetch-results').then(response => {
+                    this.$axios.post('/api/testing-matlab/fetch-results', payload).then(response => {
                         this.$toaster.success('Your toaster success message.')
-                        toastr.success('you are logged in');
+                        toastr.success('Data fetched successfully!');
                     })
                     .catch(function (error) {
                         console.error(error);

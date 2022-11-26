@@ -97,5 +97,5 @@ Route::group(['prefix' => 'testing-matlab', 'middleware' => 'auth:sanctum'], fun
     Route::post('get_data_NB_wq', [MatlabController::class, 'get_data_NB_wq']);
     Route::post('get_data_battery', [MatlabController::class, 'get_data_battery']);
     Route::post('get_data_cost', [MatlabController::class, 'get_data_cost']);
-    Route::get('fetch-results', [MatlabController::class, 'fetch_results']);
+    Route::post('fetch-results', [MatlabController::class, 'fetch_results']);
 });

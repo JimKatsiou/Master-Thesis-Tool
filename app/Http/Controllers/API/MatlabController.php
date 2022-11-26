@@ -20,7 +20,7 @@ class MatlabController extends Controller
     // This function runs Matlab
     public function runMatlab()
     {
-        exec("matlab.exe");
+        //exec("matlab.exe");
     }
 
     public function getData5gWQ(Request $request)
@@ -351,8 +351,10 @@ class MatlabController extends Controller
         return $response;
     }
 
-    public function fetch_results()
+    public function fetch_results(Request $request)
     {
+        $system = $request->post();
+
         $cost_effective_5g_solutions_by_cost = json_decode(file_get_contents(storage_path() . "/app/public/MatlabCodes/Results/Greedy/cost-effective-5g-solutions_by_cost.json"), true);
         $cheap_5g_solutions = json_decode(file_get_contents(storage_path() . "/app/public/MatlabCodes/Results/Greedy/cost-effective-5g-solutions_by_solution.json"), true);
 
@@ -364,9 +366,6 @@ class MatlabController extends Controller
         $merged_5g = array_merge($cost_effective_5g_solutions_by_cost, $cheap_5g_solutions);
         $merged_lora = array_merge($cost_effective_lora_solutions_by_cost, $cost_effective_lora_solutions_by_solution);
         $merged_nb_iot = array_merge($cost_effective_nb_solutions_by_cost, $cost_effective_nb_solutions_by_solution);
-
-        //dd($merged_lora);
-        //dd($merged_nb_iot);
 
         // Results
         $results_config = ResultsConfig::first();
@@ -386,9 +385,9 @@ class MatlabController extends Controller
             $new_results = new Result();
 
             $new_results->simulation_nubmer = $last_number + 1;
-            // $new_results->simulation_name = ;
+            $new_results->simulation_name = "Cheapest solution based on cost";
             $new_results->technology = '5G';
-            $new_results->type_of_system = 'Water Quality'; //todo:: ΚΑΠΩΣ ΝΑ ΤΟ ΠΑΡΩ
+            $new_results->type_of_system = $system['system'];
             $new_results->execution_date = date('d-m-y h:i:s');
 
             $new_results->cheapest_5g_solutionTableCost = $merged_5g['cheapest_5g_solutionTableCost'][$count];
@@ -408,9 +407,9 @@ class MatlabController extends Controller
             $new_results = new Result();
 
             $new_results->simulation_nubmer = $last_number + 1;
-            // $new_results->simulation_name = ;
+            $new_results->simulation_name = 'Cheapest solution based on cost';
             $new_results->technology = 'LoRa';
-            $new_results->type_of_system = 'Water Quality'; //todo:: ΚΑΠΩΣ ΝΑ ΤΟ ΠΑΡΩ
+            $new_results->type_of_system = $system['system'];
             $new_results->execution_date = date('d-m-y h:i:s');
 
             $new_results->cheapest_lora_solutionTableCost = $merged_lora['cheapest_lora_solutionTableCost'][$count];
@@ -423,15 +422,15 @@ class MatlabController extends Controller
         }
 
         // NB IoT
-        $length = count($merged_lora['cheapest_nb_solutionTableCost']);
+        $length = count($merged_nb_iot['cheapest_nb_solutionTableCost']);
         for ($count = 0;  $count < $length; $count++)
         {
             $new_results = new Result();
 
             $new_results->simulation_nubmer = $last_number + 1;
-            // $new_results->simulation_name = ;
+            $new_results->simulation_name = 'Cheapest solution based on cost';
             $new_results->technology = 'NB-IoT';
-            $new_results->type_of_system = 'Water Quality'; //todo:: ΚΑΠΩΣ ΝΑ ΤΟ ΠΑΡΩ
+            $new_results->type_of_system = $system['system'];
             $new_results->execution_date = date('d-m-y h:i:s');
 
             $new_results->cheapest_nb_solutionTableCost = $merged_nb_iot['cheapest_nb_solutionTableCost'][$count];
@@ -442,6 +441,13 @@ class MatlabController extends Controller
             $results_config->save();
             $last_number = $results_config->last_simulation_nubmer;
         }
+
+        // Battery - Greedy Algorithm
+        $battery_effective_5g_solutions_by_battery_life = json_decode(file_get_contents(storage_path() . "/app/public/MatlabCodes/Results/Greedy/battery-effective-5g-solutions_by_battery_life.json"), true);
+
+
+        // Genetic - Algorithms
+
 
         //foreach($merged_5g as $m)
         //{
