@@ -99,3 +99,8 @@ Route::group(['prefix' => 'testing-matlab', 'middleware' => 'auth:sanctum'], fun
     Route::post('get_data_cost', [MatlabController::class, 'get_data_cost']);
     Route::post('fetch-results', [MatlabController::class, 'fetch_results']);
 });
+
+Route::group(['prefix' => 'results', 'middleware' => 'auth:sanctum'], function () {
+    Route::post('/chart/get-fiveg-cheapest-solution', [MatlabController::class, 'runMatlab']);
+
+});

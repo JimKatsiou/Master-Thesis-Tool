@@ -11,7 +11,8 @@ import NavBar from './components/NavBar.vue'
 import FooterBar from './components/FooterBar.vue'
 import vSelect from 'vue-select'
 import Chart from 'chart.js/auto';
-
+import Datepicker from 'vue3-datepicker'
+import Toaster from 'v-toaster';
 
 
 export default {
@@ -21,6 +22,9 @@ export default {
         FooterBar,
         vSelect,
         Chart,
+        Datepicker,
+        Toaster,
+
     },
     data() {
         return {

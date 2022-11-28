@@ -1,4 +1,5 @@
-import {createApp} from 'vue'
+import { createApp } from 'vue'
+import { createStore } from 'vuex'
 
 
 
@@ -12,7 +13,7 @@ import Toaster from 'v-toaster';
 const app = createApp(App)
 app.config.globalProperties.$axios = axios;
 app.use(router)
-
+app.use(store)
 
 app.use({mapStateTwoWay})
 
