@@ -10,6 +10,7 @@ use App\Http\Controllers\API\FiveGSolutionsController;
 use App\Http\Controllers\API\NbSolutionsController;
 use App\Http\Controllers\API\SensorsController;
 use App\Http\Controllers\API\GatewaysController;
+use App\Http\Controllers\API\ChartController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -101,6 +102,6 @@ Route::group(['prefix' => 'testing-matlab', 'middleware' => 'auth:sanctum'], fun
 });
 
 Route::group(['prefix' => 'results', 'middleware' => 'auth:sanctum'], function () {
-    Route::post('/chart/get-fiveg-cheapest-solution', [MatlabController::class, 'runMatlab']);
+    Route::post('/chart/get-fiveg-cheapest-solution', [ChartController::class, 'index']);
 
 });

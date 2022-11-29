@@ -1,8 +1,6 @@
 import Vue from "vue";
 import Vuex from 'vuex';
-
-
-Vue.use(Vuex)
+import charts from './modules/charts'
 
 
 export default new Vuex.Store({
