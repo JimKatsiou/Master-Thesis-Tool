@@ -9,11 +9,18 @@
                     <div class="card-body">
                         <h5 class="card-title">Bars - Cheapest solution (5G)</h5>
                         <p class="card-text">mpla mpla mplla.</p>
-                        <div v-if="this.fist_chart === true"  style="width: 800px;"><canvas id="acquisitions"></canvas></div>
+                        <div v-if="this.chart_1 === true">
+                            <Bar id="my-chart-id_1" :options="chartOptions" :data="chartData_1"/>
+                            <hr>
+                        </div>
+                        <div class="row">
                             <div class="col-sm-6">
                                 <datepicker  v-model="picked"/>
                             </div>
-                        <button type="button" class="btn btn-primary" @click="plot_first_bar(picked)">Plot chart</button>
+                            <div class="col-sm-6">
+                                <button type="button" class="btn btn-primary" @click="plot_first_bar(picked)">Plot chart</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -33,18 +40,53 @@
                                 </div>
                             </div>
                         </form>
-
                     </div>
                 </div>
             </div>
-        </div>
+        </div>        
 
-
-        <hr> mpla
-
-                <!-- <div style="width: 800px;"><canvas id="acquisitions"></canvas></div> -->
+        <!-- <div style="width: 800px;"><canvas id="myChart"></canvas></div> -->
 
         <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Bars - Cheapest solution (5G)</h5>
+                        <p class="card-text">mpla mpla mplla.</p>
+                        <div v-if="this.chart_3 === true">
+                            <Bar id="my-chart-id_3" :options="chartOptions" :data="chartData_2"/>
+                            <hr>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <datepicker  v-model="picked"/>
+                            </div>
+                            <div class="col-sm-6">
+                                <button type="button" class="btn btn-primary" @click="plot_first_bar(picked)">Plot chart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Bars - Battary Efficient solution (5G)</h5>
+                        <p class="card-text">mpla mpla mplla.</p>
+                        <form>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <datepicker  v-model="picked"/>
+                                </div>
+                                <div class="col-sm-6">
+                                    <button type="button" class="btn btn-primary" @click="plot_second_bar()">Plot chart</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -54,71 +96,97 @@ import Chart from 'chart.js/auto'
 import datepicker from 'vue3-datepicker'
 import { ref } from 'vue'
 const picked = ref(new Date())
-import store from 'vuex'
+import store, { mapGetters } from 'vuex'
+import moment from 'moment' 
+import { Bar } from 'vue-chartjs'
+import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
+
+ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
 
 export default {
     name: "Charts",
     data() {
         return {
-            fist_chart: false,
             picked: picked,
+            chartOptions: {
+                responsive: true
+            },
+            // 1
+            chartData_1: {
+                labels: [ ],
+                datasets: [ ]
+            },
+            chart_1: false,
+            // 2
+            chartData_2: {
+                labels: [ ],
+                datasets: [ ]
+            },
+            chart_2: false,
+            chartData_3: {
+                labels: [ ],
+                datasets: [ ]
+            },
+            chart_3: false,
+            
         };
     },
+           
     components: {
         datepicker,
         Chart,
         store,
+        moment,
+        Bar,
     },
 
     mounted() {
-
-        // const data = [
-        //     { year: 2010, count: 10 },
-        //     { year: 2011, count: 20 },
-        //     { year: 2012, count: 15 },
-        //     { year: 2013, count: 25 },
-        //     { year: 2014, count: 22 },
-        //     { year: 2015, count: 30 },
-        //     { year: 2016, count: 28 },
-        // ];
-        // new Chart(document.getElementById("acquisitions"), {
-        //     type: "bar",
-        //     options: {
-        //         animation: true,
-        //         plugins: {
-        //             legend: {
-        //                 display: false
-        //             },
-        //             tooltip: {
-        //                 enabled: false
-        //             }
-        //         },
-        //     },
-        //     data: {
-        //         labels: data.map(row => row.year),
-        //         datasets: [
-        //             {
-        //                 label: "Acquisitions by year",
-        //                 data: data.map(row => row.count)
-        //             }
-        //         ]
-        //     }
-        // });
     },
 
     methods:
     {
+        // convertProxyObjectToPojo(proxyObj) {
+        //     return _.cloneDeep(proxyObj);
+        // },
+
         plot_first_bar(picked)
         {
-            console.log('MPLA MPLA')
+            let date = moment(String(picked)).format('DD-MM-YYYY')
             let payload = {
-                date: picked
+                date: date
             }
-            this.$store.dispatch('fetch5GCheapestSolution', payload)
+            this.$store.dispatch('fetch5GCheapestSolution', payload).then(response => {
+                let mpla = this.$store.getters.get5GCheapestSolution;
+                let mplo = JSON.parse(JSON.stringify(mpla))
+               
+                let data = []
+                let labels = []
+                for (let i = 0; i < mplo.length; i++)
+                {
+                    data[i] = mplo[i]['cheapest_5g_solutionTableCost']
+                    labels[i] = mplo[i]['simulation_nubmer']
+                }
+                console.log('data', data)
+                console.log('labels', labels)
+                this.chartData_1 = {
+                    labels: labels.map(row => row),
+                    datasets: [ {data: data} ]
+                }
+                this.chart_1 = true
+            })
+        },
+    },
 
-        }
-    }
+    mounted() {
+        this.picked = new Date();
+    },
+
+    computed: {
+        ...mapGetters([
+            'get5GCheapestSolution'
+        ]),
+    },
 
 }
 

@@ -4,23 +4,38 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\Result;
+use stdClass;
+use Illuminate\Http\Request;
 use App\Classes\ResponseClass;
 
 class ChartController extends Controller
 {
-    public function index():ResponseClass
+    public function index(Request $request)
     {
-        $results = Result::where('technology', '5G')->get();
-        //dd($results);
+       // $respone = new ResponseClass();
+       
+        $data = $request->post();
+        $date = $data['date'];
+        //$number = $data['number'];
+        $results = Result::where('technology', '5G')->where('execution_date', $date)->get();
+        
+        if($results->isEmpty())
+        {
+            $response = new stdClass();
+            $response->object = [];
+        }
+        else {
+            $response = new stdClass();
+            $response->object = $results;
+        }
+        //$respone->error = 'false';
+        //$respone->message = 'ok';
+        
+        return $response;
+        //dd($respone);
 
-        $respone = new ResponseClass();
-        $respone->error = 'false';
-        $respone->message = 'ok';
-        $respone->object = $results;
-
-        return $respone;
+        //return $respone;
     }
-
 }
 
 ?>

@@ -388,8 +388,8 @@ class MatlabController extends Controller
             $new_results->simulation_name = "Cheapest solution based on cost";
             $new_results->technology = '5G';
             $new_results->type_of_system = $system['system'];
-            $new_results->execution_date = date('d-m-y h:i:s');
-
+            $new_results->execution_date = date('d-m-Y');
+            
             $new_results->cheapest_5g_solutionTableCost = $merged_5g['cheapest_5g_solutionTableCost'][$count];
             $new_results->cheapest_5g_solutionTable = $merged_5g['cheapest_5g_solutionTable'][$count];
 
@@ -410,7 +410,7 @@ class MatlabController extends Controller
             $new_results->simulation_name = 'Cheapest solution based on cost';
             $new_results->technology = 'LoRa';
             $new_results->type_of_system = $system['system'];
-            $new_results->execution_date = date('d-m-y h:i:s');
+            $new_results->execution_date = date('d-m-Y');
 
             $new_results->cheapest_lora_solutionTableCost = $merged_lora['cheapest_lora_solutionTableCost'][$count];
             $new_results->cheapest_lora_solutionTable = $merged_lora['cheapest_lora_solutionTable'][$count];
@@ -431,7 +431,7 @@ class MatlabController extends Controller
             $new_results->simulation_name = 'Cheapest solution based on cost';
             $new_results->technology = 'NB-IoT';
             $new_results->type_of_system = $system['system'];
-            $new_results->execution_date = date('d-m-y h:i:s');
+            $new_results->execution_date = date('d-m-Y');
 
             $new_results->cheapest_nb_solutionTableCost = $merged_nb_iot['cheapest_nb_solutionTableCost'][$count];
             $new_results->cheapest_nb_solutionTable = $merged_nb_iot['cheapest_nb_solutionTable'][$count];

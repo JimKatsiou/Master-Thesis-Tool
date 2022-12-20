@@ -7,16 +7,15 @@ const state = {
 }
 
 const getters = {
-    get5GCheapestSolution: (state) => state.date,
+    get5GCheapestSolution: (state) => state.fiveg_cheapest_solution,
 }
 
 const actions = {
 
     async fetch5GCheapestSolution({commit}, payload) {
-        const response = await axios.post('/api/results/chart/get-fiveg-cheapest-solution/', payload)
-        console.log('response.data', response.data)
-        console.log('response', response)
-        commit('SET_FIVE_G_CHEAPESST_SOLUTION', response.data)
+        console.log('mpkl sto fetchh')
+        const response = await axios.post('/api/results/chart/get-fiveg-cheapest-solution', payload)
+        commit('SET_FIVE_G_CHEAPESST_SOLUTION', response.data.object)
     }
 
 }

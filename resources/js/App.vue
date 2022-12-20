@@ -13,7 +13,8 @@ import vSelect from 'vue-select'
 import Chart from 'chart.js/auto';
 import Datepicker from 'vue3-datepicker'
 import Toaster from 'v-toaster';
-//import store from './store';
+import store from './store';
+import { Bar } from 'vue-chartjs'
 
 
 export default {
@@ -25,7 +26,8 @@ export default {
         Chart,
         Datepicker,
         Toaster,
-        //store,
+        store,
+        Bar,
 
     },
     data() {
