@@ -16,14 +16,14 @@
                         <label>Type of System</label>
                         <input type="text" class="form-control" v-model="scenario.type_of_system_name">
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label>Cost</label>
                         <input type="text" class="form-control" v-model="scenario.cost">
                     </div>
                     <div class="form-group">
                         <label>Installation cost</label>
                         <input type="text" class="form-control" v-model="scenario.installation_cost">
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <label>Description</label>
                         <input type="text" class="form-control" v-model="scenario.description">

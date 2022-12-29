@@ -50,8 +50,8 @@
         <div class="card-body">
         <ul>
             <li>
-                <h5> For cost-effective scenario:</h5>
-                <h6> Direcory: <b> storage/MattlabCodes/Greedy_CostEffective_Scenrio.m </b> </h6>
+                <h5>For cost-effective scenario:</h5>
+                <h6>Direcory: <b> storage/MattlabCodes/Greedy_CostEffective_Scenrio.m </b> </h6>
             </li>
             <hr>
             <li>
