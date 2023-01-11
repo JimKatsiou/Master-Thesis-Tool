@@ -13,7 +13,7 @@ const getters = {
 const actions = {
 
     async fetch5GCheapestSolution({commit}, payload) {
-        console.log('mpkl sto fetchh')
+        console.log('mpike sto fetchh')
         const response = await axios.post('/api/results/chart/get-fiveg-cheapest-solution', payload)
         commit('SET_FIVE_G_CHEAPESST_SOLUTION', response.data.object)
     }

@@ -55,6 +55,7 @@ Route::group(['prefix' => 'sensors', 'middleware' => 'auth:sanctum'], function (
     Route::get('edit/{id}', [SensorsController::class, 'edit']);
     Route::post('update/{id}', [SensorsController::class, 'update']);
     Route::delete('delete/{id}', [SensorsController::class, 'delete']);
+    Route::get('getNumberOfSensors', [SensorsController::class, 'getNumberOfSensors']);
 });
 
 Route::group(['prefix' => 'gateways', 'middleware' => 'auth:sanctum'], function () {

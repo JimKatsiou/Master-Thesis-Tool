@@ -8,7 +8,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Bars - Cheapest solution (5G)</h5>
-                        <p class="card-text">mpla mpla mplla.</p>
+                        <p class="card-text">Cheapest Scenarios using 5G Technology <b>(Gready Algorithm Results)</b></p>
                         <div v-if="this.chart_1 === true">
                             <Bar id="my-chart-id_1" :options="chartOptions" :data="chartData_1"/>
                             <hr>
@@ -18,7 +18,7 @@
                                 <datepicker  v-model="picked"/>
                             </div>
                             <div class="col-sm-6">
-                                <button type="button" class="btn btn-primary" @click="plot_first_bar(picked)">Plot chart</button>
+                                <button type="button" class="btn btn-primary" @click="plot_cost_bar_5g(picked)">Plot chart</button>
                             </div>
                         </div>
                     </div>
@@ -29,14 +29,14 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Bars - Battary Efficient solution (5G)</h5>
-                        <p class="card-text">mpla mpla mplla.</p>
+                        <p class="card-text">Battary Efficient Scenarios using 5G Technology <b>(Gready Algorithm Results)</b></p>
                         <form>
                             <div class="row">
                                 <div class="col-sm-6">
                                     <datepicker  v-model="picked"/>
                                 </div>
                                 <div class="col-sm-6">
-                                    <button type="button" class="btn btn-primary" @click="plot_second_bar()">Plot chart</button>
+                                    <button type="button" class="btn btn-primary" @click="plot_battery_bar_5g()">Plot chart</button>
                                 </div>
                             </div>
                         </form>
@@ -51,8 +51,8 @@
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Bars - Cheapest solution (5G)</h5>
-                        <p class="card-text">mpla mpla mplla.</p>
+                        <h5 class="card-title">Bars - Cheapest solution (LoRa)</h5>
+                        <p class="card-text">Cheapest Scenarios using LoRa Technology <b>(Gready Algorithm Results)</b></p>
                         <div v-if="this.chart_3 === true">
                             <Bar id="my-chart-id_3" :options="chartOptions" :data="chartData_2"/>
                             <hr>
@@ -62,7 +62,95 @@
                                 <datepicker  v-model="picked"/>
                             </div>
                             <div class="col-sm-6">
-                                <button type="button" class="btn btn-primary" @click="plot_first_bar(picked)">Plot chart</button>
+                                <button type="button" class="btn btn-primary" @click="plot_cost_bar_lora(picked)">Plot chart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Bars - Battary Efficient solution (LoRa)</h5>
+                        <p class="card-text">Battary Efficient Scenarios using LoRa Technology <b>(Gready Algorithm Results)</b></p>
+                        <form>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <datepicker  v-model="picked"/>
+                                </div>
+                                <div class="col-sm-6">
+                                    <button type="button" class="btn btn-primary" @click="plot_battery_bar_lora()">Plot chart</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Bars - Cheapest solution (NB-IoT)</h5>
+                        <p class="card-text">Cheapest Scenarios using NB IoT Technology <b>(Gready Algorithm Results)</b></p>
+                        <div v-if="this.chart_3 === true">
+                            <Bar id="my-chart-id_3" :options="chartOptions" :data="chartData_2"/>
+                            <hr>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <datepicker  v-model="picked"/>
+                            </div>
+                            <div class="col-sm-6">
+                                <button type="button" class="btn btn-primary" @click="plot_cost_bar_nb(picked)">Plot chart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Bars - Battary Efficient solution (NB-IoT)</h5>
+                       <p class="card-text">Battary Efficient Scenarios using NB-IoT Technology <b>(Gready Algorithm Results)</b></p>
+                        <form>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <datepicker  v-model="picked"/>
+                                </div>
+                                <div class="col-sm-6">
+                                    <button type="button" class="btn btn-primary" @click="plot_battery_bar_nb()">Plot chart</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <hr>
+        <br>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Bars - Cheapest solution (5G)</h5>
+                        <p class="card-text">Cheapest Scenarios using 5G Technology <b>(Genetic Algorithm Results)</b></p>
+                        <div v-if="this.chart_1 === true">
+                            <Bar id="my-chart-id_1" :options="chartOptions" :data="chartData_1"/>
+                            <hr>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <datepicker  v-model="picked"/>
+                            </div>
+                            <div class="col-sm-6">
+                                <button type="button" class="btn btn-primary" @click="plot_cost_bar_5g_GA(picked)">Plot chart</button>
                             </div>
                         </div>
                     </div>
@@ -73,14 +161,58 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Bars - Battary Efficient solution (5G)</h5>
-                        <p class="card-text">mpla mpla mplla.</p>
+                        <p class="card-text">Battary Efficient Scenarios using 5G Technology <b>(Genetic Algorithm Results)</b></p>
                         <form>
                             <div class="row">
                                 <div class="col-sm-6">
                                     <datepicker  v-model="picked"/>
                                 </div>
                                 <div class="col-sm-6">
-                                    <button type="button" class="btn btn-primary" @click="plot_second_bar()">Plot chart</button>
+                                    <button type="button" class="btn btn-primary" @click="plot_battery_bar_5g_GA()">Plot chart</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>        
+
+        <!-- <div style="width: 800px;"><canvas id="myChart"></canvas></div> -->
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Bars - Cheapest solution (LoRa)</h5>
+                        <p class="card-text">Cheapest Scenarios using LoRa Technology <b>(Genetic Algorithm Results)</b></p>
+                        <div v-if="this.chart_3 === true">
+                            <Bar id="my-chart-id_3" :options="chartOptions" :data="chartData_2"/>
+                            <hr>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <datepicker  v-model="picked"/>
+                            </div>
+                            <div class="col-sm-6">
+                                <button type="button" class="btn btn-primary" @click="plot_cost_bar_lora_GA(picked)">Plot chart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Bars - Battary Efficient solution (LoRa)</h5>
+                        <p class="card-text">Battary Efficient Scenarios using LoRa Technology <b>(Genetic Algorithm Results)</b></p>
+                        <form>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <datepicker  v-model="picked"/>
+                                </div>
+                                <div class="col-sm-6">
+                                    <button type="button" class="btn btn-primary" @click="plot_battery_bar_lora_GA()">Plot chart</button>
                                 </div>
                             </div>
                         </form>
@@ -88,6 +220,50 @@
                 </div>
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Bars - Cheapest solution (NB-IoT)</h5>
+                        <p class="card-text">Cheapest Scenarios using NB IoT Technology <b>(Genetic Algorithm Results)</b></p>
+                        <div v-if="this.chart_3 === true">
+                            <Bar id="my-chart-id_3" :options="chartOptions" :data="chartData_2"/>
+                            <hr>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <datepicker  v-model="picked"/>
+                            </div>
+                            <div class="col-sm-6">
+                                <button type="button" class="btn btn-primary" @click="plot_battery_bar_lora_GA(picked)">Plot chart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Bars - Battary Efficient solution (NB-IoT)</h5>
+                       <p class="card-text">Battary Efficient Scenarios using NB-IoT Technology <b>(Genetic Algorithm Results)</b></p>
+                        <form>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <datepicker  v-model="picked"/>
+                                </div>
+                                <div class="col-sm-6">
+                                    <button type="button" class="btn btn-primary" @click="plot_battery_bar_nb_GASS()">Plot chart</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 </template>
 
@@ -150,22 +326,23 @@ export default {
         //     return _.cloneDeep(proxyObj);
         // },
 
-        plot_first_bar(picked)
+        plot_cost_bar_5g(picked)
         {
             let date = moment(String(picked)).format('DD-MM-YYYY')
             let payload = {
                 date: date
             }
             this.$store.dispatch('fetch5GCheapestSolution', payload).then(response => {
-                let mpla = this.$store.getters.get5GCheapestSolution;
-                let mplo = JSON.parse(JSON.stringify(mpla))
+                let result = this.$store.getters.get5GCheapestSolution;
+                console.log('result ==', result)
+                let results = JSON.parse(JSON.stringify(result))
                
                 let data = []
                 let labels = []
-                for (let i = 0; i < mplo.length; i++)
+                for (let i = 0; i < results.length; i++)
                 {
-                    data[i] = mplo[i]['cheapest_5g_solutionTableCost']
-                    labels[i] = mplo[i]['simulation_nubmer']
+                    data[i] = results[i]['cheapest_5g_solutionTableCost']
+                    labels[i] = results[i]['simulation_nubmer']
                 }
                 console.log('data', data)
                 console.log('labels', labels)
@@ -175,6 +352,64 @@ export default {
                 }
                 this.chart_1 = true
             })
+        },
+
+        plot_cost_bar_lora(picked){
+        },
+
+        plot_cost_bar_nb(picked){
+        },
+
+        plot_battery_bar_5g(picked){
+        },
+
+        plot_battery_bar_lora(picked){
+        },
+
+        plot_battery_bar_nb(picked){
+        },
+
+        plot_cost_bar_5g_GA(picked)
+        {
+            let date = moment(String(picked)).format('DD-MM-YYYY')
+            let payload = {
+                date: date
+            }
+            this.$store.dispatch('fetch5GCheapestSolution', payload).then(response => {
+                let result = this.$store.getters.get5GCheapestSolution;
+                console.log('result ==', result)
+                let results = JSON.parse(JSON.stringify(result))
+               
+                let data = []
+                let labels = []
+                for (let i = 0; i < results.length; i++)
+                {
+                    data[i] = results[i]['cheapest_5g_solutionTableCost']
+                    labels[i] = results[i]['simulation_nubmer']
+                }
+                console.log('data', data)
+                console.log('labels', labels)
+                this.chartData_1 = {
+                    labels: labels.map(row => row),
+                    datasets: [ {data: data} ]
+                }
+                this.chart_1 = true
+            })
+        },
+
+        plot_cost_bar_lora_GA(picked){
+        },
+
+        plot_cost_bar_nb_GA(picked){
+        },
+
+        plot_battery_bar_5g_GA(picked){
+        },
+
+        plot_battery_bar_lora_GA(picked){
+        },
+        
+        plot_battery_bar_nb_GA(picked){
         },
     },
 

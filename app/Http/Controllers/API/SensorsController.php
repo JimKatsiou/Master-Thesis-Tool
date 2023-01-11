@@ -63,6 +63,12 @@ class SensorsController extends Controller
         return response()->json('The sensor successfully deleted');
     }
 
+    public function getNumberOfSensors()
+    {
+        $sensors = Sensor::all();
+        $sensorsNumber = $sensors->count();
+        return response()->json($sensorsNumber);
+    }
 }
 
 ?>

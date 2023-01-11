@@ -13,7 +13,7 @@
                             <div class="level is-mobile">
                                 <div class="is-widget-label">
                                     <h3 class="subtitle is-spaced"> Sensors </h3>
-                                    <h1 class="title"><div>???</div></h1>
+                                    <h1 class="title"><div>{{ this.sensors_nubmer }}</div></h1>
                                     <div class="level-item has-widget-icon">
                                         <div class="is-widget-icon">
                                             <span class="icon has-text-primary is-large">
@@ -80,7 +80,13 @@ export default {
     data() {
         return {
             name: null,
+            sensors_nubmer: 0,
         }
+    },
+    mounted() {
+        this.$axios.get('/api/sensors/getNumberOfSensors').then(response => {
+                    this.sensors_nubmer = response.data;
+        })
     },
     created() {
         if (window.Laravel.user) {
