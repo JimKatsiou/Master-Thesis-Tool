@@ -69,4 +69,11 @@ class TechnologyController extends Controller
         // dd($response);
         // return $response;
     }
+
+    public function getNumberOfTechnologies()
+    {
+        $technoligies= Technologies::all();
+        $technologiesNumber = $technoligies->count();
+        return response()->json($technologiesNumber);
+    }
 }

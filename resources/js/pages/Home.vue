@@ -4,11 +4,12 @@
             <!-- Background image -->
             <div id="intro" class="bg-image shadow-2-strong">
                 <div class="mask" style="background-color: rgba(0, 0, 0, 0.8);">
-                    <div class="container d-flex align-items-center justify-content-center text-center h-100">
+                    <div class="container d-flex align-items-center justify-content-center text-center h-300">
                         <div class="text-white">
                             <h1 class="mb-3">Reporting and IoT Network Management</h1>
-                            <h5 class="mb-4">Some Text</h5>
-                            <router-link to="/login" class="btn btn-secondary btn-lg">Lets go</router-link>
+                            <br>
+                            <!-- <h5 class="mb-4">Some Text</h5> --> <!-- // TODO: ΝΑ ΒΑΛΩ ΚΑΠΟΙΟ ΤΕΧΤ -->
+                            <router-link to="/login" class="btn btn-secondary btn-lg">Lets go</router-link>    
                         </div>
                     </div>
                 </div>

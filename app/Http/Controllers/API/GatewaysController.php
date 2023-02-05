@@ -57,4 +57,11 @@ class GatewaysController extends Controller
 
         return response()->json('The gateway successfully deleted');
     }
+
+    public function getNumberOfGateways()
+    {
+        $gateways= Gateway::all();
+        $gatewaysNumber = $gateways->count();
+        return response()->json($gatewaysNumber);
+    }
 }

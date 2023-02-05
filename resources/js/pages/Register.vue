@@ -34,12 +34,10 @@
                                            required autocomplete="off">
                                 </div>
                             </div>
-
+                            <br>
                             <div class="form-group row mb-0">
                                 <div class="col-md-8 offset-md-4">
-                                    <button type="submit" class="btn btn-primary" @click="handleSubmit">
-                                        Register
-                                    </button>
+                                    <button type="submit" class="btn btn-primary" @click="handleSubmit">Register</button>
                                 </div>
                             </div>
                         </form>

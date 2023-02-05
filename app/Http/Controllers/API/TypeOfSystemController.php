@@ -91,6 +91,14 @@ class TypeOfSystemController extends Controller
         dd($data);
     }
 
+    
+    public function getNumberOfTypeOfSystems()
+    {
+        $type_of_systems= TypeOfSystem::all();
+        $type_of_systemsNumber = $type_of_systems->count();
+        return response()->json($type_of_systemsNumber);
+    }
+
 }
 
 ?>

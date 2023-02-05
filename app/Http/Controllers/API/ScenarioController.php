@@ -59,6 +59,13 @@ class ScenarioController extends Controller
         return response()->json('The scenario successfully deleted');
     }
 
+    public function getNumberOfScenarios()
+    {
+        $scenarios= Scenario::all();
+        $scenariosNumber = $scenarios->count();
+        return response()->json($scenariosNumber);
+    }
+
 }
 
 ?>

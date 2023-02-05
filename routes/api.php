@@ -26,6 +26,9 @@ Route::group(['prefix' => 'scenarios', 'middleware' => 'auth:sanctum'], function
     Route::get('edit/{id}', [ScenarioController::class, 'edit']);
     Route::post('update/{id}', [ScenarioController::class, 'update']);
     Route::delete('delete/{id}', [ScenarioController::class, 'delete']);
+
+    Route::get('getNumberOfScenarios', [ScenarioController::class, 'getNumberOfScenarios']);
+
 });
 
 Route::group(['prefix' => 'technologies', 'middleware' => 'auth:sanctum'], function () {
@@ -36,6 +39,7 @@ Route::group(['prefix' => 'technologies', 'middleware' => 'auth:sanctum'], funct
     Route::delete('delete/{id}', [TechnologyController::class, 'delete']);
 
     Route::get('get-technologies', [TechnologyController::class, 'getAllTechnologies']);
+    Route::get('getNumberOfTechnologies', [TechnologyController::class, 'getNumberOfTechnologies']);
 });
 
 Route::group(['prefix' => 'type_of_systems', 'middleware' => 'auth:sanctum'], function () {
@@ -47,6 +51,7 @@ Route::group(['prefix' => 'type_of_systems', 'middleware' => 'auth:sanctum'], fu
 
     Route::get('get-type-of-systems', [TypeOfSystemController::class, 'getAllTypesOfSystems']);
     Route::get('get-selected-system', [TypeOfSystemController::class, 'getSelectedSystem']);
+    Route::get('getNumberOfTypeOfSystems', [TypeOfSystemController::class, 'getNumberOfTypeOfSystems']);
 });
 
 Route::group(['prefix' => 'sensors', 'middleware' => 'auth:sanctum'], function () {
@@ -64,7 +69,13 @@ Route::group(['prefix' => 'gateways', 'middleware' => 'auth:sanctum'], function 
     Route::get('edit/{id}', [GatewaysController::class, 'edit']);
     Route::post('update/{id}', [GatewaysController::class, 'update']);
     Route::delete('delete/{id}', [GatewaysController::class, 'delete']);
+
+    Route::get('getNumberOfGateways', [GatewaysController::class, 'getNumberOfGateways']);
 });
+
+// Route::group(['prefix' => 'fiveGSolutions', 'middleware' => 'auth:sanctum'], function () {
+//     Route::get('getNumberOfSolutions', [SensorsController::class, 'getNumberOfSensors']);
+// });
 
 Route::group(['prefix' => 'fiveGSolutions', 'middleware' => 'auth:sanctum'], function () {
     Route::get('/', [FiveGSolutionsController::class, 'index']);
