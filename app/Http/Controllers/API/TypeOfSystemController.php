@@ -19,8 +19,20 @@ class TypeOfSystemController extends Controller
     // all type_of_system
     public function index()
     {
-        $types_of_system = TypeOfSystem::all()->toArray();
-        return array_reverse($types_of_system);
+        $i = 0;
+        $types_of_systems = TypeOfSystem::all()->toArray();
+        foreach ($types_of_systems as $type_of_system) {
+            $result_type_of_system[$i]['id'] = $type_of_system['id'];
+            $result_type_of_system[$i]['name'] = $type_of_system['name'];
+            $result_type_of_system[$i]['description'] = $type_of_system['description'];
+            $date = strtotime($type_of_system['updated_at']);
+            $updated_at = date('d/M/Y', $date);
+            //$updated_at = date_format(,"Y/m/d");
+
+            $result_type_of_system[$i]['updated_at'] = $updated_at;
+            $i++;
+        }
+        return array_reverse($result_type_of_system);
     }
 
     // add type_of_system

@@ -11,6 +11,7 @@ use App\Http\Controllers\API\NbSolutionsController;
 use App\Http\Controllers\API\SensorsController;
 use App\Http\Controllers\API\GatewaysController;
 use App\Http\Controllers\API\ChartController;
+use App\Http\Controllers\API\BatteryController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -111,6 +112,10 @@ Route::group(['prefix' => 'testing-matlab', 'middleware' => 'auth:sanctum'], fun
     Route::post('get_data_battery', [MatlabController::class, 'get_data_battery']);
     Route::post('get_data_cost', [MatlabController::class, 'get_data_cost']);
     Route::post('fetch-results', [MatlabController::class, 'fetch_results']);
+});
+
+Route::group(['prefix' => 'battaries', 'middleware' => 'auth:sanctum'], function () {
+    Route::get('get-battaries', [BatteryController::class, 'getAllBatteries']);
 });
 
 Route::group(['prefix' => 'results', 'middleware' => 'auth:sanctum'], function () {

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Models\Battery;
 use App\Models\Sensor;
 use App\Models\Technologies;
 use Illuminate\Http\Request;
@@ -32,6 +33,8 @@ class SensorsController extends Controller
         }
         $sensor->cost = $request->cost;
         $sensor->installation_cost = $request->installation_cost;
+        $battery_id = Battery::select('id')->where('name', $request->battery_id)->first();
+        $sensor->battery_id = $battery_id['id'];
 
         $sensor->save();
 

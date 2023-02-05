@@ -16,7 +16,7 @@
                     </div>
                     <br>
                     <button type="submit" class="btn btn-primary">Update Type of System</button>
-                    <router-link to="/type_of_system" class="btn btn-secondary">Back</router-link>
+                    <router-link to="/type_of_systems" class="btn btn-secondary">Back</router-link>
                 </form>
             </div>
         </div>

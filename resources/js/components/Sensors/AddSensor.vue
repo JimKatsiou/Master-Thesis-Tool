@@ -13,7 +13,7 @@
                     <div class="form-group">
                         <label>Technology</label>
                         <v-select :options="technologies"
-                            v-model="sensor.technology_id" :placeholder="'Select technoly'">
+                            v-model="sensor.technology_id" :placeholder="'Select technology'">
                         </v-select>
                     </div>
                     <div class="form-group">
@@ -23,6 +23,12 @@
                     <div class="form-group">
                         <label>installation cost</label>
                         <input type="text" class="form-control" v-model="sensor.installation_cost">
+                    </div>
+                    <div class="form-group">
+                        <label>Battery</label>
+                        <v-select :options="battaries"
+                            v-model="sensor.battary_id" :placeholder="'Select battary'">
+                        </v-select>                    
                     </div>
                     <div class="form-group">
                         <label>Description</label>
@@ -46,6 +52,7 @@ export default {
         return {
             sensor: {},
             technologies: [],
+            battaries: [],
         }
     },
     components: {
@@ -85,6 +92,16 @@ export default {
                 console.error(error);
             });
         })
+        
+        this.$axios.get('/api/batteries/get-batteries').then(response => {
+            let batteries = response.data;
+            let batt = []
+                for (let i = 0; i < batteries.length; i++)
+                {
+                    batt[i] = batteries[i]['name'];
+                }
+                this.battaries = batt;
+            })
     },
 }
 </script>
