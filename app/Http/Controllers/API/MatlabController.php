@@ -20,7 +20,7 @@ class MatlabController extends Controller
     // This function runs Matlab
     public function runMatlab()
     {
-        exec("matlab.exe");
+        //exec("matlab.exe");
     }
 
     public function getData5gWQ(Request $request)
@@ -356,6 +356,12 @@ class MatlabController extends Controller
         $system = $request->post();    
 
         // COST SIMULATION JSON FILES
+        $fiveG_scenario = json_decode(file_get_contents(storage_path() . "/app/public/MatlabCodes/Inputs-json/5g_scenario.json"), true);
+        $lora_scenario = json_decode(file_get_contents(storage_path() . "/app/public/MatlabCodes/Inputs-json/lora_scenario.json"), true);
+        $nbIoT_scenario = json_decode(file_get_contents(storage_path() . "/app/public/MatlabCodes/Inputs-json/nb_scenario.json"), true);
+        // PANE KANEI PINAKA POY THA T POTHIKEUEI KETEUTHIAN GIA ISTORIKOTITA KAI THA PERNEI KAI TO NOYMERO TO RESULT
+        // dd($fiveG_scenario,$lora_scenario,$nbIoT_scenario);
+
         $cost_effective_5g_solutions_by_cost = json_decode(file_get_contents(storage_path() . "/app/public/MatlabCodes/Results/Greedy/cost-effective-5g-solutions_by_cost.json"), true);
         $cheap_5g_solutions = json_decode(file_get_contents(storage_path() . "/app/public/MatlabCodes/Results/Greedy/cost-effective-5g-solutions_by_solution.json"), true);
 
@@ -367,19 +373,17 @@ class MatlabController extends Controller
 
         $merged_5g_cost = array_merge($cost_effective_5g_solutions_by_cost, $cheap_5g_solutions);
         $merged_lora_cost = array_merge($cost_effective_lora_solutions_by_cost, $cost_effective_lora_solutions_by_solution);
-        $merged_nb_iot_cost = array_merge($cost_effective_nb_solutions_by_cost, $cost_effective_nb_solutions_by_solution);
-
-        
+        $merged_nb_iot_cost = array_merge($cost_effective_nb_solutions_by_cost, $cost_effective_nb_solutions_by_solution);      
 
         // Results
-        $results_config = ResultsConfig::first();
-        if($results_config != null)
-        {
-            $last_number = $results_config->last_simulation_nubmer;
-        } else {
-            $results_config = new ResultsConfig();
-            $last_number = 0;
-        }
+        // $results_config = ResultsConfig::first();
+        // if($results_config != null)
+        // {
+        //     $last_number = $results_config->last_simulation_nubmer;
+        // } else {
+        //     $results_config = new ResultsConfig();
+        //     $last_number = 0;
+        // }
 
 
         // 5G
@@ -508,33 +512,36 @@ class MatlabController extends Controller
         //     $last_number = $results_config->last_simulation_nubmer;
         // }
 
-         // NB IoT
-         $length = count($merged_nb_battery['best_nb_solutionTableBL']);
-         for ($count = 0;  $count < $length; $count++)
-         {
-             $new_results = new Result();
+        //  // NB IoT
+        //  $length = count($merged_nb_battery['best_nb_solutionTableBL']);
+        //  for ($count = 0;  $count < $length; $count++)
+        //  {
+        //      $new_results = new Result();
  
-             $new_results->simulation_nubmer = $last_number + 1;
-             $new_results->simulation_name = 'Cheapest solution based on cost';
-             $new_results->technology = 'NB-IoT';
-             $new_results->type_of_system = $system['system'];
-             $new_results->execution_date = date('d-m-Y');
+        //      $new_results->simulation_nubmer = $last_number + 1;
+        //      $new_results->simulation_name = 'Cheapest solution based on cost';
+        //      $new_results->technology = 'NB-IoT';
+        //      $new_results->type_of_system = $system['system'];
+        //      $new_results->execution_date = date('d-m-Y');
  
-             $new_results->best_nb_solutionTableBL = $merged_nb_battery['best_nb_solutionTableBL'][$count];
-             $new_results->best_nb_solutionTable = $merged_nb_battery['best_nb_solutionTable'][$count];
+        //      $new_results->best_nb_solutionTableBL = $merged_nb_battery['best_nb_solutionTableBL'][$count];
+        //      $new_results->best_nb_solutionTable = $merged_nb_battery['best_nb_solutionTable'][$count];
  
-             $new_results->save();
-             $results_config->last_simulation_nubmer = $new_results->simulation_nubmer;
-             $results_config->save();
-             $last_number = $results_config->last_simulation_nubmer;
-         }
+        //      $new_results->save();
+        //      $results_config->last_simulation_nubmer = $new_results->simulation_nubmer;
+        //      $results_config->save();
+        //      $last_number = $results_config->last_simulation_nubmer;
+        //  }
 
 
         // Genetic - Algorithms
 
+        // COST SIMULATION JSON FILES
+        $ga_most_effective_5g_solutions = json_decode(file_get_contents(storage_path() . "/app/public/MatlabCodes/Results/GA/GA-cost-effective-5g-solutions.json"), true);
+        $ga_most_effective_lora_solutions = json_decode(file_get_contents(storage_path() . "/app/public/MatlabCodes/Results/GA/GA-cost-effective-lora-solutions.json"), true);
+        $ga_most_effective_nb_solutions = json_decode(file_get_contents(storage_path() . "/app/public/MatlabCodes/Results/GA/GA-cost-effective-NB-solutions.json"), true);
 
-        //foreach($merged_5g as $m)
-        //{
+        dd($ga_most_effective_5g_solutions, $ga_most_effective_lora_solutions, $ga_most_effective_nb_solutions);
             // $count++;
             // $new_results = new Result();
 

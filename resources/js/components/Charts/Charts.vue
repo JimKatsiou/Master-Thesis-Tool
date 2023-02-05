@@ -145,18 +145,18 @@
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Bars - Cheapest solution (5G)</h5>
+                        <h5 class="card-title">Bars - Most effective solution (5G)</h5>
                         <p class="card-text">Cheapest Scenarios using 5G Technology <b>(Genetic Algorithm Results)</b></p>
-                        <div v-if="this.cost_bar_5g_GA === true">
-                            <Bar id="cost-bar-5g-GA-id" :options="chartOptions" :data="cost_bar_5g_data_GA"/>
+                        <div v-if="this.bar_5g_GA === true">
+                            <Bar id="bar-5g-GA-id" :options="chartOptions" :data="bar_5g_GA_data"/>
                             <hr>
                         </div>
                         <div class="row">
                             <div class="col-sm-6">
-                                <datepicker  v-model="picked"/>
+                                <datepicker  v-modl="picked"/>
                             </div>
                             <div class="col-sm-6">
-                                <button type="button" class="btn btn-primary" @click="plot_cost_bar_5g_GA(picked)">Plot chart</button>
+                                <button type="button" class="btn btn-primary" @click="plot_bar_5g_GA(picked)">Plot chart</button>
                             </div>
                         </div>
                     </div>
@@ -333,7 +333,7 @@ export default {
             battery_bar_nb: false,
 
             
-            cost_bar_5g_data_GA: {
+            bar_5g_GA_data: {
                 labels: [ ],
                 datasets: [ ]
             },
@@ -407,11 +407,11 @@ export default {
                 }
                 console.log('data', data)
                 console.log('labels', labels)
-                this.chartData_1 = {
+                this.cost_bar_5g_data = {
                     labels: labels.map(row => row),
                     datasets: [ {data: data} ]
                 }
-                this.chart_1 = true
+                this.cost_bar_5g = true
             })
         },
 
