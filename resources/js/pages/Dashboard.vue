@@ -181,10 +181,10 @@ export default {
         new Chart(myChart_dashboard_1, {
             type: 'bar',
             data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels: ['5G', 'LoRa', 'NB-IoT'],
             datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
+                label: 'Cheapest solution',
+                data: [12, 19, 6],
                 borderWidth: 1
             }]
             },
@@ -201,10 +201,10 @@ export default {
         new Chart(myChart_dashboard_2, {
             type: 'line',
             data: {
-            labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            labels: ['Sensor 1', 'Sensor 2', 'Sensor 3', 'Sensor 4'],
             datasets: [{
-                label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
+                label: '# of Sensors',
+                data: [4, 19, 13, 5],
                 borderWidth: 1
             }]
             },

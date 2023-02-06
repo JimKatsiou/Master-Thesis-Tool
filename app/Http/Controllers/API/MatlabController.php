@@ -20,7 +20,7 @@ class MatlabController extends Controller
     // This function runs Matlab
     public function runMatlab()
     {
-        //exec("matlab.exe");
+        exec("matlab.exe");
     }
 
     public function getData5gWQ(Request $request)

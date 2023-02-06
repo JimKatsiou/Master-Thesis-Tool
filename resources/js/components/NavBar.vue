@@ -16,11 +16,11 @@
                     <router-link to="/gateways" class="list-group-item list-group-item-action py-2 ripple">Gateways</router-link>
                     <router-link to="/scenarios" class="list-group-item list-group-item-action py-2 ripple">Scenarios</router-link>
                     <hr>
-                    <router-link to="/testing-matlab" class="list-group-item list-group-item-action py-2 ripple">Testing - Matlab</router-link>
-                    <hr>
                     <router-link to="/fiveGSolutions" class="list-group-item list-group-item-action py-2 ripple">5G Solutions</router-link>
                     <router-link to="/loraSolutions" class="list-group-item list-group-item-action py-2 ripple">LoRa Solutions</router-link>
                     <router-link to="/nbSolutions" class="list-group-item list-group-item-action py-2 ripple">NB-IoT Solutions</router-link>
+                    <hr>
+                    <router-link to="/testing-matlab" class="list-group-item list-group-item-action py-2 ripple">Testing - Matlab</router-link>
                     <hr>
                     <router-link to="/charts" class="list-group-item list-group-item-action py-2 ripple">Charts</router-link>
                     <router-link to="/tables" class="list-group-item list-group-item-action py-2 ripple">Tables</router-link>
