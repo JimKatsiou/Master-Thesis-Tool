@@ -178,8 +178,8 @@ function json_file_generator_greedy(cheapest_5g_solutionTable,cheapest_5g_soluti
     cheapest_lora_solutionTable,cheapest_lora_solutionTableCost,cheapest_nb_solutionTable, ...
     cheapest_nb_solutionTableCost, Table_5g_solutions, Table_nb_solutions, Table_lora_solutions)
 
-    %cheapest_5g_solutionTable =  struct2table(cheapest_5g_solutionTable);
-%     solutions_5g = table(cheapest_5g_solutionTable);
+    cheapest_5g_solutionTable =  cheapest_5g_solutionTable;
+    solutions_5g = table(cheapest_5g_solutionTable);
 %     for l = 1:length(solutions_5g)
 %         solution_number = solutions_5g(l);
 %         solutions_5g_data(l) = Table_5g_solutions(l);
