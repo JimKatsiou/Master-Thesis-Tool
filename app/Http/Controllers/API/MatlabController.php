@@ -9,6 +9,7 @@ use App\Models\NbSolutions;
 use App\Models\Battery;
 use App\Models\Gateway;
 use App\Models\Result;
+use App\Models\ResultGA;
 use App\Models\ResultsConfig;
 use App\Models\Sensor;
 use stdClass;
@@ -376,79 +377,79 @@ class MatlabController extends Controller
         $merged_nb_iot_cost = array_merge($cost_effective_nb_solutions_by_cost, $cost_effective_nb_solutions_by_solution);      
 
         // Results
-        // $results_config = ResultsConfig::first();
-        // if($results_config != null)
-        // {
-        //     $last_number = $results_config->last_simulation_nubmer;
-        // } else {
-        //     $results_config = new ResultsConfig();
-        //     $last_number = 0;
-        // }
+        $results_config = ResultsConfig::first();
+        if($results_config != null)
+        {
+            $last_number = $results_config->last_simulation_nubmer;
+        } else {
+            $results_config = new ResultsConfig();
+            $last_number = 0;
+        }
 
 
-        // 5G
-        // $length = count($merged_5g_cost['cheapest_5g_solutionTableCost']);
-        // for ($count = 0;  $count < $length; $count++)
-        // {
-        //     $new_results = new Result();
+        //5G
+        $length = count($merged_5g_cost['cheapest_5g_solutionTableCost']);
+        for ($count = 0;  $count < $length; $count++)
+        {
+            $new_results = new Result();
 
-        //     $new_results->simulation_nubmer = $last_number + 1;
-        //     $new_results->simulation_name = "Cheapest solution based on cost";
-        //     $new_results->technology = '5G';
-        //     $new_results->type_of_system = $system['system'];
-        //     $new_results->execution_date = date('d-m-Y');
+            $new_results->simulation_nubmer = $last_number + 1;
+            $new_results->simulation_name = "Cheapest solution based on cost";
+            $new_results->technology = '5G';
+            $new_results->type_of_system = $system['system'];
+            $new_results->execution_date = date('d-m-Y');
             
-        //     $new_results->cheapest_5g_solutionTableCost = $merged_5g_cost['cheapest_5g_solutionTableCost'][$count];
-        //     $new_results->cheapest_5g_solutionTable = $merged_5g_cost['cheapest_5g_solutionTable'][$count];
+            $new_results->cheapest_5g_solutionTableCost = $merged_5g_cost['cheapest_5g_solutionTableCost'][$count];
+            $new_results->cheapest_5g_solutionTable = $merged_5g_cost['cheapest_5g_solutionTable'][$count];
 
-        //     $new_results->save();
-        //     $results_config->last_simulation_nubmer = $new_results->simulation_nubmer;
-        //     $results_config->save();
-        //     $last_number = $results_config->last_simulation_nubmer;
+            $new_results->save();
+            $results_config->last_simulation_nubmer = $new_results->simulation_nubmer;
+            $results_config->save();
+            $last_number = $results_config->last_simulation_nubmer;
 
-        // }
+        }
 
-        // Lora
-        // $length = count($merged_lora_cost['cheapest_lora_solutionTableCost']);
-        // for ($count = 0;  $count < $length; $count++)
-        // {
-        //     $new_results = new Result();
+        //Lora
+        $length = count($merged_lora_cost['cheapest_lora_solutionTableCost']);
+        for ($count = 0;  $count < $length; $count++)
+        {
+            $new_results = new Result();
 
-        //     $new_results->simulation_nubmer = $last_number + 1;
-        //     $new_results->simulation_name = 'Cheapest solution based on cost';
-        //     $new_results->technology = 'LoRa';
-        //     $new_results->type_of_system = $system['system'];
-        //     $new_results->execution_date = date('d-m-Y');
+            $new_results->simulation_nubmer = $last_number + 1;
+            $new_results->simulation_name = 'Cheapest solution based on cost';
+            $new_results->technology = 'LoRa';
+            $new_results->type_of_system = $system['system'];
+            $new_results->execution_date = date('d-m-Y');
 
-        //     $new_results->cheapest_lora_solutionTableCost = $merged_lora_cost['cheapest_lora_solutionTableCost'][$count];
-        //     $new_results->cheapest_lora_solutionTable = $merged_lora_cost['cheapest_lora_solutionTable'][$count];
+            $new_results->cheapest_lora_solutionTableCost = $merged_lora_cost['cheapest_lora_solutionTableCost'][$count];
+            $new_results->cheapest_lora_solutionTable = $merged_lora_cost['cheapest_lora_solutionTable'][$count];
 
-        //     $new_results->save();
-        //     $results_config->last_simulation_nubmer = $new_results->simulation_nubmer;
-        //     $results_config->save();
-        //     $last_number = $results_config->last_simulation_nubmer;
-        // }
+            $new_results->save();
+            $results_config->last_simulation_nubmer = $new_results->simulation_nubmer;
+            $results_config->save();
+            $last_number = $results_config->last_simulation_nubmer;
+        }
 
-        // NB IoT
-        // $length = count($merged_nb_iot_cost['cheapest_nb_solutionTableCost']);
-        // for ($count = 0;  $count < $length; $count++)
-        // {
-        //     $new_results = new Result();
+        //NB IoT
+        $length = count($merged_nb_iot_cost['cheapest_nb_solutionTableCost']);
+        for ($count = 0;  $count < $length; $count++)
+        {
+            $new_results = new Result();
 
-        //     $new_results->simulation_nubmer = $last_number + 1;
-        //     $new_results->simulation_name = 'Cheapest solution based on cost';
-        //     $new_results->technology = 'NB-IoT';
-        //     $new_results->type_of_system = $system['system'];
-        //     $new_results->execution_date = date('d-m-Y');
+            $new_results->simulation_nubmer = $last_number + 1;
+            $new_results->simulation_name = 'Cheapest solution based on cost';
+            $new_results->technology = 'NB-IoT';
+            $new_results->type_of_system = $system['system'];
+            $new_results->execution_date = date('d-m-Y');
 
-        //     $new_results->cheapest_nb_solutionTableCost = $merged_nb_iot_cost['cheapest_nb_solutionTableCost'][$count];
-        //     $new_results->cheapest_nb_solutionTable = $merged_nb_iot_cost['cheapest_nb_solutionTable'][$count];
+            $new_results->cheapest_nb_solutionTableCost = $merged_nb_iot_cost['cheapest_nb_solutionTableCost'][$count];
+            $new_results->cheapest_nb_solutionTable = $merged_nb_iot_cost['cheapest_nb_solutionTable'][$count];
 
-        //     $new_results->save();
-        //     $results_config->last_simulation_nubmer = $new_results->simulation_nubmer;
-        //     $results_config->save();
-        //     $last_number = $results_config->last_simulation_nubmer;
-        // }
+            $new_results->save();
+            $results_config->last_simulation_nubmer = $new_results->simulation_nubmer;
+            $results_config->save();
+            $last_number = $results_config->last_simulation_nubmer;
+        }
 
         // Battery - Greedy Algorithm
 
@@ -471,67 +472,67 @@ class MatlabController extends Controller
         $merged_lora_battery_gateways = array_merge($battery_effective_lora_solutions_by_battery_life_gateways, $battery_effective_lora_solutions_by_solution_gateways);
 
         // 5G
-        // $length = count($merged_5g_battery['best_5g_solutionTableBL']);
-        // for ($count = 0;  $count < $length; $count++)
-        // {
-        //     $new_results = new Result();
+        $length = count($merged_5g_battery['best_5g_solutionTableBL']);
+        for ($count = 0;  $count < $length; $count++)
+        {
+            $new_results = new Result();
 
-        //     $new_results->simulation_nubmer = $last_number + 1;
-        //     $new_results->simulation_name = "Efficient solution based on battery life";
-        //     $new_results->technology = '5G';
-        //     $new_results->type_of_system = $system['system'];
-        //     $new_results->execution_date = date('d-m-Y');
+            $new_results->simulation_nubmer = $last_number + 1;
+            $new_results->simulation_name = "Efficient solution based on battery life";
+            $new_results->technology = '5G';
+            $new_results->type_of_system = $system['system'];
+            $new_results->execution_date = date('d-m-Y');
             
-        //     $new_results->best_5g_solutionTableBL = $merged_5g_battery['best_5g_solutionTableBL'][$count];
-        //     $new_results->best_5g_solutionTable = $merged_5g_battery['best_5g_solutionTable'][$count];
+            $new_results->best_5g_solutionTableBL = $merged_5g_battery['best_5g_solutionTableBL'][$count];
+            $new_results->best_5g_solutionTable = $merged_5g_battery['best_5g_solutionTable'][$count];
 
-        //     $new_results->save();
-        //     $results_config->last_simulation_nubmer = $new_results->simulation_nubmer;
-        //     $results_config->save();
-        //     $last_number = $results_config->last_simulation_nubmer;
-        // }
+            $new_results->save();
+            $results_config->last_simulation_nubmer = $new_results->simulation_nubmer;
+            $results_config->save();
+            $last_number = $results_config->last_simulation_nubmer;
+        }
 
-        // Lora - Bttery
-        // $length = count($merged_lora_cost['cheapest_lora_solutionTableCost']);
-        // for ($count = 0;  $count < $length; $count++)
-        // {
-        //     $new_results = new Result();
+        //Lora - Bttery
+        $length = count($merged_lora_cost['cheapest_lora_solutionTableCost']);
+        for ($count = 0;  $count < $length; $count++)
+        {
+            $new_results = new Result();
 
-        //     $new_results->simulation_nubmer = $last_number + 1;
-        //     $new_results->simulation_name = 'Cheapest solution based on cost';
-        //     $new_results->technology = 'LoRa';
-        //     $new_results->type_of_system = $system['system'];
-        //     $new_results->execution_date = date('d-m-Y');
+            $new_results->simulation_nubmer = $last_number + 1;
+            $new_results->simulation_name = 'Cheapest solution based on cost';
+            $new_results->technology = 'LoRa';
+            $new_results->type_of_system = $system['system'];
+            $new_results->execution_date = date('d-m-Y');
 
-        //     $new_results->cheapest_lora_solutionTableCost = $merged_lora_cost['cheapest_lora_solutionTableCost'][$count];
-        //     $new_results->cheapest_lora_solutionTable = $merged_lora_cost['cheapest_lora_solutionTable'][$count];
+            $new_results->cheapest_lora_solutionTableCost = $merged_lora_cost['cheapest_lora_solutionTableCost'][$count];
+            $new_results->cheapest_lora_solutionTable = $merged_lora_cost['cheapest_lora_solutionTable'][$count];
 
-        //     $new_results->save();
-        //     $results_config->last_simulation_nubmer = $new_results->simulation_nubmer;
-        //     $results_config->save();
-        //     $last_number = $results_config->last_simulation_nubmer;
-        // }
+            $new_results->save();
+            $results_config->last_simulation_nubmer = $new_results->simulation_nubmer;
+            $results_config->save();
+            $last_number = $results_config->last_simulation_nubmer;
+        }
 
-        //  // NB IoT
-        //  $length = count($merged_nb_battery['best_nb_solutionTableBL']);
-        //  for ($count = 0;  $count < $length; $count++)
-        //  {
-        //      $new_results = new Result();
+         // NB IoT
+         $length = count($merged_nb_battery['best_nb_solutionTableBL']);
+         for ($count = 0;  $count < $length; $count++)
+         {
+             $new_results = new Result();
  
-        //      $new_results->simulation_nubmer = $last_number + 1;
-        //      $new_results->simulation_name = 'Cheapest solution based on cost';
-        //      $new_results->technology = 'NB-IoT';
-        //      $new_results->type_of_system = $system['system'];
-        //      $new_results->execution_date = date('d-m-Y');
+             $new_results->simulation_nubmer = $last_number + 1;
+             $new_results->simulation_name = 'Cheapest solution based on cost';
+             $new_results->technology = 'NB-IoT';
+             $new_results->type_of_system = $system['system'];
+             $new_results->execution_date = date('d-m-Y');
  
-        //      $new_results->best_nb_solutionTableBL = $merged_nb_battery['best_nb_solutionTableBL'][$count];
-        //      $new_results->best_nb_solutionTable = $merged_nb_battery['best_nb_solutionTable'][$count];
+             $new_results->best_nb_solutionTableBL = $merged_nb_battery['best_nb_solutionTableBL'][$count];
+             $new_results->best_nb_solutionTable = $merged_nb_battery['best_nb_solutionTable'][$count];
  
-        //      $new_results->save();
-        //      $results_config->last_simulation_nubmer = $new_results->simulation_nubmer;
-        //      $results_config->save();
-        //      $last_number = $results_config->last_simulation_nubmer;
-        //  }
+             $new_results->save();
+             $results_config->last_simulation_nubmer = $new_results->simulation_nubmer;
+             $results_config->save();
+             $last_number = $results_config->last_simulation_nubmer;
+         }
 
 
         // Genetic - Algorithms
@@ -541,27 +542,87 @@ class MatlabController extends Controller
         $ga_most_effective_lora_solutions = json_decode(file_get_contents(storage_path() . "/app/public/MatlabCodes/Results/GA/GA-cost-effective-lora-solutions.json"), true);
         $ga_most_effective_nb_solutions = json_decode(file_get_contents(storage_path() . "/app/public/MatlabCodes/Results/GA/GA-cost-effective-NB-solutions.json"), true);
 
-        dd($ga_most_effective_5g_solutions, $ga_most_effective_lora_solutions, $ga_most_effective_nb_solutions);
-            // $count++;
-            // $new_results = new Result();
+        // 5G
+        $length = count([$ga_most_effective_5g_solutions]);
+        for ($count = 0;  $count < $length; $count++)
+        {
+            $check_if_resultt_exist = ResultGA::where('sensor_5g_a', $ga_most_effective_5g_solutions[$count][0])
+            ->where('sensor_5g_a', $ga_most_effective_5g_solutions[$count][0])
+            ->where('sensor_5g_b', $ga_most_effective_5g_solutions[$count][0])
+            ->where('sensor_5g_c', $ga_most_effective_5g_solutions[$count][0])
+            ->first();
 
+            $new_results = new ResultGA();
 
-            // $new_results->best_5g_solutionTableBL = ;
-            // $new_results->best_5g_solutionTableBL = ;
-            // $new_results->best_5g_solutionTable = ;
+            $new_results->simulation_nubmer = $last_number + 1;
+            $new_results->simulation_name = "Efficient solutions, response from algorith";
+            $new_results->technology = '5G';
+            $new_results->type_of_system = $system['system'];
+            $new_results->execution_date = date('d-m-Y');
+            
+            $new_results->sensor_5g_a = $ga_most_effective_5g_solutions[$count][0];
+            $new_results->sensor_5g_b = $ga_most_effective_5g_solutions[$count][1];
+            $new_results->sensor_5g_c = $ga_most_effective_5g_solutions[$count][2];
 
-            // $new_results->best_lora_gateway_solutionTableBL = ;
-            // $new_results->best_lora_gateway_solutionTableBL_sensorsBL = ;
-            // $new_results->best_lora_solutionTableBL = ;
-            // $new_results->best_lora_solutionTableBL_GatewaysBL= ;
-            // $new_results->best_lora_gateway_solutionTable = ;
-            // $new_results->best_lora_solutionTable = ;
+            $new_results->solution_cost_nb = $ga_most_effective_5g_solutions[$count][3];
+            $new_results->solution_battery_life_nb = $ga_most_effective_5g_solutions[$count][4];
 
-            // $new_results->best_nb_solutionTableBL = ;
-            // $new_results->best_nb_solutionTable = ;
+            $new_results->save();
+            $results_config->last_simulation_nubmer = $new_results->simulation_nubmer;
+            $results_config->save();
+            $last_number = $results_config->last_simulation_nubmer;
+        }
 
-            //$new_results->save();
-        //}
+        // LoRa
+        $length = count([$ga_most_effective_lora_solutions]);
+        for ($count = 0;  $count < $length; $count++)
+        {
+            $new_results = new ResultGA();
+
+            $new_results->simulation_nubmer = $last_number + 1;
+            $new_results->simulation_name = "Efficient solutions, response from algorith";
+            $new_results->technology = 'LoRa';
+            $new_results->type_of_system = $system['system'];
+            $new_results->execution_date = date('d-m-Y');
+            
+            $new_results->sensor_lora_a = $ga_most_effective_lora_solutions[$count][0];
+            $new_results->sensor_lora_b = $ga_most_effective_lora_solutions[$count][1];
+            $new_results->sensor_lora_c = $ga_most_effective_lora_solutions[$count][2];
+
+            $new_results->solution_cost_lora = $ga_most_effective_lora_solutions[$count][3];
+            $new_results->solution_battery_life_lora = $ga_most_effective_lora_solutions[$count][4];
+
+            $new_results->save();
+            $results_config->last_simulation_nubmer = $new_results->simulation_nubmer;
+            $results_config->save();
+            $last_number = $results_config->last_simulation_nubmer;
+        }
+
+        // NB-IoT
+        $length = count([$ga_most_effective_nb_solutions]);
+        for ($count = 0;  $count < $length; $count++)
+        {
+            $new_results = new ResultGA();
+
+            $new_results->simulation_nubmer = $last_number + 1;
+            $new_results->simulation_name = "Efficient solutions, response from gentic algorith";
+            $new_results->technology = 'NB-IoT';
+            $new_results->type_of_system = $system['system'];
+            $new_results->execution_date = date('d-m-Y');
+            
+            $new_results->sensor_nb_a = $ga_most_effective_nb_solutions[$count][0];
+            $new_results->sensor_nb_b = $ga_most_effective_nb_solutions[$count][1];
+            $new_results->sensor_nb_c = $ga_most_effective_nb_solutions[$count][2];
+
+            $new_results->solution_cost_nb = $ga_most_effective_nb_solutions[$count][3];
+            $new_results->solution_battery_life_nb = $ga_most_effective_nb_solutions[$count][4];
+
+            $new_results->save();
+            $results_config->last_simulation_nubmer = $new_results->simulation_nubmer;
+            $results_config->save();
+            $last_number = $results_config->last_simulation_nubmer;
+        }
+
     }
 }
 ?>
