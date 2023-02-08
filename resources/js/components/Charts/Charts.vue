@@ -15,11 +15,22 @@
                             <hr>
                         </div>
                         <div class="row">
-                            <div class="col-sm-6">
-                                <datepicker  v-model="picked"/>
+                            <div class="col-sm-5">
+                               <div class="form-group">
+                                    <label>Date</label>
+                                    <datepicker v-model="picked"/>
+                                </div>
                             </div>
-                            <div class="col-sm-6">
-                                <button type="button" class="btn btn-primary" @click="plot_cost_bar_5g(picked)">Plot chart</button>
+                            <div class="col-sm-5">
+                               <div class="form-group">
+                                    <label>Simulation Number</label>
+                                    <input type="number" class="form-control" v-model="number_of_simulation" placeholder="Enter sumulation number">
+                                </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-group">
+                                    <button type="button" class="btn btn-primary" @click="plot_cost_bar_5g(picked,number_of_simulation)">Plot chart</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -231,6 +242,7 @@ export default {
     data() {
         return {
             picked: picked,
+            number_of_simulation: null,
             chartOptions: {
                 responsive: true
             },
@@ -305,15 +317,16 @@ export default {
         //     return _.cloneDeep(proxyObj);
         // },
 
-        plot_cost_bar_5g(picked)
+        plot_cost_bar_5g(picked,simulation_nubmer)
         {
             let date = moment(String(picked)).format('DD-MM-YYYY')
             let payload = {
-                date: date
+                date: date,
+                simulation_nubmer: simulation_nubmer
             }
             this.$store.dispatch('fetch5GCheapestSolution', payload).then(response => {
                 let result = this.$store.getters.get5GCheapestSolution;
-                console.log('result ==', result)
+                //console.log('result ==', result)
                 let results = JSON.parse(JSON.stringify(result))
                
                 let data = []
@@ -323,8 +336,8 @@ export default {
                     data[i] = results[i]['cheapest_5g_solutionTableCost']
                     labels[i] = results[i]['simulation_nubmer']
                 }
-                console.log('data', data)
-                console.log('labels', labels)
+                //console.log('data', data)
+                //console.log('labels', labels)
                 this.cost_bar_5g_data = {
                     labels: labels.map(row => row),
                     datasets: [ {data: data} ]

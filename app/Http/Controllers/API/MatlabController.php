@@ -380,12 +380,11 @@ class MatlabController extends Controller
         $results_config = ResultsConfig::first();
         if($results_config != null)
         {
-            $last_number = $results_config->last_simulation_nubmer;
+            $last_number = $results_config->last_simulation_nubmer + 1;
         } else {
             $results_config = new ResultsConfig();
-            $last_number = 0;
+            $last_number = 1;
         }
-
 
         //5G
         $length = count($merged_5g_cost['cheapest_5g_solutionTableCost']);
@@ -393,7 +392,7 @@ class MatlabController extends Controller
         {
             $new_results = new Result();
 
-            $new_results->simulation_nubmer = $last_number + 1;
+            $new_results->simulation_nubmer = $last_number;
             $new_results->simulation_name = "Cheapest solution based on cost";
             $new_results->technology = '5G';
             $new_results->type_of_system = $system['system'];
@@ -415,7 +414,7 @@ class MatlabController extends Controller
         {
             $new_results = new Result();
 
-            $new_results->simulation_nubmer = $last_number + 1;
+            $new_results->simulation_nubmer = $last_number;
             $new_results->simulation_name = 'Cheapest solution based on cost';
             $new_results->technology = 'LoRa';
             $new_results->type_of_system = $system['system'];
@@ -436,7 +435,7 @@ class MatlabController extends Controller
         {
             $new_results = new Result();
 
-            $new_results->simulation_nubmer = $last_number + 1;
+            $new_results->simulation_nubmer = $last_number;
             $new_results->simulation_name = 'Cheapest solution based on cost';
             $new_results->technology = 'NB-IoT';
             $new_results->type_of_system = $system['system'];
@@ -477,7 +476,7 @@ class MatlabController extends Controller
         {
             $new_results = new Result();
 
-            $new_results->simulation_nubmer = $last_number + 1;
+            $new_results->simulation_nubmer = $last_number;
             $new_results->simulation_name = "Efficient solution based on battery life";
             $new_results->technology = '5G';
             $new_results->type_of_system = $system['system'];
@@ -498,7 +497,7 @@ class MatlabController extends Controller
         {
             $new_results = new Result();
 
-            $new_results->simulation_nubmer = $last_number + 1;
+            $new_results->simulation_nubmer = $last_number;
             $new_results->simulation_name = 'Cheapest solution based on cost';
             $new_results->technology = 'LoRa';
             $new_results->type_of_system = $system['system'];
@@ -519,7 +518,7 @@ class MatlabController extends Controller
          {
              $new_results = new Result();
  
-             $new_results->simulation_nubmer = $last_number + 1;
+             $new_results->simulation_nubmer = $last_number;
              $new_results->simulation_name = 'Cheapest solution based on cost';
              $new_results->technology = 'NB-IoT';
              $new_results->type_of_system = $system['system'];
@@ -554,7 +553,7 @@ class MatlabController extends Controller
 
             $new_results = new ResultGA();
 
-            $new_results->simulation_nubmer = $last_number + 1;
+            $new_results->simulation_nubmer = $last_number;
             $new_results->simulation_name = "Efficient solutions, response from algorith";
             $new_results->technology = '5G';
             $new_results->type_of_system = $system['system'];
@@ -579,7 +578,7 @@ class MatlabController extends Controller
         {
             $new_results = new ResultGA();
 
-            $new_results->simulation_nubmer = $last_number + 1;
+            $new_results->simulation_nubmer = $last_number;
             $new_results->simulation_name = "Efficient solutions, response from algorith";
             $new_results->technology = 'LoRa';
             $new_results->type_of_system = $system['system'];
@@ -604,7 +603,7 @@ class MatlabController extends Controller
         {
             $new_results = new ResultGA();
 
-            $new_results->simulation_nubmer = $last_number + 1;
+            $new_results->simulation_nubmer = $last_number;
             $new_results->simulation_name = "Efficient solutions, response from gentic algorith";
             $new_results->technology = 'NB-IoT';
             $new_results->type_of_system = $system['system'];
@@ -622,7 +621,6 @@ class MatlabController extends Controller
             $results_config->save();
             $last_number = $results_config->last_simulation_nubmer;
         }
-
     }
 }
 ?>
