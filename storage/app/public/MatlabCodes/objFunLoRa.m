@@ -1,11 +1,8 @@
-function [Cost, Energy] = objFunLoRa(x)
-
-    
+function [Cost, Energy] = objFunLoRa(x)    
 % get cost data from json file 
     jsonText_Cost = fileread("Inputs-json\costs.json");
     jsonData_Cost = jsondecode(jsonText_Cost); % Convert JSON formatted text to MATLAB data types
     jsonDataCostTable = table(jsonData_Cost);
-
     jsonText_Energy = fileread("Inputs-json\battery.json");
     jsonData_Energy = jsondecode(jsonText_Energy); % Convert JSON formatted text to MATLAB data types
     jsonDataEnergyTable = table(jsonData_Energy);
@@ -35,7 +32,6 @@ function [Cost, Energy] = objFunLoRa(x)
     capacity5 = jsonDataEnergyTable.jsonData_Energy.battery_capacity_lora_gateway_type_b;
     consumption5 = jsonDataEnergyTable.jsonData_Energy.battery_consumption_lora_gateway_type_b;
 
-
     cost1 = ( x1 * c1 ) + ( x1 * c2 );
     cost2 = ( x2 * c3 ) + ( x2 * c4 );
     cost3 = ( x3 * c5 ) + ( x3 * c6 );
@@ -47,8 +43,6 @@ function [Cost, Energy] = objFunLoRa(x)
     batteryLife_4 = capacity4/consumption4;
     batteryLife_5 = capacity5/consumption5;
 
-
     Cost = cost1 + cost2 + cost3 + cost4;
     Energy =  (batteryLife_1 + batteryLife_2 + batteryLife_3 + batteryLife_4 + batteryLife_5) / 5;
-
 end

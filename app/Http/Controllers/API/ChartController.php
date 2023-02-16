@@ -21,7 +21,7 @@ class ChartController extends Controller
         $results = Result::where('technology','=', "5G")->where('execution_date', $date)
         ->where('simulation_nubmer','=', $data['simulation_nubmer'])->where('simulation_perpuse','=',"Chepest-by-cost")->get();
 
-        dd($results);
+        //dd($results);
         
         if($results->isEmpty())
         {

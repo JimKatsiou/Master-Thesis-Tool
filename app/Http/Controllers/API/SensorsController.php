@@ -22,19 +22,21 @@ class SensorsController extends Controller
     {
         $sensor = new Sensor();
 
-        $sensor->name = $request->name;
-        $sensor->technology_name = $request->technology_name;
-        $technology_id = Technologies::select('id')->where('name', $request->technology_id)->first();
-        $sensor->technology_id = $technology_id['id'];
-        if(isset($request->description)){
-            $sensor->description = $request->description;
+        $data = $request->post();
+        $sensor->name = $data['name'];
+        
+        $technology = Technologies::where('name', $data['technology_id'])->first();
+        $sensor->technology_id = $technology['id'];
+        $sensor->technology_name = $technology['name'];
+        if(isset($data['description'])){
+            $sensor->description = $data['description'];
         } else {
             $sensor->description = null;
         }
-        $sensor->cost = $request->cost;
-        $sensor->installation_cost = $request->installation_cost;
-        $battery_id = Battery::select('id')->where('name', $request->battery_id)->first();
-        $sensor->battery_id = $battery_id['id'];
+        $sensor->cost = $data['cost'];
+        $sensor->installation_cost = $data['installation_cost'];
+        $battery = Battery::select('id')->where('name', $data['battery'])->first();
+        $sensor->battery_id = $battery['id'];
 
         $sensor->save();
 

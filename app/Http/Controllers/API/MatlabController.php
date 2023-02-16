@@ -8,6 +8,7 @@ use App\Models\LoraSolutions;
 use App\Models\NbSolutions;
 use App\Models\Battery;
 use App\Models\Gateway;
+use App\Models\InputHistory;
 use App\Models\Result;
 use App\Models\ResultGA;
 use App\Models\ResultsConfig;
@@ -21,7 +22,7 @@ class MatlabController extends Controller
     // This function runs Matlab
     public function runMatlab()
     {
-        exec("matlab.exe");
+        //exec("matlab.exe");
     }
 
     public function getData5gWQ(Request $request)
@@ -386,6 +387,89 @@ class MatlabController extends Controller
             $last_number = 1;
         }
 
+        $merge_history = array_merge($fiveG_scenario, $lora_scenario, $nbIoT_scenario);
+        //dd($merge_history);
+
+        //History inputs
+        $length = count($fiveG_scenario);
+        for ($count = 0;  $count < $length; $count++)
+        {
+            $history = new InputHistory();
+
+            $history->simulation_nubmer = $last_number;
+            //$new_results->simulation_name = "Cheapest solution based on cost";
+            $history->technology = '5G';
+            $history->type_of_system = $system['system'];
+            $history->simulation_perpuse = 'Chepest-by-cost';
+            $history->execution_date = date('d-m-Y');
+
+            $history->five_g_sensors_type_a =  $fiveG_scenario['five_g_sensors_type_a'];
+            $history->five_g_sensors_type_b = $fiveG_scenario['five_g_sensors_type_b'];
+            $history->five_g_sensors_type_c = $fiveG_scenario['five_g_sensors_type_c'];
+            $history->numberOf5gSensorsTypeA = $fiveG_scenario['numberOf5gSensorsTypeA'];
+            $history->numberOf5gSensorsTypeB = $fiveG_scenario['numberOf5gSensorsTypeB'];
+            $history->numberOf5gSensorsTypeC = $fiveG_scenario['numberOf5gSensorsTypeC'];
+    
+            $history->save();
+            $results_config->last_simulation_nubmer = $history->simulation_nubmer;
+            $results_config->save();
+            $last_number = $results_config->last_simulation_nubmer;
+        }
+
+        $length = count($lora_scenario);
+        for ($count = 0;  $count < $length; $count++)
+        {
+            $history = new InputHistory();
+
+            $history->simulation_nubmer = $last_number;
+            //$new_results->simulation_name = "Cheapest solution based on cost";
+            $history->technology = '5G';
+            $history->type_of_system = $system['system'];
+            $history->simulation_perpuse = 'Chepest-by-cost';
+            $history->execution_date = date('d-m-Y');
+
+            $history->lora_sensors_type_a =  $lora_scenario['lora_sensors_type_a'];
+            $history->lora_sensors_type_b = $lora_scenario['lora_sensors_type_b'];
+            $history->lora_sensors_type_c = $lora_scenario['lora_sensors_type_c'];
+            $history->numberOfLoraSensorsTypeA = $lora_scenario['numberOfLoraSensorsTypeA'];
+            $history->numberOfLoraSensorsTypeB = $lora_scenario['numberOfLoraSensorsTypeB'];
+            $history->numberOfLoraSensorsTypeC = $lora_scenario['numberOfLoraSensorsTypeC'];
+            $history->gateways_type_a = $lora_scenario['gateways_type_a'];
+            $history->gateways_type_b = $lora_scenario['gateways_type_b'];
+            $history->numberOfGatewaysTypeA = $lora_scenario['numberOfGatewaysTypeA'];
+            $history->numberOfGatewaysTypeB = $lora_scenario['numberOfGatewaysTypeB'];
+   
+            $history->save();
+            $results_config->last_simulation_nubmer = $history->simulation_nubmer;
+            $results_config->save();
+            $last_number = $results_config->last_simulation_nubmer;
+        }
+
+        $length = count($nbIoT_scenario);
+        for ($count = 0;  $count < $length; $count++)
+        {
+            $history = new InputHistory();
+
+            $history->simulation_nubmer = $last_number;
+            //$new_results->simulation_name = "Cheapest solution based on cost";
+            $history->technology = '5G';
+            $history->type_of_system = $system['system'];
+            $history->simulation_perpuse = 'Chepest-by-cost';
+            $history->execution_date = date('d-m-Y');
+
+            $history->nb_sensors_type_a =  $nbIoT_scenario['nb_sensors_type_a'];
+            $history->nb_sensors_type_b = $nbIoT_scenario['nb_sensors_type_b'];
+            $history->nb_sensors_type_c = $nbIoT_scenario['nb_sensors_type_c'];
+            $history->numberOfNBSensorsTypeA = $nbIoT_scenario['numberOfNBSensorsTypeA'];
+            $history->numberOfNBSensorsTypeB = $nbIoT_scenario['numberOfNBSensorsTypeB'];
+            $history->numberOfNBSensorsTypeC = $nbIoT_scenario['numberOfNBSensorsTypeC'];
+   
+            $history->save();
+            $results_config->last_simulation_nubmer = $history->simulation_nubmer;
+            $results_config->save();
+            $last_number = $results_config->last_simulation_nubmer;
+        }
+
         //5G
         $length = count($merged_5g_cost['cheapest_5g_solutionTableCost']);
         for ($count = 0;  $count < $length; $count++)
@@ -396,6 +480,7 @@ class MatlabController extends Controller
             $new_results->simulation_name = "Cheapest solution based on cost";
             $new_results->technology = '5G';
             $new_results->type_of_system = $system['system'];
+            $new_results->simulation_perpuse = 'Chepest-by-cost';
             $new_results->execution_date = date('d-m-Y');
             
             $new_results->cheapest_5g_solutionTableCost = $merged_5g_cost['cheapest_5g_solutionTableCost'][$count];
@@ -418,6 +503,7 @@ class MatlabController extends Controller
             $new_results->simulation_name = 'Cheapest solution based on cost';
             $new_results->technology = 'LoRa';
             $new_results->type_of_system = $system['system'];
+            $new_results->simulation_perpuse = 'Chepest-by-cost';
             $new_results->execution_date = date('d-m-Y');
 
             $new_results->cheapest_lora_solutionTableCost = $merged_lora_cost['cheapest_lora_solutionTableCost'][$count];
@@ -439,6 +525,7 @@ class MatlabController extends Controller
             $new_results->simulation_name = 'Cheapest solution based on cost';
             $new_results->technology = 'NB-IoT';
             $new_results->type_of_system = $system['system'];
+            $new_results->simulation_perpuse = 'Chepest-by-cost';
             $new_results->execution_date = date('d-m-Y');
 
             $new_results->cheapest_nb_solutionTableCost = $merged_nb_iot_cost['cheapest_nb_solutionTableCost'][$count];
@@ -480,6 +567,7 @@ class MatlabController extends Controller
             $new_results->simulation_name = "Efficient solution based on battery life";
             $new_results->technology = '5G';
             $new_results->type_of_system = $system['system'];
+            $new_results->simulation_perpuse = 'Best battery performance';
             $new_results->execution_date = date('d-m-Y');
             
             $new_results->best_5g_solutionTableBL = $merged_5g_battery['best_5g_solutionTableBL'][$count];
@@ -501,6 +589,7 @@ class MatlabController extends Controller
             $new_results->simulation_name = 'Cheapest solution based on cost';
             $new_results->technology = 'LoRa';
             $new_results->type_of_system = $system['system'];
+            $new_results->simulation_perpuse = 'Best battery performance';
             $new_results->execution_date = date('d-m-Y');
 
             $new_results->cheapest_lora_solutionTableCost = $merged_lora_cost['cheapest_lora_solutionTableCost'][$count];
@@ -522,6 +611,7 @@ class MatlabController extends Controller
              $new_results->simulation_name = 'Cheapest solution based on cost';
              $new_results->technology = 'NB-IoT';
              $new_results->type_of_system = $system['system'];
+             $new_results->simulation_perpuse = 'Best battery performance';
              $new_results->execution_date = date('d-m-Y');
  
              $new_results->best_nb_solutionTableBL = $merged_nb_battery['best_nb_solutionTableBL'][$count];

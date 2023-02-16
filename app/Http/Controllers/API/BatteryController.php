@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use stdClass;
 use App\Models\Battery;
 
-class BatteryContoller extends Controller{
+class BatteryController extends Controller{
 
     public function getAllBattaries()
     {

@@ -114,8 +114,8 @@ Route::group(['prefix' => 'testing-matlab', 'middleware' => 'auth:sanctum'], fun
     Route::post('fetch-results', [MatlabController::class, 'fetch_results']);
 });
 
-Route::group(['prefix' => 'battaries', 'middleware' => 'auth:sanctum'], function () {
-    Route::get('get-battaries', [BatteryController::class, 'getAllBatteries']);
+Route::group(['prefix' => 'batteries', 'middleware' => 'auth:sanctum'], function () {
+    Route::get('get-batteries', [BatteryController::class, 'getAllBattaries']);
 });
 
 Route::group(['prefix' => 'results', 'middleware' => 'auth:sanctum'], function () {

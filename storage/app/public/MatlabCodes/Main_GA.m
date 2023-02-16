@@ -2,7 +2,7 @@ clc;
 clear;
 close all;
 
-%% Problem Definition - GA Parameters (here is defined the the parameters of the genetic algorithm)
+%% Problem Definition - GA Parameters (here is defined the parameters of the genetic algorithm)
 scenarios = 3;
 for sc=1:1:scenarios
     if (sc == 1)  % 5g scenario
@@ -24,7 +24,7 @@ for sc=1:1:scenarios
         crossover_times = 4;    % Number of crossovers
         mutation_times = 5;     % Number of mutations
     
-    elseif( sc == 2) % LoRa scenariocl
+    elseif( sc == 2) % LoRa scenario
 
         nVar = 4;               % Number of variables
         VarMin = [20, 20, 20, 10];            % The lower bound of the chromosomes

@@ -26,8 +26,8 @@
                     </div>
                     <div class="form-group">
                         <label>Battery</label>
-                        <v-select :options="battaries"
-                            v-model="sensor.battary_id" :placeholder="'Select battary'">
+                        <v-select :options="batteries"
+                            v-model="sensor.battery" :placeholder="'Select battary'">
                         </v-select>                    
                     </div>
                     <div class="form-group">
@@ -52,7 +52,7 @@ export default {
         return {
             sensor: {},
             technologies: [],
-            battaries: [],
+            batteries: [],
         }
     },
     components: {
@@ -92,16 +92,17 @@ export default {
                 console.error(error);
             });
         })
-        
-        this.$axios.get('/api/batteries/get-batteries').then(response => {
-            let batteries = response.data;
-            let batt = []
+        this.$axios.get('/sanctum/csrf-cookie').then(response => {
+            this.$axios.get('/api/batteries/get-batteries').then(response => {
+                let batteries = response.data;
+                let batt = []
                 for (let i = 0; i < batteries.length; i++)
                 {
                     batt[i] = batteries[i]['name'];
                 }
-                this.battaries = batt;
+                this.batteries = batt;
             })
+        })
     },
 }
 </script>

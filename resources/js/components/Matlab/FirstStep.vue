@@ -14,7 +14,7 @@
                     <form>
                         <div class="form-group">
                             <v-select :options="type_of_systems"
-                                v-model="selecetedSystem" :placeholder="'Select technoly'">
+                                v-model="selecetedSystem" :placeholder="'Select system'">
                             </v-select>
                         </div>
                         <br>

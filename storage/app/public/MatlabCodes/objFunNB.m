@@ -1,5 +1,4 @@
 function [Cost, Energy] = objFunNB(x)
-
 % get cost data from json file 
     jsonText_Cost = fileread("Inputs-json\costs.json");
     jsonData_Cost = jsondecode(jsonText_Cost); % Convert JSON formatted text to MATLAB data types
@@ -37,5 +36,4 @@ function [Cost, Energy] = objFunNB(x)
    
     Cost = cost1 + cost2 + cost3;
     Energy =  (batteryLife_1 + batteryLife_2 + batteryLife_3) / 3;
-
 end

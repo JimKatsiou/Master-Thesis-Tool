@@ -40,5 +40,4 @@ function [Cost, Energy] = objectiveFunction5g(x)
     Cost = cost1 + cost2 + cost3;
     Energy = (batteryLife_1 + batteryLife_2 + batteryLife_3) / 3;
     Energy = Energy / 24; % in days
-
 end

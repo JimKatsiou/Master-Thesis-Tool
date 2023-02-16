@@ -14,7 +14,7 @@ class AddSimulationPerpuseColumnToResultsTable extends Migration
     public function up()
     {
         Schema::table('results', function (Blueprint $table) {
-            $table->string('battery_id')->after('technology_name');
+            $table->string('simulation_perpuse')->after('technology');
 
         });
     }
@@ -27,7 +27,7 @@ class AddSimulationPerpuseColumnToResultsTable extends Migration
     public function down()
     {
         Schema::table('results', function (Blueprint $table) {
-            //
+            $table->dropColumn('simulation_perpuse');
         });
     }
 }
