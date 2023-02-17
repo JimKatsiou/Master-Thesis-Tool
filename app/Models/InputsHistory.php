@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 
-class InputHistory extends Model
+class InputsHistory extends Model
 {
     use HasFactory;
     protected $guarded = [];

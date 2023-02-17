@@ -8,7 +8,7 @@ use App\Models\LoraSolutions;
 use App\Models\NbSolutions;
 use App\Models\Battery;
 use App\Models\Gateway;
-use App\Models\InputHistory;
+use App\Models\InputsHistory;
 use App\Models\Result;
 use App\Models\ResultGA;
 use App\Models\ResultsConfig;
@@ -394,21 +394,20 @@ class MatlabController extends Controller
         $length = count($fiveG_scenario);
         for ($count = 0;  $count < $length; $count++)
         {
-            $history = new InputHistory();
+            $history = new InputsHistory();
 
             $history->simulation_nubmer = $last_number;
             //$new_results->simulation_name = "Cheapest solution based on cost";
             $history->technology = '5G';
             $history->type_of_system = $system['system'];
-            $history->simulation_perpuse = 'Chepest-by-cost';
             $history->execution_date = date('d-m-Y');
 
-            $history->five_g_sensors_type_a =  $fiveG_scenario['five_g_sensors_type_a'];
-            $history->five_g_sensors_type_b = $fiveG_scenario['five_g_sensors_type_b'];
-            $history->five_g_sensors_type_c = $fiveG_scenario['five_g_sensors_type_c'];
-            $history->numberOf5gSensorsTypeA = $fiveG_scenario['numberOf5gSensorsTypeA'];
-            $history->numberOf5gSensorsTypeB = $fiveG_scenario['numberOf5gSensorsTypeB'];
-            $history->numberOf5gSensorsTypeC = $fiveG_scenario['numberOf5gSensorsTypeC'];
+            $history->five_g_sensors_type_a =  $fiveG_scenario[$count]['five_g_sensors_type_a'];
+            $history->five_g_sensors_type_b = $fiveG_scenario[$count]['five_g_sensors_type_b'];
+            $history->five_g_sensors_type_c = $fiveG_scenario[$count]['five_g_sensors_type_c'];
+            $history->numberOf5gSensorsTypeA = $fiveG_scenario[$count]['numberOf5gSensorsTypeA'];
+            $history->numberOf5gSensorsTypeB = $fiveG_scenario[$count]['numberOf5gSensorsTypeB'];
+            $history->numberOf5gSensorsTypeC = $fiveG_scenario[$count]['numberOf5gSensorsTypeC'];
     
             $history->save();
             $results_config->last_simulation_nubmer = $history->simulation_nubmer;
@@ -419,25 +418,24 @@ class MatlabController extends Controller
         $length = count($lora_scenario);
         for ($count = 0;  $count < $length; $count++)
         {
-            $history = new InputHistory();
+            $history = new InputsHistory();
 
             $history->simulation_nubmer = $last_number;
             //$new_results->simulation_name = "Cheapest solution based on cost";
-            $history->technology = '5G';
+            $history->technology = 'LoRa';
             $history->type_of_system = $system['system'];
-            $history->simulation_perpuse = 'Chepest-by-cost';
             $history->execution_date = date('d-m-Y');
 
-            $history->lora_sensors_type_a =  $lora_scenario['lora_sensors_type_a'];
-            $history->lora_sensors_type_b = $lora_scenario['lora_sensors_type_b'];
-            $history->lora_sensors_type_c = $lora_scenario['lora_sensors_type_c'];
-            $history->numberOfLoraSensorsTypeA = $lora_scenario['numberOfLoraSensorsTypeA'];
-            $history->numberOfLoraSensorsTypeB = $lora_scenario['numberOfLoraSensorsTypeB'];
-            $history->numberOfLoraSensorsTypeC = $lora_scenario['numberOfLoraSensorsTypeC'];
-            $history->gateways_type_a = $lora_scenario['gateways_type_a'];
-            $history->gateways_type_b = $lora_scenario['gateways_type_b'];
-            $history->numberOfGatewaysTypeA = $lora_scenario['numberOfGatewaysTypeA'];
-            $history->numberOfGatewaysTypeB = $lora_scenario['numberOfGatewaysTypeB'];
+            $history->lora_sensors_type_a =  $lora_scenario[$count]['lora_sensors_type_a'];
+            $history->lora_sensors_type_b = $lora_scenario[$count]['lora_sensors_type_b'];
+            $history->lora_sensors_type_c = $lora_scenario[$count]['lora_sensors_type_c'];
+            $history->numberOfLoraSensorsTypeA = $lora_scenario[$count]['numberOfLoraSensorsTypeA'];
+            $history->numberOfLoraSensorsTypeB = $lora_scenario[$count]['numberOfLoraSensorsTypeB'];
+            $history->numberOfLoraSensorsTypeC = $lora_scenario[$count]['numberOfLoraSensorsTypeC'];
+            $history->gateways_type_a = $lora_scenario[$count]['gateways_type_a'];
+            $history->gateways_type_b = $lora_scenario[$count]['gateways_type_b'];
+            $history->numberOfGatewaysTypeA = $lora_scenario[$count]['numberOfGatewaysTypeA'];
+            $history->numberOfGatewaysTypeB = $lora_scenario[$count]['numberOfGatewaysTypeB'];
    
             $history->save();
             $results_config->last_simulation_nubmer = $history->simulation_nubmer;
@@ -448,21 +446,20 @@ class MatlabController extends Controller
         $length = count($nbIoT_scenario);
         for ($count = 0;  $count < $length; $count++)
         {
-            $history = new InputHistory();
+            $history = new InputsHistory();
 
             $history->simulation_nubmer = $last_number;
             //$new_results->simulation_name = "Cheapest solution based on cost";
-            $history->technology = '5G';
+            $history->technology = 'NB-IoT';
             $history->type_of_system = $system['system'];
-            $history->simulation_perpuse = 'Chepest-by-cost';
             $history->execution_date = date('d-m-Y');
 
-            $history->nb_sensors_type_a =  $nbIoT_scenario['nb_sensors_type_a'];
-            $history->nb_sensors_type_b = $nbIoT_scenario['nb_sensors_type_b'];
-            $history->nb_sensors_type_c = $nbIoT_scenario['nb_sensors_type_c'];
-            $history->numberOfNBSensorsTypeA = $nbIoT_scenario['numberOfNBSensorsTypeA'];
-            $history->numberOfNBSensorsTypeB = $nbIoT_scenario['numberOfNBSensorsTypeB'];
-            $history->numberOfNBSensorsTypeC = $nbIoT_scenario['numberOfNBSensorsTypeC'];
+            $history->nb_sensors_type_a =  $nbIoT_scenario[$count]['nb_sensors_type_a'];
+            $history->nb_sensors_type_b = $nbIoT_scenario[$count]['nb_sensors_type_b'];
+            $history->nb_sensors_type_c = $nbIoT_scenario[$count]['nb_sensors_type_c'];
+            $history->numberOfNBSensorsTypeA = $nbIoT_scenario[$count]['numberOfNBSensorsTypeA'];
+            $history->numberOfNBSensorsTypeB = $nbIoT_scenario[$count]['numberOfNBSensorsTypeB'];
+            $history->numberOfNBSensorsTypeC = $nbIoT_scenario[$count]['numberOfNBSensorsTypeC'];
    
             $history->save();
             $results_config->last_simulation_nubmer = $history->simulation_nubmer;
