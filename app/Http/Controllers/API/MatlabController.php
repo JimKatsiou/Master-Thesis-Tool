@@ -22,7 +22,7 @@ class MatlabController extends Controller
     // This function runs Matlab
     public function runMatlab()
     {
-        //exec("matlab.exe");
+        exec("matlab.exe");
     }
 
     public function getData5gWQ(Request $request)
@@ -650,8 +650,8 @@ class MatlabController extends Controller
             $new_results->sensor_5g_b = $ga_most_effective_5g_solutions[$count][1];
             $new_results->sensor_5g_c = $ga_most_effective_5g_solutions[$count][2];
 
-            $new_results->solution_cost_nb = $ga_most_effective_5g_solutions[$count][3];
-            $new_results->solution_battery_life_nb = $ga_most_effective_5g_solutions[$count][4];
+            $new_results->solution_cost_5g = $ga_most_effective_5g_solutions[$count][3];
+            $new_results->solution_battery_life_5g = $ga_most_effective_5g_solutions[$count][4];
 
             $new_results->save();
             $results_config->last_simulation_nubmer = $new_results->simulation_nubmer;

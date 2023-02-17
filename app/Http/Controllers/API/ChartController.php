@@ -7,6 +7,7 @@ use App\Models\Result;
 use stdClass;
 use Illuminate\Http\Request;
 use App\Classes\ResponseClass;
+use App\Models\ResultGA;
 
 class ChartController extends Controller
 {
@@ -40,6 +41,38 @@ class ChartController extends Controller
 
         //return $respone;
     }
+
+    public function getFivegBestSolutionGA(Request $request)
+    {
+        $respone = new ResponseClass();
+       
+        $data = $request->post();
+        $date = $data['date'];
+
+        // $results = ResultGA::where('technology','=', "5G")->where('execution_date', $date)
+        // ->where('simulation_nubmer','=', $data['simulation_nubmer'])->get();
+
+        $results = ResultGA::where('execution_date', $date)
+        ->where('simulation_nubmer','=', $data['simulation_nubmer'])->get();
+
+        //dd('results', $results);
+        
+        if($results->isEmpty())
+        {
+            $response = new stdClass();
+            $response->object = [];
+        }
+        else {
+            $response = new stdClass();
+            $response->object = $results;
+        }
+        //$respone->error = 'false';
+        //$respone->message = 'ok';
+        
+        return $response;
+    }
+
+    
 }
 
 ?>

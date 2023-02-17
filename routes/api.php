@@ -120,5 +120,5 @@ Route::group(['prefix' => 'batteries', 'middleware' => 'auth:sanctum'], function
 
 Route::group(['prefix' => 'results', 'middleware' => 'auth:sanctum'], function () {
     Route::post('/chart/get-fiveg-cheapest-solution', [ChartController::class, 'index']);
-
+    Route::post('/chart/get-fiveg-best-solution_GA', [ChartController::class, 'getFivegBestSolutionGA']);
 });

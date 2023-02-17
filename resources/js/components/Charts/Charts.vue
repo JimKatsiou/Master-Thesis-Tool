@@ -158,18 +158,27 @@
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Bars - Most effective solution (5G)</h5>
-                        <p class="card-text">Cheapest Scenarios using 5G Technology <b>(Genetic Algorithm Results)</b></p>
+                        <h5 class="card-title">Bars - Most effective solution (Cost)</h5>
+                        <p class="card-text">Cheapest Scenarios using 5G, LoRa, NB-IoT technologies <b>(Genetic Algorithm Results)</b></p>
                         <div v-if="this.bar_5g_GA === true">
                             <Bar id="bar-5g-GA-id" :options="chartOptions" :data="bar_5g_GA_data"/>
                             <hr>
                         </div>
                         <div class="row">
-                            <div class="col-sm-6">
-                                <datepicker  v-model="picked"/>
+                            <div class="col-sm-5">
+                               <div class="form-group">
+                                    <label>Date</label>
+                                    <datepicker v-model="picked"/>
+                                </div>
+                            </div>
+                            <div class="col-sm-5">
+                               <div class="form-group">
+                                    <label>Simulation Number</label>
+                                    <input type="number" class="form-control" v-model="number_of_simulation" placeholder="Enter sumulation number">
+                                </div>
                             </div>
                             <div class="col-sm-6">
-                                <button type="button" class="btn btn-primary" @click="plot_bar_5g_GA()">Plot chart</button>
+                                <button type="button" class="btn btn-primary" @click="plot_bar_5g_GA(picked,number_of_simulation)">Plot chart</button>
                             </div>
                         </div>
                     </div>
@@ -179,18 +188,27 @@
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Bars - Most effective solution (LoRa)</h5>
-                        <p class="card-text">Cheapest Scenarios using LoRa Technology <b>(Genetic Algorithm Results)</b></p>
+                        <h5 class="card-title">Bars - Most effective solution (Battery Life)</h5>
+                        <p class="card-text">Battery efficient using 5G, LoRa, NB-IoT technologies <b>(Genetic Algorithm Results)</b></p>
                         <div v-if="this.bar_lora_GA === true">
                             <Bar id="bar-lora-GA-id" :options="chartOptions" :data="bar_lora_GA_data"/>
                             <hr>
                         </div>
                         <div class="row">
-                            <div class="col-sm-6">
-                                <datepicker  v-model="picked"/>
+                            <div class="col-sm-5">
+                               <div class="form-group">
+                                    <label>Date</label>
+                                    <datepicker v-model="picked"/>
+                                </div>
+                            </div>
+                            <div class="col-sm-5">
+                               <div class="form-group">
+                                    <label>Simulation Number</label>
+                                    <input type="number" class="form-control" v-model="number_of_simulation" placeholder="Enter sumulation number">
+                                </div>
                             </div>
                             <div class="col-sm-6">
-                                <button type="button" class="btn btn-primary" @click="plot_bar_lora_GA()">Plot chart</button>
+                                <button type="button" class="btn btn-primary" @click="plot_bar_lora_GA(picked,number_of_simulation)">Plot chart</button>
                             </div>
                         </div>
                     </div>
@@ -198,7 +216,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-body">
@@ -209,17 +227,26 @@
                             <hr>
                         </div>
                         <div class="row">
-                            <div class="col-sm-6">
-                                <datepicker  v-model="picked"/>
+                            <div class="col-sm-5">
+                               <div class="form-group">
+                                    <label>Date</label>
+                                    <datepicker v-model="picked"/>
+                                </div>
+                            </div>
+                            <div class="col-sm-5">
+                               <div class="form-group">
+                                    <label>Simulation Number</label>
+                                    <input type="number" class="form-control" v-model="number_of_simulation" placeholder="Enter sumulation number">
+                                </div>
                             </div>
                             <div class="col-sm-6">
-                                <button type="button" class="btn btn-primary" @click="plot_bar_nb_GA()">Plot chart</button>
+                                <button type="button" class="btn btn-primary" @click="plot_bar_nb_GA(picked,number_of_simulation)">Plot chart</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
     </div>
 </template>
@@ -286,7 +313,7 @@ export default {
                 datasets: [ ]
             },
             bar_lora_GA: false,
-            bar_lota_GA_data: {
+            bar_lora_GA_data: {
                 labels: [ ],
                 datasets: [ ]
             },
@@ -294,7 +321,12 @@ export default {
             bar_nb_GA_data: {
                 labels: [ ],
                 datasets: [ ]
-            }
+            },
+            // bar_GA: false,
+            // bar__GA_data: {
+            //     labels: [ ],
+            //     datasets: [ ]
+            // }
             
         };
     },
@@ -329,6 +361,7 @@ export default {
                 //console.log('result ==', result)
                 let results = JSON.parse(JSON.stringify(result))
                
+                //console.log('results', )
                 let data = []
                 let labels = []
                 for (let i = 0; i < results.length; i++)
@@ -361,35 +394,125 @@ export default {
         plot_battery_bar_nb(picked){
         },
 
-        plot_bar_5g_GA(picked)
+        plot_bar_5g_GA(picked,simulation_nubmer)
         {
-            // let date = moment(String(picked)).format('DD-MM-YYYY')
-            // let payload = {
-            //     date: date
-            // }
-            // this.$store.dispatch('fetch5GCheapestSolution', payload).then(response => {
-            //     let result = this.$store.getters.get5GCheapestSolution;
-            //     console.log('result ==', result)
-            //     let results = JSON.parse(JSON.stringify(result))
-               
-            //     let data = []
-            //     let labels = []
-            //     for (let i = 0; i < results.length; i++)
-            //     {
-            //         data[i] = results[i]['cheapest_5g_solutionTableCost']
-            //         labels[i] = results[i]['simulation_nubmer']
-            //     }
-            //     console.log('data', data)
-            //     console.log('labels', labels)
-            //     this.chartData_1 = {
-            //         labels: labels.map(row => row),
-            //         datasets: [ {data: data} ]
-            //     }
-            //     this.chart_1 = true
-            // })
+            let date = moment(String(picked)).format('DD-MM-YYYY')
+            let payload = {
+                date: date,
+                simulation_nubmer: simulation_nubmer
+            }
+            this.$axios.get('/sanctum/csrf-cookie').then(response => {
+                this.$axios.post('/api/results/chart/get-fiveg-best-solution_GA', payload).then(response => {
+                    
+                let results = JSON.parse(JSON.stringify(response.data.object))
+                console.log('results ==', results)
+
+                let data = []
+                let labels = []
+                let mpla1 = ""
+                let mpla2 = ""
+                let mpla3 = ""
+
+                for (let i = 0; i < results.length; i++) {
+                    if(i === 0) {
+                        data[i] = results[i]['solution_cost_5g']
+                        mpla1 = String(results[i]['sensor_5g_a']);
+                        mpla2 = String(results[i]['sensor_5g_b']);
+                        mpla3 = String(results[i]['sensor_5g_c']);
+
+                        labels[i] = mpla3 + ', ' + mpla2 + ', ' + mpla3;
+                    }
+                    if(i === 1) {
+                        data[i] = results[i]['solution_cost_lora']
+                        mpla1 = String(results[i]['sensor_lora_a']);
+                        mpla2 = String(results[i]['sensor_lora_b']);
+                        mpla3 = String(results[i]['sensor_lora_c']);
+
+                        labels[i] = mpla3 + ', ' + mpla2 + ', ' + mpla3;
+                    }
+                    if(i === 2) {
+                        data[i] = results[i]['solution_cost_nb']
+                        mpla1 = String(results[i]['sensor_nb_a']);
+                        mpla2 = String(results[i]['sensor_nb_b']);
+                        mpla3 = String(results[i]['sensor_nb_c']);
+
+                        labels[i] = mpla3 + ', ' + mpla2 + ', ' + mpla3;
+                    }
+                }
+                console.log ('data ==', data);
+                this.bar_5g_GA_data = {
+                    labels: labels,
+                    datasets :[
+                        {
+                            label: 'Cost in €',
+                            data: data
+                        }
+                    ]
+                }
+                this.bar_5g_GA = true
+                })
+            })
         },
 
-        plot_bar_lora_GA(picked){
+        plot_bar_lora_GA(picked, simulation_nubmer){
+            let date = moment(String(picked)).format('DD-MM-YYYY')
+            let payload = {
+                date: date,
+                simulation_nubmer: simulation_nubmer
+            }
+            this.$axios.get('/sanctum/csrf-cookie').then(response => {
+                this.$axios.post('/api/results/chart/get-fiveg-best-solution_GA', payload).then(response => {
+                    
+                let results = JSON.parse(JSON.stringify(response.data.object))
+                console.log('results ==', results)
+
+                let data = []
+                let labels = []
+                let mpla1 = ""
+                let mpla2 = ""
+                let mpla3 = ""
+
+                for (let i = 0; i < results.length; i++) {
+                    if(i === 0) {
+                        data[i] = results[i]['solution_battery_life_5g']
+                        mpla1 = String(results[i]['sensor_5g_a']);
+                        mpla2 = String(results[i]['sensor_5g_b']);
+                        mpla3 = String(results[i]['sensor_5g_c']);
+
+                        labels[i] = mpla3 + ', ' + mpla2 + ', ' + mpla3;
+                    }
+                    if(i === 1) {
+                        data[i] = results[i]['solution_battery_life_lora']
+                        mpla1 = String(results[i]['sensor_lora_a']);
+                        mpla2 = String(results[i]['sensor_lora_b']);
+                        mpla3 = String(results[i]['sensor_lora_c']);
+
+                        labels[i] = mpla3 + ', ' + mpla2 + ', ' + mpla3;
+                    }
+                    if(i === 2) {
+                        data[i] = results[i]['solution_battery_life_nb']
+                        mpla1 = String(results[i]['sensor_nb_a']);
+                        mpla2 = String(results[i]['sensor_nb_b']);
+                        mpla3 = String(results[i]['sensor_nb_c']);
+
+                        labels[i] = mpla3 + ', ' + mpla2 + ', ' + mpla3;
+                    }
+                }
+                console.log ('data ==', data);
+               
+                this.bar_lora_GA_data = {
+                    labels: labels.map(row => row),
+                    datasets :[
+                        {
+                            label: 'Battery life in (months)',
+                            data: data
+                        }
+                    ]
+                }
+                this.bar_lora_GA = true
+                
+                })
+            })
         },
         
         plot_bar_nb_GA(picked){
