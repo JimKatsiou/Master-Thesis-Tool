@@ -43,6 +43,7 @@ import FirstStep from '../components/Matlab/FirstStep'
 
 import Charts from '../components/Charts/Charts'
 import TablesView from '../components/Tables/TablesView'
+import SolutionsHistoryTablesView from '../components/Tables/SolutionsHistoryTablesView'
 import Documentation from '../components/Documentation'
 
 export const routes = [
@@ -233,6 +234,13 @@ export const routes = [
         path: '/tables',
         component: TablesView
     },
+
+    {
+        name: 'SolutionsHistory',
+        path: '/solutions_history',
+        component: SolutionsHistoryTablesView
+    },
+    
 
     {
         name: 'Documentation',

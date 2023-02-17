@@ -119,6 +119,11 @@ Route::group(['prefix' => 'batteries', 'middleware' => 'auth:sanctum'], function
 });
 
 Route::group(['prefix' => 'results', 'middleware' => 'auth:sanctum'], function () {
+    Route::get('/', [ChartController::class, 'getAllResults']);
     Route::post('/chart/get-fiveg-cheapest-solution', [ChartController::class, 'index']);
     Route::post('/chart/get-fiveg-best-solution_GA', [ChartController::class, 'getFivegBestSolutionGA']);
+
+    Route::post('/chart/get-lora-cheapest-solution', [ChartController::class, 'lora_cost_chart']);
+    Route::post('/chart/get-nb-cheapest-solution', [ChartController::class, 'nb_cost_chart']);
+
 });

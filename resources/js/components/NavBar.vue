@@ -24,6 +24,8 @@
                     <hr>
                     <router-link to="/charts" class="list-group-item list-group-item-action py-2 ripple">Charts</router-link>
                     <router-link to="/tables" class="list-group-item list-group-item-action py-2 ripple">Tables</router-link>
+                    <router-link to="/solution_history" class="list-group-item list-group-item-action py-2 ripple">Solutions History</router-link>
+
                     <hr>
                     <router-link to="/documentation" class="list-group-item list-group-item-action py-2 ripple">Documentaion</router-link>
                     <!-- <router-link to="/" class="list-group-item list-group-item-action py-2 ripple">Somethink else</router-link> -->

@@ -1,6 +1,6 @@
 <template>
     <div class="topOfThePage">
-        <h3>All Results</h3>
+        <h3>Solution Hisory</h3>
     </div>
     <div class="nextOfSideBar">
         <table class="table table-bordered">

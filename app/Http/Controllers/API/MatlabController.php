@@ -22,7 +22,7 @@ class MatlabController extends Controller
     // This function runs Matlab
     public function runMatlab()
     {
-        exec("matlab.exe");
+        //exec("matlab.exe");
     }
 
     public function getData5gWQ(Request $request)
@@ -377,6 +377,7 @@ class MatlabController extends Controller
         $merged_lora_cost = array_merge($cost_effective_lora_solutions_by_cost, $cost_effective_lora_solutions_by_solution);
         $merged_nb_iot_cost = array_merge($cost_effective_nb_solutions_by_cost, $cost_effective_nb_solutions_by_solution);      
 
+        dd($merged_5g_cost);
         // Results
         $results_config = ResultsConfig::first();
         if($results_config != null)
@@ -478,6 +479,7 @@ class MatlabController extends Controller
             $new_results->technology = '5G';
             $new_results->type_of_system = $system['system'];
             $new_results->simulation_perpuse = 'Chepest-by-cost';
+            $new_results->simulation_number = 'Chepest-by-cost';
             $new_results->execution_date = date('d-m-Y');
             
             $new_results->cheapest_5g_solutionTableCost = $merged_5g_cost['cheapest_5g_solutionTableCost'][$count];

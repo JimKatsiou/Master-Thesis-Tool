@@ -15,19 +15,19 @@
                             <hr>
                         </div>
                         <div class="row">
-                            <div class="col-sm-5">
+                            <div class="col-sm-6">
                                <div class="form-group">
                                     <label>Date</label>
                                     <datepicker v-model="picked"/>
                                 </div>
                             </div>
-                            <div class="col-sm-5">
+                            <div class="col-sm-6">
                                <div class="form-group">
                                     <label>Simulation Number</label>
                                     <input type="number" class="form-control" v-model="number_of_simulation" placeholder="Enter sumulation number">
                                 </div>
                             </div>
-                            <div class="col-sm-2">
+                            <div class="col-sm-6">
                                 <div class="form-group">
                                     <button type="button" class="btn btn-primary" @click="plot_cost_bar_5g(picked,number_of_simulation)">Plot chart</button>
                                 </div>
@@ -48,10 +48,19 @@
                         </div>
                         <div class="row">
                             <div class="col-sm-6">
-                                <datepicker  v-model="picked"/>
+                               <div class="form-group">
+                                    <label>Date</label>
+                                    <datepicker v-model="picked"/>
+                                </div>
                             </div>
                             <div class="col-sm-6">
-                                <button type="button" class="btn btn-primary" @click="plot_battery_bar_5g(picked)">Plot chart</button>
+                               <div class="form-group">
+                                    <label>Simulation Number</label>
+                                    <input type="number" class="form-control" v-model="number_of_simulation" placeholder="Enter sumulation number">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <button type="button" class="btn btn-primary" @click="plot_battery_bar_5g(picked,number_of_simulation)">Plot chart</button>
                             </div>
                         </div>
                     </div>
@@ -73,10 +82,19 @@
                         </div>
                         <div class="row">
                             <div class="col-sm-6">
-                                <datepicker  v-model="picked"/>
+                               <div class="form-group">
+                                    <label>Date</label>
+                                    <datepicker v-model="picked"/>
+                                </div>
                             </div>
                             <div class="col-sm-6">
-                                <button type="button" class="btn btn-primary" @click="plot_cost_bar_lora(picked)">Plot chart</button>
+                               <div class="form-group">
+                                    <label>Simulation Number</label>
+                                    <input type="number" class="form-control" v-model="number_of_simulation" placeholder="Enter sumulation number">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <button type="button" class="btn btn-primary" @click="plot_cost_bar_lora(picked,number_of_simulation)">Plot chart</button>
                             </div>
                         </div>
                     </div>
@@ -94,10 +112,19 @@
                         </div>
                             <div class="row">
                                 <div class="col-sm-6">
-                                    <datepicker  v-model="picked"/>
+                               <div class="form-group">
+                                    <label>Date</label>
+                                    <datepicker v-model="picked"/>
                                 </div>
+                            </div>
+                            <div class="col-sm-6">
+                               <div class="form-group">
+                                    <label>Simulation Number</label>
+                                    <input type="number" class="form-control" v-model="number_of_simulation" placeholder="Enter sumulation number">
+                                </div>
+                            </div>
                                 <div class="col-sm-6">
-                                    <button type="button" class="btn btn-primary" @click="plot_battery_bar_lora()">Plot chart</button>
+                                    <button type="button" class="btn btn-primary" @click="plot_battery_bar_lora(picked,number_of_simulation)">Plot chart</button>
                                 </div>
                             </div>
                     </div>
@@ -117,10 +144,19 @@
                         </div>
                         <div class="row">
                             <div class="col-sm-6">
-                                <datepicker  v-model="picked"/>
+                               <div class="form-group">
+                                    <label>Date</label>
+                                    <datepicker v-model="picked"/>
+                                </div>
                             </div>
                             <div class="col-sm-6">
-                                <button type="button" class="btn btn-primary" @click="plot_cost_bar_nb(picked)">Plot chart</button>
+                               <div class="form-group">
+                                    <label>Simulation Number</label>
+                                    <input type="number" class="form-control" v-model="number_of_simulation" placeholder="Enter sumulation number">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <button type="button" class="btn btn-primary" @click="plot_cost_bar_nb(picked,number_of_simulation)">Plot chart</button>
                             </div>
                         </div>
                     </div>
@@ -137,11 +173,20 @@
                             <hr>
                         </div>
                         <div class="row">
-                            <div class="col-sm-6">
-                                <datepicker  v-model="picked"/>
+                            <div class="col-sm-5">
+                               <div class="form-group">
+                                    <label>Date</label>
+                                    <datepicker v-model="picked"/>
+                                </div>
+                            </div>
+                            <div class="col-sm-5">
+                               <div class="form-group">
+                                    <label>Simulation Number</label>
+                                    <input type="number" class="form-control" v-model="number_of_simulation" placeholder="Enter sumulation number">
+                                </div>
                             </div>
                             <div class="col-sm-6">
-                                <button type="button" class="btn btn-primary" @click="plot_battery_bar_nb(picked)">Plot chart</button>
+                                <button type="button" class="btn btn-primary" @click="plot_battery_bar_nb(picked,number_of_simulation)">Plot chart</button>
                             </div>
                         </div>
                     </div>
@@ -195,13 +240,13 @@
                             <hr>
                         </div>
                         <div class="row">
-                            <div class="col-sm-5">
+                            <div class="col-sm-6">
                                <div class="form-group">
                                     <label>Date</label>
                                     <datepicker v-model="picked"/>
                                 </div>
                             </div>
-                            <div class="col-sm-5">
+                            <div class="col-sm-6">
                                <div class="form-group">
                                     <label>Simulation Number</label>
                                     <input type="number" class="form-control" v-model="number_of_simulation" placeholder="Enter sumulation number">
@@ -361,37 +406,110 @@ export default {
                 //console.log('result ==', result)
                 let results = JSON.parse(JSON.stringify(result))
                
-                //console.log('results', )
+                console.log('results' ,results)
                 let data = []
                 let labels = []
-                for (let i = 0; i < results.length; i++)
+                let i
+                for (i = 0; i < results.length; i++)
                 {
                     data[i] = results[i]['cheapest_5g_solutionTableCost']
-                    labels[i] = results[i]['simulation_nubmer']
+                    labels[i] = results[i]['cheapest_5g_solutionTable']
                 }
-                //console.log('data', data)
-                //console.log('labels', labels)
+
+                console.log ('data ==', data);
+               
                 this.cost_bar_5g_data = {
-                    labels: labels.map(row => row),
-                    datasets: [ {data: data} ]
+                    labels: labels,
+                    datasets :[
+                        {
+                            label: 'Simulation: ' + results[0]['simulation_nubmer'] + ' Cheapest solution',
+                            data: data
+                        }
+                    ]
                 }
                 this.cost_bar_5g = true
             })
         },
 
-        plot_cost_bar_lora(picked){
+        plot_cost_bar_lora(picked, simulation_nubmer) {
+            let date = moment(String(picked)).format('DD-MM-YYYY')
+            let payload = {
+                date: date,
+                simulation_nubmer: simulation_nubmer
+            }
+            this.$store.dispatch('fetchLoRaCheapestSolution', payload).then(response => {
+                let result = this.$store.getters.getLoRaCheapestSolution;
+                //console.log('result ==', result)
+                let results = JSON.parse(JSON.stringify(result))
+               
+                console.log('results' ,results)
+                let data = []
+                let labels = []
+                let i
+                for (i = 0; i < results.length; i++)
+                {
+                    data[i] = results[i]['cheapest_lora_solutionTableCost']
+                    labels[i] = results[i]['cheapest_lora_solutionTable']
+                }
+
+                console.log ('data ==', data);
+               
+                this.cost_bar_lora_data = {
+                    labels: labels,
+                    datasets :[
+                        {
+                            label: 'Simulation: ' + results[0]['simulation_nubmer'] + ' Cheapest solution',
+                            data: data
+                        }
+                    ]
+                }
+                this.cost_bar_lora = true
+            })
         },
 
-        plot_cost_bar_nb(picked){
+        plot_cost_bar_nb(picked, simulation_nubmer){
+            let date = moment(String(picked)).format('DD-MM-YYYY')
+            let payload = {
+                date: date,
+                simulation_nubmer: simulation_nubmer
+            }
+            this.$store.dispatch('fetchNBCheapestSolution', payload).then(response => {
+                let result = this.$store.getters.getNBCheapestSolution;
+                //console.log('result ==', result)
+                let results = JSON.parse(JSON.stringify(result))
+               
+                console.log('results' ,results)
+                let data = []
+                let labels = []
+                let i
+                for (i = 0; i < results.length; i++)
+                {
+                    data[i] = results[i]['cheapest_nb_solutionTableCost']
+                    labels[i] = results[i]['cheapest_nb_solutionTable']
+                }
+
+                console.log ('data ==', data);
+               
+                this.cost_bar_nb_data = {
+                    labels: labels,
+                    datasets :[
+                        {
+                            label: 'Simulation: ' + results[0]['simulation_nubmer'] + ' Cheapest solution',
+                            data: data
+                        }
+                    ]
+                }
+                this.cost_bar_nb = true
+            })
         },
 
-        plot_battery_bar_5g(picked){
+        plot_battery_bar_5g(picked, simulation_nubmer){
         },
 
-        plot_battery_bar_lora(picked){
+        plot_battery_bar_lora(picked, simulation_nubmer){
         },
 
-        plot_battery_bar_nb(picked){
+        plot_battery_bar_nb(picked, simulation_nubmer){
         },
 
         plot_bar_5g_GA(picked,simulation_nubmer)
@@ -501,7 +619,7 @@ export default {
                 console.log ('data ==', data);
                
                 this.bar_lora_GA_data = {
-                    labels: labels.map(row => row),
+                    labels: labels,
                     datasets :[
                         {
                             label: 'Battery life in (months)',
@@ -521,7 +639,9 @@ export default {
 
     computed: {
         ...mapGetters([
-            'get5GCheapestSolution'
+            'get5GCheapestSolution',
+            'getLoRaCheapestSolution',
+            'getNBCheapestSolution'
         ]),
     },
 

@@ -72,6 +72,52 @@ class ChartController extends Controller
         return $response;
     }
 
+    public function lora_cost_chart(Request $request)
+    {
+       // $respone = new ResponseClass();
+       
+        $data = $request->post();
+        $date = $data['date'];
+
+        //$number = $data['number'];
+        $results = Result::where('technology','=', "LoRa")->where('execution_date', $date)
+        ->where('simulation_nubmer','=', $data['simulation_nubmer'])->where('simulation_perpuse','=',"Chepest-by-cost")->get();
+        
+        if($results->isEmpty())
+        {
+            $response = new stdClass();
+            $response->object = [];
+        }
+        else {
+            $response = new stdClass();
+            $response->object = $results;
+        }
+        
+        return $response;;
+    }
+
+    public function nb_cost_chart(Request $request)
+    {
+       // $respone = new ResponseClass();
+        $data = $request->post();
+        $date = $data['date'];
+
+        //$number = $data['number'];
+        $results = Result::where('technology','=', "NB-IoT")->where('execution_date', $date)
+        ->where('simulation_nubmer','=', $data['simulation_nubmer'])->where('simulation_perpuse','=',"Chepest-by-cost")->get();
+        
+        if($results->isEmpty())
+        {
+            $response = new stdClass();
+            $response->object = [];
+        }
+        else {
+            $response = new stdClass();
+            $response->object = $results;
+        }        
+        return $response;
+    }
+
     
 }
 
