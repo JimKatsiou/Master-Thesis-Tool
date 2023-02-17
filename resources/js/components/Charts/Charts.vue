@@ -504,12 +504,108 @@ export default {
         },
 
         plot_battery_bar_5g(picked, simulation_nubmer){
+            let date = moment(String(picked)).format('DD-MM-YYYY')
+            let payload = {
+                date: date,
+                simulation_nubmer: simulation_nubmer
+            }
+            this.$store.dispatch('fetchBat5GCheapestSolution', payload).then(response => {
+                let result = this.$store.getters.getBat5GCheapestSolution;
+                let results = JSON.parse(JSON.stringify(result))
+               
+                console.log('results' ,results)
+                let data = []
+                let labels = []
+                let i
+                for (i = 0; i < results.length; i++)
+                {
+                    data[i] = results[i]['best_5g_solutionTableBL']
+                    labels[i] = results[i]['best_5g_solutionTable']
+                }
+
+                console.log ('data ==', data);
+               
+                this.battery_bar_lora_data = {
+                    labels: labels,
+                    datasets :[
+                        {
+                            label: 'Simulation: ' + results[i-1]['simulation_nubmer'] + ' Cheapest solution',
+                            data: data
+                        }
+                    ]
+                }
+                this.battery_bar_lora = true
+            })
         },
 
         plot_battery_bar_lora(picked, simulation_nubmer){
+            let date = moment(String(picked)).format('DD-MM-YYYY')
+            let payload = {
+                date: date,
+                simulation_nubmer: simulation_nubmer
+            }
+            this.$store.dispatch('fetchBatLoRaCheapestSolution', payload).then(response => {
+                let result = this.$store.getters.getBatLoRaCheapestSolution;
+                let results = JSON.parse(JSON.stringify(result))
+               
+                console.log('results' ,results)
+                let data = []
+                let labels = []
+                let i
+                for (i = 0; i < results.length; i++)
+                {
+                    data[i] = results[i]['best_lora_solutionTableBL']
+                    labels[i] = results[i]['best_lora_solutionTable']
+                }
+
+                console.log ('data ==', data);
+               
+                this.battery_bar_nb_data = {
+                    labels: labels,
+                    datasets :[
+                        {
+                            label: 'Simulation: ' + results[i-1]['simulation_nubmer'] + ' Cheapest solution',
+                            data: data
+                        }
+                    ]
+                }
+                this.battery_bar_nb = true
+            })
         },
 
         plot_battery_bar_nb(picked, simulation_nubmer){
+            let date = moment(String(picked)).format('DD-MM-YYYY')
+            let payload = {
+                date: date,
+                simulation_nubmer: simulation_nubmer
+            }
+            this.$store.dispatch('fetchBatNBCheapestSolution', payload).then(response => {
+                let result = this.$store.getters.getBatNBCheapestSolution;
+                let results = JSON.parse(JSON.stringify(result))
+               
+                console.log('results' ,results)
+                let data = []
+                let labels = []
+                let i
+                for (i = 0; i < results.length; i++)
+                {
+                    data[i] = results[i]['best_nb_solutionTableBL']
+                    labels[i] = results[i]['best_nb_solutionTable']
+                }
+
+                console.log ('data ==', data);
+               
+                this.battery_bar_5g_data = {
+                    labels: labels,
+                    datasets :[
+                        {
+                            label: 'Simulation: ' + results[i-1]['simulation_nubmer'] + ' Cheapest solution',
+                            data: data
+                        }
+                    ]
+                }
+                this.battery_bar_5g = true
+            })
         },
 
         plot_bar_5g_GA(picked,simulation_nubmer)
@@ -641,7 +737,10 @@ export default {
         ...mapGetters([
             'get5GCheapestSolution',
             'getLoRaCheapestSolution',
-            'getNBCheapestSolution'
+            'getNBCheapestSolution',
+            'getBat5GCheapestSolution',
+            'getBatLoRaCheapestSolution',
+            'getBatNBCheapestSolution'
         ]),
     },
 

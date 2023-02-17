@@ -126,4 +126,9 @@ Route::group(['prefix' => 'results', 'middleware' => 'auth:sanctum'], function (
     Route::post('/chart/get-lora-cheapest-solution', [ChartController::class, 'lora_cost_chart']);
     Route::post('/chart/get-nb-cheapest-solution', [ChartController::class, 'nb_cost_chart']);
 
+    Route::post('/chart/get-bat-fiveg-cheapest-solution', [ChartController::class, 'bat_index']);
+    Route::post('/chart/get-bat-lora-cheapest-solution', [ChartController::class, 'bat_lora_cost_chart']);
+    Route::post('/chart/get-bat-nb-cheapest-solution', [ChartController::class, 'bat_nb_cost_chart']);
+
+
 });

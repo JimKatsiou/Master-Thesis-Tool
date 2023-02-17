@@ -93,7 +93,7 @@ class ChartController extends Controller
             $response->object = $results;
         }
         
-        return $response;;
+        return $response;
     }
 
     public function nb_cost_chart(Request $request)
@@ -115,6 +115,78 @@ class ChartController extends Controller
             $response = new stdClass();
             $response->object = $results;
         }        
+        return $response;
+    }
+
+    public function bat_index(Request $request)
+    {
+       // $respone = new ResponseClass();
+       
+        $data = $request->post();
+        $date = $data['date'];
+
+        //$number = $data['number'];
+        $results = Result::where('technology','=', "5G")->where('execution_date', $date)
+        ->where('simulation_nubmer','=', $data['simulation_nubmer'])->where('simulation_perpuse','=',"Best battery performance")->get();
+        
+        if($results->isEmpty())
+        {
+            $response = new stdClass();
+            $response->object = [];
+        }
+        else {
+            $response = new stdClass();
+            $response->object = $results;
+        }
+        
+        return $response;
+    }
+
+    public function bat_lora_cost_chart(Request $request)
+    {
+       // $respone = new ResponseClass();
+       
+        $data = $request->post();
+        $date = $data['date'];
+
+        //$number = $data['number'];
+        $results = Result::where('technology','=', "LoRa")->where('execution_date', $date)
+        ->where('simulation_nubmer','=', $data['simulation_nubmer'])->where('simulation_perpuse','=',"Best battery performance")->get();
+        
+        if($results->isEmpty())
+        {
+            $response = new stdClass();
+            $response->object = [];
+        }
+        else {
+            $response = new stdClass();
+            $response->object = $results;
+        }
+        
+        return $response;
+    }
+
+    public function bat_nb_cost_chart(Request $request)
+    {
+       // $respone = new ResponseClass();
+       
+        $data = $request->post();
+        $date = $data['date'];
+
+        //$number = $data['number'];
+        $results = Result::where('technology','=', "NB-IoT")->where('execution_date', $date)
+        ->where('simulation_nubmer','=', $data['simulation_nubmer'])->where('simulation_perpuse','=',"Best battery performance")->get();
+        
+        if($results->isEmpty())
+        {
+            $response = new stdClass();
+            $response->object = [];
+        }
+        else {
+            $response = new stdClass();
+            $response->object = $results;
+        }
+        
         return $response;
     }
 
